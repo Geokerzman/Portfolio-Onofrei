@@ -1,0 +1,253 @@
+[
+ {
+  "board": "01-colour",
+  "tile": 1,
+  "file": "01-colour--1-base-surfaces-ambient.png",
+  "sections": [
+   "Base surfaces",
+   "Ambient"
+  ],
+  "px": [
+   1170,
+   2493
+  ]
+ },
+ {
+  "board": "01-colour",
+  "tile": 2,
+  "file": "01-colour--2-glass-surfaces-text.png",
+  "sections": [
+   "Glass surfaces",
+   "Text"
+  ],
+  "px": [
+   1170,
+   2379
+  ]
+ },
+ {
+  "board": "01-colour",
+  "tile": 3,
+  "file": "01-colour--3-severity-ai-accent.png",
+  "sections": [
+   "Severity",
+   "AI accent",
+   "Utility"
+  ],
+  "px": [
+   1170,
+   2649
+  ]
+ },
+ {
+  "board": "02-night-dim",
+  "tile": 1,
+  "file": "02-night-dim--1-same-card-both-modes-token-deltas.png",
+  "sections": [
+   "Same card, both modes",
+   "Token deltas"
+  ],
+  "px": [
+   1170,
+   2466
+  ]
+ },
+ {
+  "board": "02-night-dim",
+  "tile": 2,
+  "file": "02-night-dim--2-rules.png",
+  "sections": [
+   "Rules"
+  ],
+  "px": [
+   1170,
+   1365
+  ]
+ },
+ {
+  "board": "03-type-space",
+  "tile": 1,
+  "file": "03-type-space--1-type-scale-tabular-figures.png",
+  "sections": [
+   "Type scale",
+   "Tabular figures"
+  ],
+  "px": [
+   1170,
+   2799
+  ]
+ },
+ {
+  "board": "03-type-space",
+  "tile": 2,
+  "file": "03-type-space--2-spacing-scale-radius.png",
+  "sections": [
+   "Spacing scale",
+   "Radius",
+   "Elevation"
+  ],
+  "px": [
+   1170,
+   2856
+  ]
+ },
+ {
+  "board": "04-motion-data",
+  "tile": 1,
+  "file": "04-motion-data--1-duration-easing.png",
+  "sections": [
+   "Duration",
+   "Easing"
+  ],
+  "px": [
+   1170,
+   1554
+  ]
+ },
+ {
+  "board": "04-motion-data",
+  "tile": 2,
+  "file": "04-motion-data--2-the-one-exception-chart.png",
+  "sections": [
+   "The one exception",
+   "Chart",
+   "Sparklines in rows"
+  ],
+  "px": [
+   1170,
+   2217
+  ]
+ },
+ {
+  "board": "04-motion-data",
+  "tile": 3,
+  "file": "04-motion-data--3-chart-rules.png",
+  "sections": [
+   "Chart rules"
+  ],
+  "px": [
+   1170,
+   567
+  ]
+ },
+ {
+  "board": "05-controls",
+  "tile": 1,
+  "file": "05-controls--1-segmented-pill-tab-primary-button.png",
+  "sections": [
+   "Segmented pill tab",
+   "Primary button"
+  ],
+  "px": [
+   1170,
+   2616
+  ]
+ },
+ {
+  "board": "05-controls",
+  "tile": 2,
+  "file": "05-controls--2-destructive-button-ghost-button.png",
+  "sections": [
+   "Destructive button",
+   "Ghost button",
+   "Severity chip"
+  ],
+  "px": [
+   1170,
+   2535
+  ]
+ },
+ {
+  "board": "05-controls",
+  "tile": 3,
+  "file": "05-controls--3-toggle-switch-sync-badge.png",
+  "sections": [
+   "Toggle switch",
+   "Sync badge",
+   "Bottom tab bar"
+  ],
+  "px": [
+   1170,
+   1566
+  ]
+ },
+ {
+  "board": "06-incident-surfaces",
+  "tile": 1,
+  "file": "06-incident-surfaces--1-ai-summary-card-ai-badge-confidence-meter.png",
+  "sections": [
+   "AI summary card",
+   "AI badge & confidence meter"
+  ],
+  "px": [
+   1170,
+   3279
+  ]
+ },
+ {
+  "board": "06-incident-surfaces",
+  "tile": 2,
+  "file": "06-incident-surfaces--2-incident-list-row-runbook-checklist-item.png",
+  "sections": [
+   "Incident list row",
+   "Runbook checklist item"
+  ],
+  "px": [
+   1170,
+   2646
+  ]
+ },
+ {
+  "board": "06-incident-surfaces",
+  "tile": 3,
+  "file": "06-incident-surfaces--3-bottom-sheet-offline-banner.png",
+  "sections": [
+   "Bottom sheet",
+   "Offline banner",
+   "Status ring"
+  ],
+  "px": [
+   1170,
+   3282
+  ]
+ },
+ {
+  "board": "07-touch-rules",
+  "tile": 1,
+  "file": "07-touch-rules--1-tap-targets-reach-zone.png",
+  "sections": [
+   "Tap targets",
+   "Reach zone"
+  ],
+  "px": [
+   1170,
+   2025
+  ]
+ },
+ {
+  "board": "07-touch-rules",
+  "tile": 2,
+  "file": "07-touch-rules--2-colour-is-never-alone-verified-contrast.png",
+  "sections": [
+   "Colour is never alone",
+   "Verified contrast"
+  ],
+  "px": [
+   1170,
+   2544
+  ]
+ },
+ {
+  "board": "07-touch-rules",
+  "tile": 3,
+  "file": "07-touch-rules--3-interaction-do-not.png",
+  "sections": [
+   "Interaction",
+   "Do not"
+  ],
+  "px": [
+   1170,
+   2298
+  ]
+ }
+]

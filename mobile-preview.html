@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mobile preview — index.html</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; background: #EDEDEA; font: 13px/1.4 ui-sans-serif, system-ui, sans-serif; color: #0B0C0E; }
+  body { display: flex; flex-direction: column; overflow: hidden; }
+
+  .bar { flex: none; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 16px; }
+  .bar button {
+    font: inherit; font-size: 11px; letter-spacing: .05em; text-transform: uppercase;
+    padding: 7px 13px; border-radius: 999px; border: 1px solid rgba(11,12,14,.16);
+    background: #fff; color: #0B0C0E; cursor: pointer;
+  }
+  .bar button[aria-pressed="true"] { background: #0B0C0E; color: #fff; border-color: #0B0C0E; }
+  .meta { font-variant-numeric: tabular-nums; color: rgba(11,12,14,.5); margin-left: 4px; }
+
+  .stage { flex: 1; min-height: 0; display: grid; place-items: center; padding: 0 16px 20px; }
+  .phone-scale { position: relative; transform-origin: top left; }
+  .phone-scale > .phone { position: absolute; top: 0; left: 0; }
+
+  .phone {
+    position: relative; background: #0B0C0E; padding: 11px; border-radius: 52px;
+    box-shadow: 0 26px 60px rgba(0,0,0,.26), inset 0 0 0 1px rgba(255,255,255,.14);
+  }
+  .screen { position: relative; overflow: hidden; border-radius: 41px; background: #fff; }
+
+  /* Device status bar — part of the frame, not the page */
+  .statusbar {
+    position: absolute; inset: 0 0 auto 0; height: 44px; z-index: 3;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 26px; background: #0B0C0E; color: #fff;
+    font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums;
+    letter-spacing: .01em; pointer-events: none;
+  }
+  .statusbar .icons { display: flex; align-items: center; gap: 6px; }
+  .notch {
+    position: absolute; top: 9px; left: 50%; transform: translateX(-50%);
+    width: 104px; height: 26px; border-radius: 999px; background: #000; z-index: 4; pointer-events: none;
+  }
+  .viewport { position: absolute; inset: 44px 0 0 0; }
+  iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <button type="button" data-w="390" data-h="844" aria-pressed="true">iPhone 14 · 390</button>
+    <button type="button" data-w="360" data-h="800" aria-pressed="false">Android · 360</button>
+    <button type="button" data-w="430" data-h="932" aria-pressed="false">Pro Max · 430</button>
+    <span class="meta"><span id="dims">390 × 844</span> · <span id="zoom">100%</span></span>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="phone-scale" id="scaler">
+      <div class="phone">
+        <div class="screen" id="screen" style="width:390px;height:888px">
+          <div class="statusbar">
+            <span>9:41</span>
+            <span class="icons" aria-hidden="true">
+              <svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor"><rect x="0" y="7.5" width="3" height="3.5" rx="1"></rect><rect x="4.5" y="5.5" width="3" height="5.5" rx="1"></rect><rect x="9" y="3" width="3" height="8" rx="1"></rect><rect x="13.5" y="0" width="3" height="11" rx="1"></rect></svg>
+              <svg width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M1.4 4.2a9.4 9.4 0 0 1 13.2 0"></path><path d="M4 6.9a5.7 5.7 0 0 1 8 0"></path><circle cx="8" cy="10" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+              <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x="0.6" y="0.6" width="21" height="10.8" rx="3.2" stroke="currentColor" stroke-opacity=".45" stroke-width="1.2"></rect><rect x="2.4" y="2.4" width="15" height="7.2" rx="2" fill="currentColor"></rect><path d="M23.4 4.2v3.6a2.2 2.2 0 0 0 0-3.6Z" fill="currentColor" fill-opacity=".5"></path></svg>
+            </span>
+          </div>
+          <div class="notch"></div>
+          <div class="viewport"><iframe id="frame" src="site/index.html" title="site/index.html at mobile width"></iframe></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  const stage  = document.getElementById('stage');
+  const scaler = document.getElementById('scaler');
+  const screen = document.getElementById('screen');
+  const dims   = document.getElementById('dims');
+  const zoomEl = document.getElementById('zoom');
+  let W = 390, H = 844;
+
+  function fit() {
+    const frameW = W + 22, frameH = H + 44 + 22;        // + bezel padding, + status bar
+    const availW = stage.clientWidth, availH = stage.clientHeight;
+    const s = Math.min(1, availW / frameW, availH / frameH);
+    scaler.style.transform = 'scale(' + s + ')';
+    scaler.style.width  = Math.round(frameW * s) + 'px';
+    scaler.style.height = Math.round(frameH * s) + 'px';
+    zoomEl.textContent = Math.round(s * 100) + '%';
+  }
+
+  function setSize(w, h) {
+    W = w; H = h;
+    screen.style.width = w + 'px';
+    screen.style.height = (h + 44) + 'px';
+    dims.textContent = w + ' × ' + h;
+    fit();
+  }
+
+  document.querySelectorAll('.bar button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.bar button').forEach(o => o.setAttribute('aria-pressed', String(o === b)));
+    setSize(Number(b.dataset.w), Number(b.dataset.h));
+  }));
+
+  new ResizeObserver(fit).observe(stage);
+  fit();
+</script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" data-card-surface="solid" data-dark-reach="work" data-card-scale="contained">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Onset — On-call incident app · Boris Onofrei</title>
+<meta name="description" content="Onset - an on-call incident response app for the moment an engineer is woken by an alert and has to choose, in the dark, whether to take it or hand it on.">
+<meta name="author" content="Boris Onofrei">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="canonical" href="https://borisonofrei.design/work/onset.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Onset — On-call incident app · Boris Onofrei">
+<meta property="og:description" content="Onset - an on-call incident response app for the moment an engineer is woken by an alert and has to choose, in the dark, whether to take it or hand it on.">
+<meta property="og:url" content="https://borisonofrei.design/work/onset.html">
+<meta property="og:site_name" content="Boris Onofrei">
+<meta property="og:image" content="https://borisonofrei.design/assets/images/meta/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/images/meta/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/Satoshi-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/tailwind.css">
+</head>
+<body class="font-body bg-paper text-ink antialiased" data-root="../">
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-gut focus:top-4 focus:z-50 focus:bg-surface focus:px-4 focus:py-3 focus:text-s15 focus:font-medium" data-i18n="a11y.skip">Skip to content</a>
+<header class="sticky top-0 z-40 border-b border-mist bg-paper">
+  <nav class="mx-auto flex h-16 max-w-container items-center justify-between px-gut lg:px-gut-lg" aria-label="Primary">
+    <a href="../index.html" data-page-link class="font-display text-s17 font-extrabold tracking-display text-ink no-underline nav-link">Boris&nbsp;Onofrei</a>
+
+    <div class="flex items-center gap-2">
+      <ul class="hidden items-center gap-2 md:flex" role="list">
+        <li><a href="../index.html#work" data-page-link class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.work">Work</a></li>
+        <li><a href="../index.html#about" data-page-link class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.about">About</a></li>
+        <li><a href="../index.html#experience" data-page-link class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="../index.html#contact" data-page-link class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <a id="cv-link" class="btn-cv" href="../assets/docs/Boris_Onofrei_CV_ProductDesigner_EN.pdf" download data-i18n="nav.cv" data-i18n-href="nav.cvHref">CV (PDF)</a>
+
+      <div class="hidden items-center border-mist md:flex md:border-l md:pl-3" role="group" aria-label="Language" data-i18n-aria="a11y.language">
+        <button type="button" id="lang-en" data-lang="en" class="inline-flex min-h-[44px] min-w-[38px] items-center justify-center label text-ink font-medium sm:min-w-[44px]" aria-pressed="true">EN</button>
+        <span class="label hidden px-1 text-graphite sm:inline" aria-hidden="true">/</span>
+        <button type="button" id="lang-de" data-lang="de" class="inline-flex min-h-[44px] min-w-[38px] items-center justify-center label text-graphite sm:min-w-[44px]" aria-pressed="false">DE</button>
+      </div>
+
+      <button type="button" id="menu-button" class="nav-link -mr-2 ml-1 inline-flex h-11 w-11 items-center justify-center text-ink md:hidden" aria-controls="menu-panel" aria-expanded="false" data-i18n-aria="a11y.menu" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div id="menu-panel" class="border-t border-mist bg-paper md:hidden" hidden>
+    <ul class="mx-auto flex max-w-container flex-col px-gut py-2" role="list">
+      <li><a href="../index.html#work" data-page-link class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.work">Work</a></li>
+      <li><a href="../index.html#about" data-page-link class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.about">About</a></li>
+      <li><a href="../index.html#experience" data-page-link class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="../index.html#contact" data-page-link class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.contact">Contact</a></li>
+      <li class="flex min-h-[44px] items-center gap-3 pt-1" role="group" aria-label="Language">
+        <span class="label text-graphite" data-i18n="a11y.language">Language</span>
+        <span class="flex items-center gap-1">
+          <button type="button" data-lang="en" class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center label text-ink font-medium" aria-pressed="true">EN</button>
+          <span class="label text-graphite" aria-hidden="true">/</span>
+          <button type="button" data-lang="de" class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center label text-graphite" aria-pressed="false">DE</button>
+        </span>
+      </li>
+    </ul>
+  </div>
+  <div class="read-progress" aria-hidden="true"><span id="read-progress-bar"></span></div>
+</header>
+<main id="main">
+  <section class="case-hero" aria-labelledby="case-title">
+    <div class="mx-auto max-w-container px-gut pt-6 lg:px-gut-lg lg:pt-10">
+      <a href="../index.html#work" class="case-back nav-link" data-page-link><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg><span data-i18n="case.back">All work</span></a>
+      <p class="label mt-10 text-s15 text-white/60 lg:mt-14" data-i18n="work.cases.1.label">03 / Case study</p>
+      <h1 id="case-title" class="case-hero__title mt-4"><span data-i18n="work.cases.1.csHeadDim">Onset</span><span class="accent" data-i18n="work.cases.1.csHeadStrong">On-call incident app</span></h1>
+      <p class="mt-6 max-w-measure text-s20 text-onmute" data-i18n="work.cases.1.context">Mobile · DevOps · Offline-first</p>
+      <ul class="mt-8 flex flex-wrap gap-2 sm:gap-3" role="list"><li class="hero-tag" data-i18n="work.cases.1.tags.0">Mobile UX</li><li class="hero-tag" data-i18n="work.cases.1.tags.1">AI in the loop</li><li class="hero-tag" data-i18n="work.cases.1.tags.2">Design system</li></ul>
+    </div>
+    <div class="case-cover-band mt-12 lg:mt-16">
+      <div class="mx-auto max-w-container px-gut lg:px-gut-lg">
+        <div class="case-hero__cover"><img src="../assets/images/work/onset/case-cover.webp" alt="Three Onset phones angled on a dark green-lit background: the on-call schedule with an October 2026 calendar, the incident detail for a 5xx spike on /checkout with an AI reading at 82%, and the active incidents feed sorted by severity." fetchpriority="high" decoding="async"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="case-body">
+    <div class="mx-auto max-w-container px-gut pb-rhythm pt-12 lg:px-gut-lg lg:pb-rhythm-lg lg:pt-20">
+      <div class="case-layout">
+        <div class="case-aside">
+          <nav class="case-toc hidden lg:block" aria-labelledby="toc-label">
+            <p id="toc-label" class="case-toc__label" data-i18n="case.contents">Contents</p>
+            <ol role="list">
+              <li><a href="#overview" data-toc="overview"><span>01</span><span data-i18n="case.overview">Overview</span></a></li>
+              <li><a href="#s02" data-toc="s02"><span>02</span><span>The problem</span></a></li>
+              <li><a href="#s03" data-toc="s03"><span>03</span><span>The system</span></a></li>
+              <li><a href="#s04" data-toc="s04"><span>04</span><span>The decision</span></a></li>
+              <li><a href="#s05" data-toc="s05"><span>05</span><span>AI</span></a></li>
+              <li><a href="#s06" data-toc="s06"><span>06</span><span>The record</span></a></li>
+              <li><a href="#s07" data-toc="s07"><span>07</span><span>Communication</span></a></li>
+              <li><a href="#s08" data-toc="s08"><span>08</span><span>Offline</span></a></li>
+              <li><a href="#s09" data-toc="s09"><span>09</span><span>Resting state</span></a></li>
+              <li><a href="#s10" data-toc="s10"><span>10</span><span>What was tested</span></a></li>
+              <li><a href="#s11" data-toc="s11"><span>11</span><span>Limits</span></a></li>
+              <li><a href="#s12" data-toc="s12"><span>12</span><span>The flow</span></a></li>
+            </ol>
+          </nav>
+          <details class="case-toc-m lg:hidden">
+            <summary><span data-i18n="case.contents">Contents</span><span class="case-toc-m__count">12 <span data-i18n="case.sections">sections</span></span></summary>
+            <nav class="case-toc" aria-label="Case study contents" data-i18n-aria="a11y.contentsNav">
+              <ol role="list">
+              <li><a href="#overview" data-toc="overview"><span>01</span><span data-i18n="case.overview">Overview</span></a></li>
+              <li><a href="#s02" data-toc="s02"><span>02</span><span>The problem</span></a></li>
+              <li><a href="#s03" data-toc="s03"><span>03</span><span>The system</span></a></li>
+              <li><a href="#s04" data-toc="s04"><span>04</span><span>The decision</span></a></li>
+              <li><a href="#s05" data-toc="s05"><span>05</span><span>AI</span></a></li>
+              <li><a href="#s06" data-toc="s06"><span>06</span><span>The record</span></a></li>
+              <li><a href="#s07" data-toc="s07"><span>07</span><span>Communication</span></a></li>
+              <li><a href="#s08" data-toc="s08"><span>08</span><span>Offline</span></a></li>
+              <li><a href="#s09" data-toc="s09"><span>09</span><span>Resting state</span></a></li>
+              <li><a href="#s10" data-toc="s10"><span>10</span><span>What was tested</span></a></li>
+              <li><a href="#s11" data-toc="s11"><span>11</span><span>Limits</span></a></li>
+              <li><a href="#s12" data-toc="s12"><span>12</span><span>The flow</span></a></li>
+              </ol>
+            </nav>
+          </details>
+        </div>
+        <article id="case-body" class="case-article" aria-labelledby="case-title">
+<div id="overview" data-toc-target="">
+  <p class="cs-lede">Onset - an on-call incident response app for the moment an engineer is woken by an alert and has to choose, in the dark, whether to take it or hand it on.</p>
+  <p class="cs-foot">Self-initiated concept project · 2026</p>
+  
+
+  <dl class="cs-meta">
+    <div class="cs-meta__cell"><dt>Role</dt><dd>Product designer - research, IA, UI, design system</dd></div>
+    <div class="cs-meta__cell"><dt>Scope</dt><dd>10 screens, 30 frames, 1 design system</dd></div>
+    <div class="cs-meta__cell"><dt>Platform</dt><dd>Mobile only (390 × 844)</dd></div>
+    <div class="cs-meta__cell"><dt>Timeframe</dt><dd>5 weeks</dd></div>
+    <div class="cs-meta__cell"><dt>Tools</dt><dd>Figma, Claude Design</dd></div>
+    <div class="cs-meta__cell"><dt>Research</dt><dd>Competitive teardown, heuristic evaluation - no user testing</dd></div>
+  </dl>
+
+  </div><section class="cs-block" id="s02" data-toc-target="" aria-labelledby="s02-h">
+    <p class="cs-eyebrow">02 / THE PROBLEM</p>
+    <h2 class="cs-h" id="s02-h"><span>THE TOOL IS BUILT FOR A DESK.</span><span class="cs-h__accent">THE INCIDENT ISN'T.</span></h2>
+    <p class="cs-p">On-call means carrying the pager for a week. Most of that week is quiet. The product only matters in the minutes it isn't.</p>
+    <p class="cs-p">At 03:40 an alert fires. The engineer is in bed, in the dark, holding the phone in one hand, with maybe a minute of coherent thought. The decision is small and consequential: take it, or escalate to someone who can.</p>
+    <p class="cs-p">Every incident platform on the market was designed for a browser and given a phone app afterwards. A teardown of five - PagerDuty, Opsgenie, incident.io, Grafana OnCall and Better Stack - showed the same shape in all of them: the mobile app is a viewport onto a web product. Dense text, full-brightness white surfaces, primary actions in the header, and severity communicated by reading rather than by seeing.</p>
+    <p class="cs-p">None of that is wrong at a desk. All of it is wrong at 03:40.</p>
+    <p class="cs-p">Onset starts from the opposite end. It assumes the phone is the only device, the room is dark, one hand is occupied, and the user is not yet fully awake.</p>
+  </section>
+
+  <section class="cs-block" id="s03" data-toc-target="" aria-labelledby="s03-h">
+    <p class="cs-eyebrow">03 / THE SYSTEM</p>
+    <h2 class="cs-h" id="s03-h"><span>A PRODUCT USED AT 3AM</span><span class="cs-h__accent">IS A PRODUCT ABOUT LIGHT.</span></h2>
+    <p class="cs-p">The design system came before the screens, so it comes first here too: seven foundation pages and 15 documented components, with every state rendered rather than described. Everything in the scenarios below is built from these parts.</p>
+    <p class="cs-p">Its most specific decision is a second mode. Night Dim is enabled automatically during the user's quiet hours. Pure white appears nowhere; primary text tops out below it. Glass surfaces drop to a third of their opacity. Severity colours desaturate by roughly 20% and were then re-measured, not assumed.</p>
+    <p class="cs-note">P1 is the single exception. Critical keeps full luminance in both modes. If the building is on fire, the user is allowed to be dazzled.</p>
+    <p class="cs-p">Four rules held across every screen.</p>
+    <ul class="cs-list"><li><strong>Colour is never alone.</strong> Severity is always colour plus icon plus text label. Rendered under simulated deuteranopia the three severity hues converge almost completely - and roughly 8% of male engineers are red-green colourblind, and they are on call too.</li><li><strong>Contrast is measured on the composite.</strong> Every ratio is checked against the flattened glass surface the text actually sits on, not against the base background. Two tokens fell short and were restricted rather than repainted: muted text to 24px and above, and the deep violet to fills and meter tracks, never type.</li><li><strong>Red is spent on one thing.</strong> Severity, and nothing else. Offline is neutral. A declined cover request is neutral. Sync failure is neutral. That restraint is what keeps red legible at 3am.</li><li><strong>The thumb defines the layout.</strong> Minimum target 48×48, primary actions 56px and full width, everything critical in the bottom third. Nothing important sits in a header that the hand holding the phone cannot reach.</li></ul>
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/design-system/01-colour-1.webp" alt="Colour tokens board: base surfaces bg-base, bg-raised and bg-sunken, and the ambient petrol glow kept at a separate hue from the status colours." loading="lazy"></li><li><img src="../assets/images/work/onset/design-system/01-colour-2.webp" alt="Colour tokens board: glass fill, glass fill active and glass border tokens, and text tokens with measured contrast of 16.1, 7.0, 3.2 and 17.8 to 1." loading="lazy"></li><li><img src="../assets/images/work/onset/design-system/01-colour-3.webp" alt="Colour tokens board: P1 critical, P2 warning, P3 low and resolved severity colours with icons and contrast ratios, the violet AI accent gradient, and utility tokens including the focus ring." loading="lazy"></li></ul><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/design-system/02-night-dim-1.webp" alt="Night Dim board: the same P2 incident card in standard and Night Dim modes, and a table of token deltas for text, glass fill, severity and AI accent." loading="lazy"></li><li><img src="../assets/images/work/onset/design-system/02-night-dim-2.webp" alt="Night Dim rules: no pure white, severity desaturated about 20% then verified, the AI gradient flattens, and P1 keeps full luminance as the one exception." loading="lazy"></li></ul><figcaption>Foundation - colour tokens and the two modes</figcaption></figure>
+
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/design-system/05-controls-1.webp" alt="Controls board: segmented pill tabs in two-way and three-way variants, and the primary Acknowledge button in default, pressed, loading and disabled states." loading="lazy"></li><li><img src="../assets/images/work/onset/design-system/05-controls-2.webp" alt="Controls board: destructive Escalate button including the Tap again to escalate confirming state, ghost button states, and severity chips combining colour, icon and label." loading="lazy"></li><li><img src="../assets/images/work/onset/design-system/05-controls-3.webp" alt="Controls board: toggle switches, sync badges for queued, syncing, sent and failed, and the five-item bottom tab bar." loading="lazy"></li></ul><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/design-system/07-touch-rules-1.webp" alt="Touch rules board: 48 by 48 minimum tap target next to a 56px full-width primary button, and a reach-zone diagram with primary actions in the bottom third of a 390 by 844 screen." loading="lazy"></li><li><img src="../assets/images/work/onset/design-system/07-touch-rules-2.webp" alt="Touch rules board: severity chips as designed and under simulated deuteranopia, and a verified contrast list for every text and severity token in both modes." loading="lazy"></li><li><img src="../assets/images/work/onset/design-system/07-touch-rules-3.webp" alt="Touch rules board: interaction rules - pressed not hover, confirm the irreversible, never colour alone - and a Do not list." loading="lazy"></li></ul><figcaption>Foundation - control states, touch targets, verified contrast</figcaption></figure>
+
+    <p class="cs-p">The incident surfaces are where the three layers meet - severity, glass and the AI accent. The AI card is specified at high and low confidence, because the low-confidence state is the one that keeps the high one honest.</p>
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/design-system/06-incident-surfaces-1.webp" alt="Design system board: AI summary card collapsed, expanded at 82% confidence with a violet accent, and at low 38% confidence in neutral grey reading no strong match in the last 90 days; plus the AI badge and confidence meter." loading="lazy"></li><li><img src="../assets/images/work/onset/design-system/06-incident-surfaces-2.webp" alt="Design system board: incident list row in unread, acknowledged, in progress and resolved states, and runbook checklist items marked done, running, open and not applicable." loading="lazy"></li><li><img src="../assets/images/work/onset/design-system/06-incident-surfaces-3.webp" alt="Design system board: escalate bottom sheet, the neutral offline banner with 3 actions queued, and the status ring in all quiet, needs attention and P1 active states." loading="lazy"></li></ul><figcaption>Incident surfaces - AI card at high and low confidence</figcaption></figure>
+  </section>
+
+  <section class="cs-block" id="s04" data-toc-target="" aria-labelledby="s04-h">
+    <p class="cs-eyebrow">04 / THE DECISION</p>
+    <h2 class="cs-h" id="s04-h"><span>ONE TAP TO ACCEPT.</span><span class="cs-h__accent">BUT NOT BY ACCIDENT.</span></h2>
+    <p class="cs-p">The first screen is not in the app. It is the lock screen, because unlocking a phone is already too many steps.</p>
+    <p class="cs-p">The alert card occupies the lower two thirds of the screen - the only part a thumb reaches on a phone held in one hand. Above it, the time and date stay untouched, so the first thing the engineer reads is what hour it actually is.</p>
+    <p class="cs-p">The card carries four facts and nothing else: how severe, what broke, how long it has been broken, and what the metric did. The chart is there instead of an icon because an illustration answers none of those questions.</p>
+    <p class="cs-p">Acknowledging is a slide, not a tap.</p>
+    <p class="cs-note">A tap can be fired by a cheek, a pocket, or a hand swiping at a nightstand. A false acknowledgement tells the system a human is awake and handling the incident when nobody is - and silences the escalation that would have woken someone else. A slide cannot happen by accident. It is the one place in this product where friction is the feature.</p>
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s1-lock-alert-at-rest.webp" alt="Lock screen at 3:41 with a P1 critical alert card: Checkout API error rate 47%, a rising error chart crossing the 5% threshold, 1 service down, about 8,400 users hit, and a Slide to acknowledge control." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s1-lock-alert-mid-slide.webp" alt="The same lock screen alert with the acknowledge handle dragged halfway across the track, the label changing to Release to acknowledge." loading="lazy"></li></ul><figcaption>Lock screen alert - at rest and mid-slide</figcaption></figure>
+
+    <p class="cs-p">Inside the app, the feed is read by its left edge. Every row carries a 4px severity bar, so the first pass is a vertical rhythm of red, amber and green marks - a shape, not a list. Text is the second pass, for the row that already caught the eye.</p>
+    <p class="cs-p">Rows are deliberately dense: three lines, ~96px tall, six visible without scrolling. During a bad night an engineer has eight to fourteen open incidents, and a feed that shows three of them at a time has failed at its only job.</p>
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s2-incident-feed.webp" alt="On call feed: counters for 5 active, 3 acked and 12 resolved in 24 hours, All / Mine / Unacked tabs, and active incidents sorted by severity, each row with a coloured left bar, service name, title, P1 or P2 chip, timer, assignee and a sparkline." loading="lazy"></li></ul><figcaption>Incident feed - sorted by severity</figcaption></figure>
+
+  </section>
+
+  <section class="cs-block" id="s05" data-toc-target="" aria-labelledby="s05-h">
+    <p class="cs-eyebrow">05 / AI</p>
+    <h2 class="cs-h" id="s05-h"><span>THE MODEL READS THE DATA.</span><span class="cs-h__accent">THE ENGINEER OWNS THE CALL.</span></h2>
+    <p class="cs-p">An incident generates more signal than anyone can read at 03:40: metrics, logs, deploy history, dependency graphs. Correlating them is exactly what a model is good at, and exactly what a half-awake human is bad at.</p>
+    <p class="cs-p">So Onset puts an AI reading on the incident detail screen. It states a likely cause, a suggested fix, and the signals it was built from.</p>
+    <p class="cs-p">Three rules hold everywhere it appears.</p>
+    <ul class="cs-list"><li><strong>It is labelled and quantified.</strong> Every AI surface carries the violet accent, the word AI, and a confidence value written as text. The colour alone never signals provenance - that would fail the product's own accessibility rules.</li><li><strong>It is traceable.</strong> "Built from 3 signals" is a link, not a reassurance. The suggestion can be opened back into the data it came from.</li><li><strong>It never acts.</strong> The model drafts, proposes and summarises. Applying a fix, sending a message, acknowledging an incident and completing a runbook step are all human taps, always.</li></ul>
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s3-incident-detail-top.webp" alt="Incident detail for 5xx spike on /checkout, P1 critical: error-rate chart above the 5% threshold, elapsed 00:47:12, 2,140 failed requests, and an expanded AI card at 82% confidence with the likely cause, a suggested fix, a Built from 3 signals link and an Apply fix button." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s3-incident-detail-services.webp" alt="Lower part of incident detail: affected services checkout-service, payment-gateway and cart-service with severity bars and sparklines, similar past incidents with AI 64% badges, and Start runbook, Escalate and Post status actions." loading="lazy"></li></ul><figcaption>Incident detail - AI reading, blast radius, affected services</figcaption></figure>
+
+    <p class="cs-p">Facts and inference are also kept physically apart on the screen. A plain prose block states what is known - thresholds, timings, the deploy four hours earlier - with no interpretation in it. The interpretation sits above, inside a card that announces itself as a model output.</p>
+    <p class="cs-p">The same card also knows when to step back. When the model has nothing, it says so. Below 50% confidence the card drops the violet entirely - no gradient, no accent border - and reads "no strong match in the last 90 days". The accent is earned by confidence, not granted by category.</p>
+    <p class="cs-pull">A model that is confident about everything is a model nobody checks.</p>
+  </section>
+
+  <section class="cs-block" id="s06" data-toc-target="" aria-labelledby="s06-h">
+    <p class="cs-eyebrow">06 / THE RECORD</p>
+    <h2 class="cs-h" id="s06-h"><span>EVERY DECISION</span><span class="cs-h__accent">HAS AN AUTHOR.</span></h2>
+    <p class="cs-p">Two days after the incident there is a postmortem. Two hours into it, someone new is pulled in and asks the only question that matters: what has already been tried?</p>
+    <p class="cs-p">The timeline answers both. It is the live "what's been done" during the incident and the record afterwards, and it is the same screen.</p>
+    <p class="cs-p">Entries come in three visually distinct node types - a system event, a human action, and an AI suggestion. A circle with a monochrome icon, a circle with a face, and a violet rounded square. Scanning the line tells you which decisions a person made and which a machine proposed, before reading a word.</p>
+    <p class="cs-note">Timestamps are absolute, not relative. And gaps are shown, not smoothed: wherever more than five minutes passed between two entries the line breaks and labels the silence. Empty time is usually the finding.</p>
+    <p class="cs-p">Above the timeline, a phase bar splits the elapsed time into detect, acknowledge, diagnose and fix, with the longest phase named in a sentence. The postmortem's first question is answered before anyone asks it.</p>
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s4-timeline-top.webp" alt="Timeline screen: elapsed 00:47:12 with a phase bar of detect 3m, ack 4m, diagnose 26m and fixing 14m, captioned Diagnosis took 26 minutes, the longest phase; below, entries for the alert, the acknowledgement and an AI-suggested cause." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s4-timeline-runbook-expanded.webp" alt="Timeline with the runbook entry expanded to 3 of 7 steps, then an auto-recheck, an escalation to Elli Brandt, a status post and an AI-suggested fix marked not applied, with +9, +10 and +7 minute gap labels." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s4-timeline-open-threads.webp" alt="End of the timeline with the incident still open at 04:24, followed by open threads: Elli has not responded for 6 minutes, an AI fix awaiting decision, and a status update due in 03:47." loading="lazy"></li></ul><figcaption>Timeline - phase bar, expanded runbook, open threads</figcaption></figure>
+
+    <p class="cs-p">The runbook is the same principle applied to procedure. One step is open at a time; completed steps collapse, upcoming steps stay quiet. Commands can be copied but not executed - running infrastructure commands from an unverified phone at 4am creates the second incident, and the interface says so rather than hiding the capability.</p>
+    <p class="cs-p">The step that mattered most to design was the one nobody builds: "not applicable".</p>
+    <p class="cs-note">Runbooks are written for the general case and a real incident rarely matches it. Without an honest way to skip, people either tick a box for work they didn't do or abandon the runbook entirely. In Onset a skip requires one line of reason, renders with a dash rather than a green check, and is routed to the runbook's owner. A skipped step is how a runbook gets fixed.</p>
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s5-runbook-step-4-open.webp" alt="Pool exhaustion runbook at 3 of 7: two steps done, one skipped as not our setup, and step 4 Raise the pool ceiling open with a copyable kubectl command, a note that Onset does not execute commands from a phone, and the expected result." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s5-runbook-skip-reason.webp" alt="Why skip this step bottom sheet over the runbook, with reasons Already true, Not our setup and Step is outdated, an optional detail field and a Skip and record the reason button." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s5-runbook-ai-explanation.webp" alt="Runbook step 4 with an AI explanation at 74% confidence describing where the pool ceiling lives, linked to the runbook and 2 past incidents and labelled explanation only, above Mark done and Not applicable buttons." loading="lazy"></li></ul><figcaption>Runbook - current step, skip reason, AI explanation</figcaption></figure>
+
+  </section>
+
+  <section class="cs-block" id="s07" data-toc-target="" aria-labelledby="s07-h">
+    <p class="cs-eyebrow">07 / COMMUNICATION</p>
+    <h2 class="cs-h" id="s07-h"><span>TWO AUDIENCES.</span><span class="cs-h__accent">ONE OF THEM CAN'T BE UNTOLD.</span></h2>
+    <p class="cs-p">Thirty-four colleagues and an unknown number of customers are waiting to hear something. The engineer has about forty seconds and no capacity to compose careful prose.</p>
+    <p class="cs-p">The composer never starts empty. A draft is generated from the incident data and is plainly editable, with the AI strip visually separated from the text it produced. The model solves the blank page; the engineer owns the words.</p>
+    <p class="cs-p">The screen's real work is the distinction between the two audiences. Selecting "Public" changes three things at once: a warning rule appears on the destination line, the "estimated users affected" toggle switches itself off, and the send button requires a second tap inside a three-second window.</p>
+    <p class="cs-p">Before any of that, the preview renders the same source text twice - once as a Slack message, once as a status-page entry - because an update that reads fine internally can read very differently to a customer.</p>
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s6-post-internal.webp" alt="Post update composer set to Internal for #incidents, 34 people: stage chips, an AI-drafted message at 91% confidence marked edited, and include toggles." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s6-post-public-selected.webp" alt="The same composer with Public selected: an amber warning line reads status.company.com, visible to customers, above the stage chips and the drafted message." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s6-post-preview-sheet.webp" alt="Preview sheet showing the same update twice, once as an Onset app message in #incidents and once as an Investigating entry on status.company.com, with a Back to editing button." loading="lazy"></li></ul><figcaption>Status composer - internal, public, preview</figcaption></figure>
+
+    <p class="cs-p">The last communication is the one most often skipped. At 09:00 the shift changes, and an unspoken handoff is how a twenty-minute incident becomes a two-hour one.</p>
+    <p class="cs-p">The handoff sheet is pre-filled from the shift itself - open incidents, services that went unstable, anything deferred - and asks for the one thing the data cannot supply: anything else the next person should know.</p>
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s7-schedule-shift-month.webp" alt="Schedule tab: You are on call card with 14:22:41 remaining until Friday 09:00, next on call Elli Brandt, 2 open incidents and 1 unstable service, and an October 2026 calendar marking shifts and incidents." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s7-schedule-hand-off-sheet.webp" alt="Hand off to Elli Brandt sheet, summarised from the shift by AI at 88%: open P1 and P2 incidents, an unstable service, a deferred follow-up, a free-text field for anything else, and a Complete handoff button." loading="lazy"></li></ul><figcaption>Schedule - current shift and handoff</figcaption></figure>
+
+  </section>
+
+  <section class="cs-block" id="s08" data-toc-target="" aria-labelledby="s08-h">
+    <p class="cs-eyebrow">08 / OFFLINE</p>
+    <h2 class="cs-h" id="s08-h"><span>THE NETWORK IS THE ONE THING</span><span class="cs-h__accent">ON-CALL CAN'T ASSUME.</span></h2>
+    <p class="cs-p">A datacenter basement, a train, a rural house at 3am. Offline is not an edge case in this product - it is a Tuesday.</p>
+    <p class="cs-p">Most of the app keeps working. Acknowledge, escalate, the cached runbooks for the engineer's own services, timeline notes and the schedule all queue locally and send when the connection returns.</p>
+    <p class="cs-p">Three decisions make that queue honest rather than reassuring.</p>
+    <ul class="cs-list"><li><strong>Actions keep the time they were performed.</strong> A postmortem that shows an acknowledgement at 04:02 instead of 03:41 tells a false story about response time, and the engineer is the one who pays for it.</li><li><strong>Stale data is marked as stale.</strong> The chart stops at the last synced point and the remaining width is hatched and labelled. A flat line would read as recovery.</li><li><strong>The escalation timer keeps running, and the screen says so.</strong> The most dangerous offline failure is an engineer who believes they have taken the incident while the system does not know it. A warning card counts down to the moment the secondary on-call is alerted, and offers the one path that needs no data - a phone call.</li></ul>
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s9-offline-queue-escalation.webp" alt="Offline banner with 3 actions queued, two queued actions and one failed note with a Retry button, the line Actions keep the time you performed them, and an amber card: Escalation timer is still running, 01:47, with a Call Elli directly button." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s9-offline-frozen-chart.webp" alt="Offline incident screen: last synced 03:44, six minutes ago, the error chart stopping at 03:44 with the rest of the width hatched as no data, and a Waiting to send list of queued actions." loading="lazy"></li></ul><figcaption>Offline - queued actions, escalation countdown, frozen chart</figcaption></figure>
+
+    <p class="cs-p">One action is deliberately blocked rather than queued. A public status update that sends minutes later, stamped with the send time, publishes stale information to customers - worse than publishing nothing. Internal actions queue; external ones wait for a human to reconfirm.</p>
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s9-offline-what-still-works.webp" alt="Available offline list: acknowledge and escalate, runbook checklist cached for 3 services, timeline notes and on-call schedule work offline; post public status update, live metrics and logs and AI analysis need a connection." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s9-offline-reconnecting.webp" alt="Back online, syncing 3 actions: one sent, one syncing, one queued, with the note that actions are sent with their original times and a toast: 3 actions sent, acknowledgement recorded at 03:41." loading="lazy"></li></ul><figcaption>Offline - what works, what waits, and reconnection</figcaption></figure>
+
+  </section>
+
+  <section class="cs-block" id="s09" data-toc-target="" aria-labelledby="s09-h">
+    <p class="cs-eyebrow">09 / RESTING STATE</p>
+    <h2 class="cs-h" id="s09-h"><span>MOST OF THE WEEK</span><span class="cs-h__accent">NOTHING IS ON FIRE.</span></h2>
+    <p class="cs-p">Between incidents the app has two jobs: say truthfully that nothing is wrong, and let the engineer decide what is allowed to wake them.</p>
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s10-status-p1-active.webp" alt="Status screen in P1 active state: a red ring with the number 1, checkout-service is failing, acknowledged 47 minutes ago, with the open P1 row and a collapsed AI card." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s10-status-needs-attention.webp" alt="Status screen in needs attention state: an amber ring with the number 2, two open incidents neither critical, listing two P2 rows." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s10-status-all-quiet.webp" alt="Status screen in all quiet state: a green ring with a zero, 24 services nominal for the last 6 hours, one resolved P3 today and the next handoff to Elli Brandt on Friday 09:00." loading="lazy"></li></ul><figcaption>Status - one screen, three states</figcaption></figure>
+
+    <p class="cs-p">The status screen is the product's resting state, and the only place a glow is permitted. The ring is a dial, not decoration: it carries the count of what is open and takes its colour from the highest severity in it. Green with a zero in the middle is semantically honest - nothing is on fire.</p>
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s8-quiet-hours-threshold.webp" alt="Quiet hours settings from 22:00 until 07:00 with the threshold set to P1 only, and a note: over the last 30 days this setting would have silenced 47 alerts and let 3 through." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s8-quiet-hours-overrides-night-dim.webp" alt="Quiet hours continued: per-service overrides, delivery options for push, phone call and repeat until acknowledged, and the Night Dim toggle with a standard versus dimmed preview." loading="lazy"></li></ul><figcaption>Quiet hours - threshold, overrides, night dim</figcaption></figure>
+
+    <p class="cs-p">Quiet hours are the screen where the trade is made explicit. The engineer is not switching off notifications, they are choosing a threshold - and the interface prints the consequence: over the last 30 days this setting would have silenced 47 alerts and let 3 through. A setting that hides its odds is a setting people turn off entirely.</p>
+  </section>
+
+  <section class="cs-block" id="s10" data-toc-target="" aria-labelledby="s10-h">
+    <p class="cs-eyebrow">10 / WHAT WAS TESTED</p>
+    <h2 class="cs-h" id="s10-h"><span>NO USERS.</span><span class="cs-h__accent">SAY SO PLAINLY.</span></h2>
+    <p class="cs-p">This case study has no usability test behind it, and inventing one would be the easiest lie in a portfolio. What it has instead is a teardown of five competitors, a heuristic evaluation against Nielsen's ten, and a set of measured contrast ratios.</p>
+    <h3 class="cs-sub">Heuristic findings that changed the design</h3>
+    <div class="cs-tablewrap"><table class="cs-table cs-table--wrap"><thead><tr><th scope="col">Heuristic</th><th scope="col">Finding and change</th></tr></thead><tbody><tr><th scope="row">Visibility of system status</th><td>An offline acknowledgement looked identical to a confirmed one. Added the escalation countdown card and the "performed at" timestamp on queued actions.</td></tr><tr><th scope="row">Error prevention</th><td>Tap-to-acknowledge could fire in a pocket. Replaced with a slide gesture.</td></tr><tr><th scope="row">Match with the real world</th><td>The runbook had no way to say "this step doesn't apply here". Added skip-with-reason as a first-class state, routed to the runbook owner.</td></tr><tr><th scope="row">User control and freedom</th><td>A public status update could not be recalled. Added the dual preview and a second-tap confirm.</td></tr><tr><th scope="row">Aesthetic and minimalist</th><td>The first lock-screen build tinted the entire card red. Squinting at it from across the room showed one red rectangle and no hierarchy. Red was cut to an 8% tint plus the severity bar, and the acknowledge control was made the only light element on the card.</td></tr></tbody></table></div>
+    <h3 class="cs-sub">Verified contrast · measured on the flattened glass surface</h3>
+    <div class="cs-tablewrap"><table class="cs-table"><thead><tr><th scope="col"><span class="cs-sr">Token</span></th><th scope="col" class="num">Standard</th><th scope="col" class="num">Night Dim</th></tr></thead><tbody><tr><th scope="row">Primary text</th><td class="num">16.1:1</td><td class="num">11.4:1</td></tr><tr><th scope="row">Secondary text</th><td class="num">7.0:1</td><td class="num">4.7:1</td></tr><tr><th scope="row">P1 critical</th><td class="num">5.4:1</td><td class="num">5.6:1</td></tr><tr><th scope="row">P2 warning</th><td class="num">9.7:1</td><td class="num">9.0:1</td></tr><tr><th scope="row">P3 low</th><td class="num">9.5:1</td><td class="num">8.6:1</td></tr><tr><th scope="row">AI accent (type)</th><td class="num">6.5:1</td><td class="num">4.9:1</td></tr></tbody></table></div>
+    <p class="cs-note">Two tokens land below 4.5:1 and are documented as restricted rather than quietly used: muted text at 3.2:1 is limited to 24px and above and to non-essential marks, and the deep violet at 4.1:1 is limited to fills, borders and meter tracks. Publishing the failures next to the passes is the part that makes the table worth anything.</p>
+  </section>
+
+  <section class="cs-block" id="s11" data-toc-target="" aria-labelledby="s11-h">
+    <p class="cs-eyebrow">11 / LIMITS</p>
+    <h2 class="cs-h" id="s11-h"><span>WHAT THIS IS,</span><span class="cs-h__accent">AND WHAT IT ISN'T.</span></h2>
+    <p class="cs-p">This is a self-initiated concept project, not a shipped product. No customer, no production data, no on-call rotation that actually paged anyone.</p>
+    <p class="cs-p">What that means in practice:</p>
+    <ul class="cs-list"><li><strong>Nobody was woken at 3am to test it.</strong> Every claim about the 03:40 state comes from public postmortems, competitor teardown and reasoning - not from observation. A real evaluation of this product would have to be run at night, on tired people, and that is the study this case study is missing.</li><li><strong>One role is designed for.</strong> The responder. An incident commander coordinating several people, an engineering manager watching from outside, and the support team fielding customer questions all have a claim on this product and none of them are designed for.</li><li><strong>Runbook authoring is out of scope.</strong> Onset executes runbooks; it does not help anyone write or maintain one - which is where most of the real failure lives.</li><li><strong>Alert routing and escalation policy are assumed.</strong> The rules that decide who gets paged in the first place are configured elsewhere, on a web product this case study does not cover.</li><li><strong>The system contradicted itself twice, and both are documented.</strong> The ambient background used green while the system forbade tinting the base with a status hue; it was resolved by giving the ambient its own deep petrol token at a separate hue, not by ignoring the rule. The status ring glows in three colours while the system permits one glow - resolved by reclassifying it from an empty-state decoration to a status dial. A system that never needs amending was never used.</li></ul>
+    <p class="cs-close">Next: the incident commander view, and the authoring side of runbooks.</p>
+  </section>
+
+  <section class="cs-block" id="s12" data-toc-target="" aria-labelledby="s12-h">
+    <p class="cs-eyebrow">12 / THE FLOW</p>
+    <h2 class="cs-h" id="s12-h"><span>ALERT. DECIDE.</span><span class="cs-h__accent">WORK. HAND OVER.</span></h2>
+    <p class="cs-p">The full flow, in order - every screen from the first alert to the return to quiet.</p>
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s1-lock-alert-at-rest.webp" alt="Lock screen at 3:41 with a P1 critical alert card: Checkout API error rate 47%, a rising error chart crossing the 5% threshold, 1 service down, about 8,400 users hit, and a Slide to acknowledge control." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s1-lock-alert-mid-slide.webp" alt="The same lock screen alert with the acknowledge handle dragged halfway across the track, the label changing to Release to acknowledge." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s2-incident-feed.webp" alt="On call feed: counters for 5 active, 3 acked and 12 resolved in 24 hours, All / Mine / Unacked tabs, and active incidents sorted by severity, each row with a coloured left bar, service name, title, P1 or P2 chip, timer, assignee and a sparkline." loading="lazy"></li></ul><figcaption>01-02 · Lock screen alert · Slide to acknowledge · Incident feed</figcaption></figure>
+
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s3-incident-detail-top.webp" alt="Incident detail for 5xx spike on /checkout, P1 critical: error-rate chart above the 5% threshold, elapsed 00:47:12, 2,140 failed requests, and an expanded AI card at 82% confidence with the likely cause, a suggested fix, a Built from 3 signals link and an Apply fix button." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s3-incident-detail-services.webp" alt="Lower part of incident detail: affected services checkout-service, payment-gateway and cart-service with severity bars and sparklines, similar past incidents with AI 64% badges, and Start runbook, Escalate and Post status actions." loading="lazy"></li></ul><figcaption>03 · Incident detail · Affected services</figcaption></figure>
+
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s4-timeline-top.webp" alt="Timeline screen: elapsed 00:47:12 with a phase bar of detect 3m, ack 4m, diagnose 26m and fixing 14m, captioned Diagnosis took 26 minutes, the longest phase; below, entries for the alert, the acknowledgement and an AI-suggested cause." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s4-timeline-runbook-expanded.webp" alt="Timeline with the runbook entry expanded to 3 of 7 steps, then an auto-recheck, an escalation to Elli Brandt, a status post and an AI-suggested fix marked not applied, with +9, +10 and +7 minute gap labels." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s4-timeline-open-threads.webp" alt="End of the timeline with the incident still open at 04:24, followed by open threads: Elli has not responded for 6 minutes, an AI fix awaiting decision, and a status update due in 03:47." loading="lazy"></li></ul><figcaption>04 · Timeline · Expanded runbook · Open threads</figcaption></figure>
+
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s5-runbook-step-4-open.webp" alt="Pool exhaustion runbook at 3 of 7: two steps done, one skipped as not our setup, and step 4 Raise the pool ceiling open with a copyable kubectl command, a note that Onset does not execute commands from a phone, and the expected result." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s5-runbook-skip-reason.webp" alt="Why skip this step bottom sheet over the runbook, with reasons Already true, Not our setup and Step is outdated, an optional detail field and a Skip and record the reason button." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s5-runbook-ai-explanation.webp" alt="Runbook step 4 with an AI explanation at 74% confidence describing where the pool ceiling lives, linked to the runbook and 2 past incidents and labelled explanation only, above Mark done and Not applicable buttons." loading="lazy"></li></ul><figcaption>05 · Runbook step · Skip reason · AI explanation</figcaption></figure>
+
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s6-post-internal.webp" alt="Post update composer set to Internal for #incidents, 34 people: stage chips, an AI-drafted message at 91% confidence marked edited, and include toggles." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s6-post-public-selected.webp" alt="The same composer with Public selected: an amber warning line reads status.company.com, visible to customers, above the stage chips and the drafted message." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s6-post-preview-sheet.webp" alt="Preview sheet showing the same update twice, once as an Onset app message in #incidents and once as an Investigating entry on status.company.com, with a Back to editing button." loading="lazy"></li></ul><figcaption>06 · Internal update · Public update · Preview</figcaption></figure>
+
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s7-schedule-shift-month.webp" alt="Schedule tab: You are on call card with 14:22:41 remaining until Friday 09:00, next on call Elli Brandt, 2 open incidents and 1 unstable service, and an October 2026 calendar marking shifts and incidents." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s7-schedule-hand-off-sheet.webp" alt="Hand off to Elli Brandt sheet, summarised from the shift by AI at 88%: open P1 and P2 incidents, an unstable service, a deferred follow-up, a free-text field for anything else, and a Complete handoff button." loading="lazy"></li></ul><figcaption>07 · Current shift · Handoff</figcaption></figure>
+
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s8-quiet-hours-threshold.webp" alt="Quiet hours settings from 22:00 until 07:00 with the threshold set to P1 only, and a note: over the last 30 days this setting would have silenced 47 alerts and let 3 through." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s8-quiet-hours-overrides-night-dim.webp" alt="Quiet hours continued: per-service overrides, delivery options for push, phone call and repeat until acknowledged, and the Night Dim toggle with a standard versus dimmed preview." loading="lazy"></li></ul><figcaption>08 · Quiet hours threshold · Overrides and Night Dim</figcaption></figure>
+
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s9-offline-frozen-chart.webp" alt="Offline incident screen: last synced 03:44, six minutes ago, the error chart stopping at 03:44 with the rest of the width hatched as no data, and a Waiting to send list of queued actions." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s9-offline-queue-escalation.webp" alt="Offline banner with 3 actions queued, two queued actions and one failed note with a Retry button, the line Actions keep the time you performed them, and an amber card: Escalation timer is still running, 01:47, with a Call Elli directly button." loading="lazy"></li></ul><figcaption>09 · Frozen chart · Queue and escalation countdown</figcaption></figure>
+
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s9-offline-what-still-works.webp" alt="Available offline list: acknowledge and escalate, runbook checklist cached for 3 services, timeline notes and on-call schedule work offline; post public status update, live metrics and logs and AI analysis need a connection." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s9-offline-reconnecting.webp" alt="Back online, syncing 3 actions: one sent, one syncing, one queued, with the note that actions are sent with their original times and a toast: 3 actions sent, acknowledgement recorded at 03:41." loading="lazy"></li></ul><figcaption>09 · What works offline · Reconnection</figcaption></figure>
+
+  <figure class="cs-fig cs-phones"><ul class="cs-phones__row" role="list"><li><img src="../assets/images/work/onset/screens/s10-status-p1-active.webp" alt="Status screen in P1 active state: a red ring with the number 1, checkout-service is failing, acknowledged 47 minutes ago, with the open P1 row and a collapsed AI card." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s10-status-needs-attention.webp" alt="Status screen in needs attention state: an amber ring with the number 2, two open incidents neither critical, listing two P2 rows." loading="lazy"></li><li><img src="../assets/images/work/onset/screens/s10-status-all-quiet.webp" alt="Status screen in all quiet state: a green ring with a zero, 24 services nominal for the last 6 hours, one resolved P3 today and the next handoff to Elli Brandt on Friday 09:00." loading="lazy"></li></ul><figcaption>10 · Status - P1 active · Needs attention · All quiet</figcaption></figure>
+  </section>
+
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <section class="work-dark next-case" aria-labelledby="next-heading">
+    <div class="mx-auto max-w-container px-gut py-rhythm lg:px-gut-lg lg:py-rhythm-lg">
+      <h2 id="next-heading" class="font-display text-s48 font-extrabold tracking-display text-onink" data-i18n="case.next">Next case study</h2>
+      <ul class="work-list mt-12 flex flex-col gap-6 lg:mt-16 lg:gap-8" role="list">
+        <li>
+          <article class="work-card grid overflow-hidden rounded-card border md:grid-cols-[50%_50%] md:items-stretch" data-case="2">
+            <div style="container-type: inline-size" class="order-2 p-6 md:order-1 md:p-8 lg:p-10">
+              <p class="label text-graphite" data-i18n="work.cases.2.label">01 / Case study</p>
+              <h3 class="mt-4 font-display text-s34 font-bold tracking-display text-ink" style="font-size: min(34px, 8.4cqw)">
+                <span class="block whitespace-nowrap" data-i18n="work.cases.2.csHeadDim">Marp</span>
+                <span class="block whitespace-nowrap" data-i18n="work.cases.2.csHeadStrong">B2B revenue analytics</span>
+              </h3>
+              <p class="mt-3 text-s15 text-graphite" data-i18n="work.cases.2.context">Responsive · B2B SaaS · Device handoff</p>
+              <p class="mt-5 max-w-measure text-s17 text-graphite" data-i18n="work.cases.2.outcome">A setup assistant that proposes metrics, segments and a first dashboard — then makes every one of them easy to reject. Configuration you edit is faster than configuration you write, and safer than configuration you inherit.</p>
+              <a href="./marp.html" data-page-link="" class="work-card__affordance work-card__link mt-8 inline-flex items-center font-display text-s17 font-bold tracking-display">
+                <span class="work-card__affordance-text" data-i18n="work.readCta">Read case study</span>
+                <svg class="work-card__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+            </div>
+            <div class="work-card__media relative order-1 flex aspect-[4/3] items-center justify-center overflow-hidden md:order-2 md:aspect-auto md:h-full" data-image-slot="work-03">
+              <img src="../assets/images/work/marp/card-cover.webp" alt="Marp on a light blue background: the mobile sign-up screen promising a first dashboard in about 10 minutes, next to the desktop revenue dashboard with a lime Your dashboard is ready card and this month's KPI tiles." class="absolute inset-0 h-full w-full object-cover object-left-top">
+              <ul class="work-card__tags" role="list">
+                <li class="hero-tag" data-i18n="work.cases.2.tags.0">Responsive UX</li>
+                <li class="hero-tag" data-i18n="work.cases.2.tags.1">AI in the loop</li>
+                <li class="hero-tag" data-i18n="work.cases.2.tags.2">Design system</li>
+              </ul>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="contact-dark">
+  <div class="mx-auto flex max-w-container flex-col gap-4 px-gut py-10 sm:flex-row sm:items-center sm:justify-between lg:px-gut-lg">
+    <p class="text-s15 text-white/70" data-i18n="footer.copyright">© 2026 Boris Onofrei · Freiburg, Germany</p>
+    <ul class="flex flex-wrap items-center gap-x-8 gap-y-1" role="list">
+      <li><a href="https://www.linkedin.com/in/boris-onofrei" rel="me noopener" target="_blank" class="nav-link inline-flex min-h-[44px] items-center text-s15 font-medium text-white no-underline">LinkedIn</a></li>
+      <li><a href="mailto:boris.onofrei.design@gmail.com" class="nav-link inline-flex min-h-[44px] items-center text-s15 font-medium text-white no-underline">boris.onofrei.design@gmail.com</a></li>
+      <li><a href="../impressum.html" data-page-link class="nav-link inline-flex min-h-[44px] items-center text-s15 font-medium text-white no-underline" data-i18n="footer.imprint">Legal notice</a></li>
+      <li><a href="../datenschutz.html" data-page-link class="nav-link inline-flex min-h-[44px] items-center text-s15 font-medium text-white no-underline" data-i18n="footer.privacy">Privacy</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

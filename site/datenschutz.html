@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="legal.privacyTitle">Datenschutzerklärung · Boris Onofrei</title>
+<meta name="author" content="Boris Onofrei">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./assets/images/meta/apple-touch-icon.png">
+<link rel="preload" href="./assets/fonts/Satoshi-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./assets/css/main.css">
+<link rel="stylesheet" href="./assets/css/tailwind.css">
+</head>
+<body class="font-body bg-paper text-ink antialiased" data-root="./">
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-gut focus:top-4 focus:z-50 focus:bg-surface focus:px-4 focus:py-3 focus:text-s15 focus:font-medium" data-i18n="a11y.skip">Skip to content</a>
+<header class="sticky top-0 z-40 border-b border-mist bg-paper">
+  <nav class="mx-auto flex h-16 max-w-container items-center justify-between px-gut lg:px-gut-lg" aria-label="Primary">
+    <a href="./index.html" data-page-link class="font-display text-s17 font-extrabold tracking-display text-ink no-underline nav-link">Boris&nbsp;Onofrei</a>
+
+    <div class="flex items-center gap-2">
+      <ul class="hidden items-center gap-2 md:flex" role="list">
+        <li><a href="./index.html#work" data-page-link class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.work">Work</a></li>
+        <li><a href="./index.html#about" data-page-link class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.about">About</a></li>
+        <li><a href="./index.html#experience" data-page-link class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="./index.html#contact" data-page-link class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <a id="cv-link" class="btn-cv" href="./assets/docs/Boris_Onofrei_CV_ProductDesigner_EN.pdf" download data-i18n="nav.cv" data-i18n-href="nav.cvHref">CV (PDF)</a>
+
+      <div class="hidden items-center border-mist md:flex md:border-l md:pl-3" role="group" aria-label="Language" data-i18n-aria="a11y.language">
+        <button type="button" id="lang-en" data-lang="en" class="inline-flex min-h-[44px] min-w-[38px] items-center justify-center label text-ink font-medium sm:min-w-[44px]" aria-pressed="true">EN</button>
+        <span class="label hidden px-1 text-graphite sm:inline" aria-hidden="true">/</span>
+        <button type="button" id="lang-de" data-lang="de" class="inline-flex min-h-[44px] min-w-[38px] items-center justify-center label text-graphite sm:min-w-[44px]" aria-pressed="false">DE</button>
+      </div>
+
+      <button type="button" id="menu-button" class="nav-link -mr-2 ml-1 inline-flex h-11 w-11 items-center justify-center text-ink md:hidden" aria-controls="menu-panel" aria-expanded="false" data-i18n-aria="a11y.menu" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div id="menu-panel" class="border-t border-mist bg-paper md:hidden" hidden>
+    <ul class="mx-auto flex max-w-container flex-col px-gut py-2" role="list">
+      <li><a href="./index.html#work" data-page-link class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.work">Work</a></li>
+      <li><a href="./index.html#about" data-page-link class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.about">About</a></li>
+      <li><a href="./index.html#experience" data-page-link class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="./index.html#contact" data-page-link class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.contact">Contact</a></li>
+      <li class="flex min-h-[44px] items-center gap-3 pt-1" role="group" aria-label="Language">
+        <span class="label text-graphite" data-i18n="a11y.language">Language</span>
+        <span class="flex items-center gap-1">
+          <button type="button" data-lang="en" class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center label text-ink font-medium" aria-pressed="true">EN</button>
+          <span class="label text-graphite" aria-hidden="true">/</span>
+          <button type="button" data-lang="de" class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center label text-graphite" aria-pressed="false">DE</button>
+        </span>
+      </li>
+    </ul>
+  </div>
+</header>
+<main id="main">
+  <section aria-labelledby="legal-title" class="border-b border-mist">
+    <div class="mx-auto max-w-container px-gut py-rhythm lg:px-gut-lg lg:py-rhythm-lg">
+      <h1 id="legal-title" class="font-display text-s48 font-extrabold tracking-display text-ink">
+        <span class="block text-accent">Boris Onofrei</span>
+        <span class="block" data-i18n="legal.privacy">Datenschutz&shy;erklärung</span>
+      </h1>
+      <p class="mt-5 text-s15 text-graphite" data-i18n="legal.updated">Stand: Oktober 2026</p>
+      <div class="legal legal-card mt-12 lg:mt-16">
+        <div data-lang-only="de" lang="de">
+          <h2>1. Verantwortlicher</h2>
+          <p>Verantwortlich für die Verarbeitung personenbezogener Daten auf dieser Website im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
+          <address>Boris Onofrei<br>
+            St.-Ulrich-Straße 31<br>
+            79189 Bad Krozingen<br>
+            Deutschland<br>
+            E-Mail: <a href="mailto:boris.onofrei.design@gmail.com">boris.onofrei.design@gmail.com</a></address>
+          <h2>2. Das Wichtigste in Kürze</h2>
+          <p>Diese Website ist ein persönliches Portfolio. Sie setzt keine Cookies, nutzt keine Analyse- oder Tracking-Werkzeuge und bindet keine Social-Media-Plugins oder Inhalte Dritter ein. Schriften, Stylesheets, Skripte, Bilder und PDF-Dateien liegen auf demselben Server wie die Seiten selbst. Personenbezogene Daten verarbeite ich nur, soweit das für die Auslieferung der Website technisch nötig ist oder Sie mir von sich aus schreiben. Eine automatisierte Entscheidungsfindung einschließlich Profiling findet nicht statt.</p>
+          <h2>3. Hosting und Server-Logfiles</h2>
+          <p>Diese Website wird bei der Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Deutschland, gehostet. Die Server stehen in Deutschland. Bei jedem Aufruf verarbeitet der Anbieter automatisch Daten, die Ihr Browser übermittelt:</p>
+          <ul>
+            <li>IP-Adresse, von Hetzner nur gekürzt (anonymisiert) gespeichert</li>
+            <li>Datum und Uhrzeit des Zugriffs</li>
+            <li>aufgerufene Seite oder Datei</li>
+            <li>Referrer-URL, also die zuvor besuchte Seite</li>
+            <li>Browsertyp und -version, Betriebssystem</li>
+            <li>übertragene Datenmenge und HTTP-Statuscode</li>
+          </ul>
+          <p>Zweck ist die Auslieferung der Website sowie die Sicherstellung von Stabilität und Sicherheit, etwa die Abwehr von Angriffen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; mein berechtigtes Interesse liegt in einer sicheren und fehlerfreien Bereitstellung der Website. Ohne diese Daten kann die Website nicht angezeigt werden.</p>
+          <p>Die Logfiles werden nach 7 Tagen gelöscht, sofern sie nicht zur Aufklärung eines Sicherheitsvorfalls länger benötigt werden. Mit Hetzner besteht ein Vertrag über die Auftragsverarbeitung nach Art. 28 DSGVO. Eine Übermittlung in Länder außerhalb der EU findet beim Hosting nicht statt.</p>
+          <h2>4. Kontakt per E-Mail</h2>
+          <p>Wenn Sie mir eine E-Mail schreiben, verarbeite ich Ihre E-Mail-Adresse, Ihren Namen, sofern angegeben, und den Inhalt Ihrer Nachricht, um Ihre Anfrage zu beantworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, wenn Ihre Anfrage auf einen Vertrag oder ein Arbeitsverhältnis zielt, im Übrigen Art. 6 Abs. 1 lit. f DSGVO; mein berechtigtes Interesse liegt in der Beantwortung Ihrer Anfrage. Ich lösche die Daten, sobald die Anfrage abschließend bearbeitet ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+          <p>Mein Postfach wird über Gmail der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland, betrieben. Eine Übermittlung an die Google LLC in den USA ist dabei nicht ausgeschlossen; die Google LLC ist unter dem EU-U.S. Data Privacy Framework zertifiziert.</p>
+          <h2>5. Sprachauswahl</h2>
+          <p>Die gewählte Sprache wird nur als Parameter in der Adresse der Seite weitergegeben, zum Beispiel „?lang=de“. Auf Ihrem Endgerät wird dafür nichts gespeichert.</p>
+          <h2>6. Links zu LinkedIn</h2>
+          <p>Diese Website verlinkt auf mein Profil bei LinkedIn. Es handelt sich um einfache Links, nicht um eingebettete Plugins. Daten werden erst an LinkedIn übertragen, wenn Sie einen Link anklicken; dort gilt die Datenschutzerklärung der LinkedIn Ireland Unlimited Company.</p>
+          <h2>7. Verschlüsselung</h2>
+          <p>Die Verbindung zu dieser Website ist per TLS verschlüsselt. Sie erkennen das an „https://“ in der Adresszeile Ihres Browsers.</p>
+          <h2>8. Ihre Rechte</h2>
+          <p>Sie haben das Recht auf</p>
+          <ul>
+            <li>Auskunft über die bei mir gespeicherten Daten (Art. 15 DSGVO),</li>
+            <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO),</li>
+            <li>Löschung (Art. 17 DSGVO),</li>
+            <li>Einschränkung der Verarbeitung (Art. 18 DSGVO),</li>
+            <li>Datenübertragbarkeit (Art. 20 DSGVO),</li>
+            <li>Widerspruch gegen Verarbeitungen auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (Art. 21 DSGVO).</li>
+          </ul>
+          <p>Eine formlose E-Mail an <a href="mailto:boris.onofrei.design@gmail.com">boris.onofrei.design@gmail.com</a> genügt. Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren (Art. 77 DSGVO), zum Beispiel beim Landesbeauftragten für den Datenschutz und die Informationsfreiheit Baden-Württemberg.</p>
+        </div>
+        <div data-lang-only="en" lang="en" hidden>
+          <p class="legal__note">English translation for convenience. The German version is legally binding.</p>
+          <h2>1. Controller</h2>
+          <p>The controller responsible for processing personal data on this website under the General Data Protection Regulation (GDPR) is:</p>
+          <address>Boris Onofrei<br>
+            St.-Ulrich-Straße 31<br>
+            79189 Bad Krozingen<br>
+            Germany<br>
+            Email: <a href="mailto:boris.onofrei.design@gmail.com">boris.onofrei.design@gmail.com</a></address>
+          <h2>2. In short</h2>
+          <p>This website is a personal portfolio. It sets no cookies, uses no analytics or tracking tools and embeds no social media plugins or third-party content. Fonts, stylesheets, scripts, images and PDF files are served from the same server as the pages. I process personal data only where it is technically necessary to deliver the website, or when you write to me. There is no automated decision-making, including profiling.</p>
+          <h2>3. Hosting and server log files</h2>
+          <p>This website is hosted by Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Germany. The servers are located in Germany. With every request the provider automatically processes data your browser sends:</p>
+          <ul>
+            <li>IP address, stored by Hetzner only in shortened (anonymised) form</li>
+            <li>date and time of the request</li>
+            <li>requested page or file</li>
+            <li>referrer URL, the page you came from</li>
+            <li>browser type and version, operating system</li>
+            <li>amount of data transferred and HTTP status code</li>
+          </ul>
+          <p>The purpose is to deliver the website and to keep it stable and secure, for example against attacks. The legal basis is Art. 6(1)(f) GDPR; my legitimate interest is the secure and error-free provision of the website. Without this data the website cannot be displayed.</p>
+          <p>Log files are deleted after 7 days unless they are needed longer to investigate a security incident. A data processing agreement under Art. 28 GDPR is in place with Hetzner. Hosting involves no transfer to countries outside the EU.</p>
+          <h2>4. Contact by email</h2>
+          <p>When you email me, I process your email address, your name if given, and the content of your message in order to reply. The legal basis is Art. 6(1)(b) GDPR where your enquiry concerns a contract or employment, otherwise Art. 6(1)(f) GDPR; my legitimate interest is answering your enquiry. I delete the data once the enquiry is fully dealt with, unless statutory retention obligations apply.</p>
+          <p>My mailbox runs on Gmail, provided by Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. A transfer to Google LLC in the USA cannot be ruled out; Google LLC is certified under the EU-U.S. Data Privacy Framework.</p>
+          <h2>5. Language selection</h2>
+          <p>The language you choose is passed on only as a parameter in the page address, for example “?lang=en”. Nothing is stored on your device for this.</p>
+          <h2>6. Links to LinkedIn</h2>
+          <p>This website links to my LinkedIn profile. These are plain links, not embedded plugins. No data reaches LinkedIn until you click a link; from then on, the privacy policy of LinkedIn Ireland Unlimited Company applies.</p>
+          <h2>7. Encryption</h2>
+          <p>The connection to this website is encrypted with TLS, shown by “https://” in your browser’s address bar.</p>
+          <h2>8. Your rights</h2>
+          <p>You have the right to</p>
+          <ul>
+            <li>access the data I hold about you (Art. 15 GDPR),</li>
+            <li>rectification of inaccurate data (Art. 16 GDPR),</li>
+            <li>erasure (Art. 17 GDPR),</li>
+            <li>restriction of processing (Art. 18 GDPR),</li>
+            <li>data portability (Art. 20 GDPR),</li>
+            <li>object to processing based on Art. 6(1)(f) GDPR (Art. 21 GDPR).</li>
+          </ul>
+          <p>An informal email to <a href="mailto:boris.onofrei.design@gmail.com">boris.onofrei.design@gmail.com</a> is enough. You may also lodge a complaint with a data protection supervisory authority (Art. 77 GDPR), for example the State Commissioner for Data Protection and Freedom of Information of Baden-Württemberg.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="contact-dark">
+  <div class="mx-auto flex max-w-container flex-col gap-4 px-gut py-10 sm:flex-row sm:items-center sm:justify-between lg:px-gut-lg">
+    <p class="text-s15 text-white/70" data-i18n="footer.copyright">© 2026 Boris Onofrei · Freiburg, Germany</p>
+    <ul class="flex flex-wrap items-center gap-x-8 gap-y-1" role="list">
+      <li><a href="https://www.linkedin.com/in/boris-onofrei" rel="me noopener" target="_blank" class="nav-link inline-flex min-h-[44px] items-center text-s15 font-medium text-white no-underline">LinkedIn</a></li>
+      <li><a href="mailto:boris.onofrei.design@gmail.com" class="nav-link inline-flex min-h-[44px] items-center text-s15 font-medium text-white no-underline">boris.onofrei.design@gmail.com</a></li>
+      <li><a href="./impressum.html" data-page-link class="nav-link inline-flex min-h-[44px] items-center text-s15 font-medium text-white no-underline" data-i18n="footer.imprint">Legal notice</a></li>
+      <li><a href="./datenschutz.html" data-page-link class="nav-link inline-flex min-h-[44px] items-center text-s15 font-medium text-white no-underline" data-i18n="footer.privacy">Privacy</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="./assets/js/main.js"></script>
+</body>
+</html>

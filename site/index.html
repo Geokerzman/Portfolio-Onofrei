@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en" data-card-surface="solid" data-dark-reach="work" data-card-scale="contained">
+<head>
+<!-- ============================================================
+     HEAD — meta, Open Graph, fonts, styles, Tailwind config
+     ============================================================ -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boris Onofrei — Product Designer (UX/UI, Design Systems)</title>
+<meta name="description" content="Product designer in Freiburg, Germany. Mobile and web apps, B2B SaaS and enterprise interfaces — design systems and accessible UI to WCAG 2.1 AA.">
+<meta name="author" content="Boris Onofrei">
+<meta name="theme-color" content="#FFFFFF">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en">
+<meta property="og:title" content="Boris Onofrei — Product Designer (UX/UI, Design Systems)">
+<meta property="og:description" content="Product designer in Freiburg, Germany. Mobile and web apps, B2B SaaS and enterprise interfaces — design systems and accessible UI to WCAG 2.1 AA.">
+<meta property="og:url" content="https://borisonofrei.design/">
+<meta property="og:site_name" content="Boris Onofrei">
+<meta property="og:image" content="https://borisonofrei.design/assets/images/meta/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./assets/images/meta/apple-touch-icon.png">
+
+<link rel="preload" href="./assets/fonts/Satoshi-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="stylesheet" href="./assets/css/main.css">
+<link rel="stylesheet" href="./assets/css/tailwind.css">
+</head>
+
+<body class="font-body bg-paper text-ink antialiased" data-root="./">
+
+<a href="#hero" class="sr-only focus:not-sr-only focus:absolute focus:left-gut focus:top-4 focus:z-50 focus:bg-surface focus:px-4 focus:py-3 focus:text-s15 focus:font-medium" data-i18n="a11y.skip">Skip to content</a>
+
+<!-- ============================================================
+     NAV — sticky, slim, EN/DE toggle on the right
+     ============================================================ -->
+<header class="sticky top-0 z-40 border-b border-mist bg-paper">
+  <nav class="mx-auto flex h-16 max-w-container items-center justify-between px-gut lg:px-gut-lg" aria-label="Primary">
+    <a href="#hero" class="font-display text-s17 font-extrabold tracking-display text-ink no-underline nav-link">Boris&nbsp;Onofrei</a>
+
+    <div class="flex items-center gap-2">
+      <ul class="hidden items-center gap-2 md:flex" role="list">
+        <li><a href="#work"    class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.work">Work</a></li>
+        <li><a href="#about"   class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.about">About</a></li>
+        <li><a href="#experience" class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="#contact" class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <button type="button" id="cv-link" class="btn-cv" data-cv-open data-i18n="nav.cv">CV (PDF)</button>
+
+      <div class="hidden items-center border-mist md:flex md:border-l md:pl-3" role="group" aria-label="Language">
+        <button type="button" id="lang-en" data-lang="en"
+                class="inline-flex min-h-[44px] min-w-[38px] items-center justify-center label text-ink font-medium sm:min-w-[44px]"
+                aria-pressed="true">EN</button>
+        <span class="label hidden px-1 text-graphite sm:inline" aria-hidden="true">/</span>
+        <button type="button" id="lang-de" data-lang="de"
+                class="inline-flex min-h-[44px] min-w-[38px] items-center justify-center label text-graphite sm:min-w-[44px]"
+                aria-pressed="false">DE</button>
+      </div>
+
+      <button type="button" id="menu-button"
+              class="nav-link -mr-2 ml-1 inline-flex h-11 w-11 items-center justify-center text-ink md:hidden"
+              aria-controls="menu-panel" aria-expanded="false"
+              data-i18n-aria="a11y.menu" aria-label="Menu">
+        <!-- Lucide: menu -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu — plain full-width panel, no drawer -->
+  <div id="menu-panel" class="border-t border-mist bg-paper md:hidden" hidden>
+    <ul class="mx-auto flex max-w-container flex-col px-gut py-2" role="list">
+      <li><a href="#work"    class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.work">Work</a></li>
+      <li><a href="#about"   class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.about">About</a></li>
+      <li><a href="#experience" class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="#contact" class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.contact">Contact</a></li>
+      <li class="flex min-h-[44px] items-center gap-3 pt-1" role="group" aria-label="Language">
+        <span class="label text-graphite" data-i18n="a11y.language">Language</span>
+        <span class="flex items-center gap-1">
+          <button type="button" data-lang="en"
+                  class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center label text-ink font-medium"
+                  aria-pressed="true">EN</button>
+          <span class="label text-graphite" aria-hidden="true">/</span>
+          <button type="button" data-lang="de"
+                  class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center label text-graphite"
+                  aria-pressed="false">DE</button>
+        </span>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================================================
+       HERO — full-bleed portrait, veiled for contrast; tag pills over
+       the image, display H1 + pill CTA bottom-left, statement bottom-right
+       ============================================================ -->
+  <section id="hero" aria-labelledby="hero-h1" class="relative isolate overflow-hidden bg-[#030818]">
+    <img src="./assets/images/hero/portrait.webp" alt="" aria-hidden="true"
+         class="absolute inset-0 h-full w-full object-cover object-[72%_center]">
+    <div class="hero-veil absolute inset-0" aria-hidden="true"></div>
+
+    <div class="relative mx-auto flex min-h-[calc(100svh-64px)] max-w-container flex-col justify-end px-gut pb-12 pt-10 sm:pb-24 sm:pt-16 lg:px-gut-lg lg:pb-32 lg:pt-20">
+
+      <ul class="flex flex-col items-start gap-2 sm:gap-3" role="list">
+        <li class="hero-tag" data-i18n="hero.tag1">Branding</li>
+        <li class="hero-tag" data-i18n="hero.tag2">UX/UI design</li>
+        <li class="hero-tag" data-i18n="hero.tag3">Web-Development</li>
+      </ul>
+
+      <div class="mt-6 flex flex-col items-start sm:mt-10 lg:mt-14">
+        <p class="label text-white/55 text-s20" data-i18n="hero.eyebrow">Design Portfolio</p>
+        <h1 id="hero-h1"
+            class="mt-3 max-w-[10ch] font-display text-[clamp(52px,11.5vw,142px)] font-extrabold uppercase leading-[0.9] tracking-display text-white"
+            data-i18n="hero.h1">Boris Onofrei</h1>
+
+        <div class="mt-5 flex w-full flex-col items-start sm:mt-8">
+          <p class="max-w-measure text-s20 text-white/50">
+            <span data-i18n="hero.sub_dim">I make complex B2B software </span><span class="text-white" data-i18n="hero.sub_strong">clear, consistent and compliant.</span>
+          </p>
+
+          <div class="mt-7 flex w-full flex-col items-stretch gap-3 sm:mt-8 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
+            <a href="#work" class="btn-solid text-s17 w-full justify-center sm:w-auto sm:justify-start">
+              <span data-i18n="hero.cta1">See selected work</span>
+              <svg class="btn-solid__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M3 10h13m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+            <a href="#about" class="btn-ghost text-s17 w-full justify-center sm:w-auto sm:justify-start">
+              <span data-i18n="hero.cta2">About me</span>
+              <svg class="btn-solid__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M3 10h13m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       02 — SELECTED WORK (three cards, overlay trigger)
+       ============================================================ -->
+  <section id="work" aria-labelledby="work-heading" class="work-dark">
+    <div class="mx-auto max-w-container px-gut py-rhythm lg:px-gut-lg lg:py-rhythm-lg">
+      <h2 id="work-heading" class="font-display text-s48 font-extrabold tracking-display text-onink">
+        <span class="block text-white/50" data-i18n="work.heading_dim">Law taught me order.</span>
+        <span class="block" data-i18n="work.heading_strong">Design put it to work.</span>
+      </h2>
+      <p class="mt-5 max-w-measure text-s20 text-onmute" data-i18n="work.sub">Three projects, from a consumer-facing product to internal enterprise tooling.</p>
+
+      <ul class="work-list mt-12 flex flex-col gap-6 lg:mt-16 lg:gap-8" role="list">
+
+        <!-- Card 03 -->
+        <li>
+          <article class="work-card grid overflow-hidden rounded-card border md:grid-cols-[50%_50%] md:items-stretch" data-case="2">
+            <div style="container-type: inline-size" class="order-2 p-6 md:order-1 md:p-8 lg:p-10">
+              <p class="label text-graphite" data-i18n="work.cases.2.label">01 / Case study</p>
+              <h3 class="mt-4 font-display text-s34 font-bold tracking-display text-ink" style="font-size: min(34px, 8.4cqw)">
+                <span class="block whitespace-nowrap" data-i18n="work.cases.2.csHeadDim">Marp</span>
+                <span class="block whitespace-nowrap" data-i18n="work.cases.2.csHeadStrong">B2B revenue analytics</span>
+              </h3>
+              <p class="mt-3 text-s15 text-graphite" data-i18n="work.cases.2.context">Responsive · B2B SaaS · Device handoff</p>
+              <p class="mt-5 max-w-measure text-s17 text-graphite" data-i18n="work.cases.2.outcome">A setup assistant that proposes metrics, segments and a first dashboard — then makes every one of them easy to reject. Configuration you edit is faster than configuration you write, and safer than configuration you inherit.</p>
+              <a href="./work/marp.html" data-page-link class="work-card__affordance work-card__link mt-8 inline-flex items-center font-display text-s17 font-bold tracking-display">
+                <span class="work-card__affordance-text" data-i18n="work.readCta">Read case study</span>
+                <svg class="work-card__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+            </div>
+            <div class="work-card__media relative order-1 flex aspect-[4/3] items-center justify-center overflow-hidden md:order-2 md:aspect-auto md:h-full" data-image-slot="work-03">
+              <img src="./assets/images/work/marp/card-cover.webp" alt="Marp on a light blue background: the mobile sign-up screen promising a first dashboard in about 10 minutes, next to the desktop revenue dashboard with a lime Your dashboard is ready card and this month's KPI tiles." class="absolute inset-0 h-full w-full object-cover object-left-top">
+              <ul class="work-card__tags" role="list">
+                <li class="hero-tag" data-i18n="work.cases.2.tags.0">Responsive UX</li>
+                <li class="hero-tag" data-i18n="work.cases.2.tags.1">AI in the loop</li>
+                <li class="hero-tag" data-i18n="work.cases.2.tags.2">Design system</li>
+              </ul>
+            </div>
+          </article>
+        </li>
+
+        <!-- Card 01 -->
+        <li>
+          <article class="work-card grid overflow-hidden rounded-card border md:grid-cols-[50%_50%] md:items-stretch" data-case="0">
+            <div style="container-type: inline-size" class="order-2 p-6 md:order-1 md:p-8 lg:p-10">
+              <p class="label text-graphite" data-i18n="work.cases.0.label">02 / Case study</p>
+              <h3 class="mt-4 font-display text-s34 font-bold tracking-display text-ink" style="font-size: min(34px, 8.4cqw)">
+                <span class="block whitespace-nowrap" data-i18n="work.cases.0.csHeadDim">Konform</span>
+                <span class="block whitespace-nowrap" data-i18n="work.cases.0.csHeadStrong">WCAG audit platform</span>
+              </h3>
+              <p class="mt-3 text-s15 text-graphite" data-i18n="work.cases.0.context">Desktop web · Enterprise SaaS · AI triage</p>
+              <p class="mt-5 max-w-measure text-s17 text-graphite" data-i18n="work.cases.0.outcome">Accessibility scanners report symptoms page by page. Konform reports causes - and turns a 3,187-row backlog into 142 decisions. One row is one fix: every contrast failure traced to the same ghost button is a single change, not ninety-four. What used to be a sprint of spreadsheet work is now an afternoon of triage.</p>
+              <a href="./work/konform.html" data-page-link class="work-card__affordance work-card__link mt-8 inline-flex items-center font-display text-s17 font-bold tracking-display">
+                <span class="work-card__affordance-text" data-i18n="work.readCta">Read case study</span>
+                <!-- Lucide: arrow-right -->
+                <svg class="work-card__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+            </div>
+            <div class="work-card__media relative order-1 flex aspect-[4/3] items-center justify-center overflow-hidden md:order-2 md:aspect-auto md:h-full" data-image-slot="work-01">
+              <img src="./assets/images/work/konform/card-cover.webp" alt="Konform compliance dashboard shown at an angle, headlined “Fix one button. Close hundreds violations.”" class="absolute inset-0 h-full w-full object-cover object-left-top">
+              <ul class="work-card__tags" role="list">
+                <li class="hero-tag" data-i18n="work.cases.0.tags.0">WCAG 2.1 AA</li>
+                <li class="hero-tag" data-i18n="work.cases.0.tags.1">Design system</li>
+                <li class="hero-tag" data-i18n="work.cases.0.tags.2">Enterprise UX</li>
+              </ul>
+            </div>
+          </article>
+        </li>
+
+        <!-- Card 02 -->
+        <li>
+          <article class="work-card grid overflow-hidden rounded-card border md:grid-cols-[50%_50%] md:items-stretch" data-case="1">
+            <div style="container-type: inline-size" class="order-2 p-6 md:order-1 md:p-8 lg:p-10">
+              <p class="label text-graphite" data-i18n="work.cases.1.label">03 / Case study</p>
+              <h3 class="mt-4 font-display text-s34 font-bold tracking-display text-ink" style="font-size: min(34px, 8.4cqw)">
+                <span class="block whitespace-nowrap" data-i18n="work.cases.1.csHeadDim">Onset</span>
+                <span class="block whitespace-nowrap" data-i18n="work.cases.1.csHeadStrong">On-call incident app</span>
+              </h3>
+              <p class="mt-3 text-s15 text-graphite" data-i18n="work.cases.1.context">Mobile · DevOps · Offline-first</p>
+              <p class="mt-5 max-w-measure text-s17 text-graphite" data-i18n="work.cases.1.outcome">Acknowledging an incident has to be one action and never an accident. That contradiction shaped the whole product: readable in the dark, operable with a thumb, honest when the network drops.</p>
+              <a href="./work/onset.html" data-page-link class="work-card__affordance work-card__link mt-8 inline-flex items-center font-display text-s17 font-bold tracking-display">
+                <span class="work-card__affordance-text" data-i18n="work.readCta">Read case study</span>
+                <svg class="work-card__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+            </div>
+            <div class="work-card__media relative order-1 flex aspect-[4/3] items-center justify-center overflow-hidden md:order-2 md:aspect-auto md:h-full" data-image-slot="work-02">
+              <img src="./assets/images/work/onset/card-cover.webp" alt="Three Onset status screens on a dark green-lit background: All quiet with a green ring, Needs attention with an amber ring showing 2, and P1 active with a red ring showing 1." class="absolute inset-0 h-full w-full object-cover object-left-top">
+              <ul class="work-card__tags" role="list">
+                <li class="hero-tag" data-i18n="work.cases.1.tags.0">Mobile UX</li>
+                <li class="hero-tag" data-i18n="work.cases.1.tags.1">AI in the loop</li>
+                <li class="hero-tag" data-i18n="work.cases.1.tags.2">Design system</li>
+              </ul>
+            </div>
+          </article>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       03 — CAPABILITIES (full-bleed dark block, typographic grid)
+       ============================================================ -->
+  <section id="capabilities" aria-labelledby="capabilities-heading" class="border-b border-mist bg-paper text-ink">
+    <div class="mx-auto max-w-container px-gut py-rhythm lg:px-gut-lg lg:py-rhythm-lg">
+      <h2 id="capabilities-heading" class="font-display text-s48 font-extrabold tracking-display text-ink">
+        <span class="caps-heading__dim text-accent" data-i18n="caps.heading_dim">My profile.</span>
+        <span data-i18n="caps.heading_strong">What I do:</span>
+      </h2>
+
+      <div class="caps-filters mt-10 lg:mt-12" role="group" aria-label="Filter capabilities" data-i18n-aria="caps.filterGroup">
+        <button type="button" class="caps-pill" data-caps-filter="all" aria-pressed="true" data-i18n="caps.filters.all">All</button>
+        <button type="button" class="caps-pill" data-caps-filter="enterprise" aria-pressed="false" data-i18n="caps.filters.enterprise">Enterprise</button>
+        <button type="button" class="caps-pill" data-caps-filter="ecommerce" aria-pressed="false" data-i18n="caps.filters.ecommerce">E-commerce</button>
+        <button type="button" class="caps-pill" data-caps-filter="systems" aria-pressed="false" data-i18n="caps.filters.systems">Design systems</button>
+      </div>
+
+      <div class="mt-10 grid lg:mt-14" id="caps-rows" style="--caps-scroll-pad:16px">
+        <div class="caps-row caps-row--left" tabindex="0" data-caps-filters="enterprise">
+          <span class="caps-arrow" aria-hidden="true"><span class="caps-arrow__open">&#8599;</span><svg class="caps-fingerprint" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true" focusable="false"><path d="M112 320C112 205.1 205.1 112 320 112C383.1 112 439.6 140.1 477.8 184.5C486.4 194.6 501.6 195.7 511.6 187.1C521.6 178.5 522.8 163.3 514.2 153.3C467.3 98.6 397.7 64 320 64C178.6 64 64 178.6 64 320L64 360C64 373.3 74.7 384 88 384C101.3 384 112 373.3 112 360L112 320zM570.5 267.1C567.8 254.1 555 245.8 542.1 248.6C529.2 251.4 520.8 264.1 523.6 277C526.5 290.9 528.1 305.3 528.1 320.1L528.1 360.1C528.1 373.4 538.8 384.1 552.1 384.1C565.4 384.1 576.1 373.4 576.1 360.1L576.1 320.1C576.1 302 574.2 284.3 570.6 267.2zM320 144C301 144 282.6 147 265.5 152.6C250.3 157.6 246.8 176.3 257.2 188.5C264.3 196.8 276 199.3 286.6 196.4C297.2 193.5 308.4 192 320 192C390.7 192 448 249.3 448 320L448 344.9C448 370.1 446.5 395.2 443.6 420.2C441.9 434.8 453 448 467.8 448C479.6 448 489.7 439.4 491.1 427.7C494.4 400.3 496.1 372.7 496.1 345L496.1 320.1C496.1 222.9 417.3 144.1 320.1 144.1zM214.7 212.7C205.6 202.1 189.4 201.3 180.8 212.3C157.7 242.1 144 279.4 144 320L144 344.9C144 369.1 141.4 393.3 136.2 416.8C132.8 432.4 144.1 447.9 160.1 447.9C170.6 447.9 180 440.9 182.3 430.6C188.7 402.5 192 373.8 192 344.8L192 319.9C192 292.7 200.5 267.5 214.9 246.8C222.1 236.4 222.9 222.2 214.7 212.6zM320 224C267 224 224 267 224 320L224 344.9C224 380.8 219.4 416.4 210.2 451C206.4 465.3 216.9 480 231.7 480C241.2 480 249.6 473.8 252.1 464.6C262.6 425.6 268 385.4 268 344.9L268 320C268 291.3 291.3 268 320 268C348.7 268 372 291.3 372 320L372 344.9C372 381.2 368.5 417.3 361.6 452.8C358.9 466.7 369.3 480 383.4 480C393.6 480 402.4 473 404.4 463C412.1 424.2 416 384.7 416 344.9L416 320C416 267 373 224 320 224zM344 320C344 306.7 333.3 296 320 296C306.7 296 296 306.7 296 320L296 344.9C296 404.8 285 464.2 263.5 520.1L257.6 535.4C252.8 547.8 259 561.7 271.4 566.4C283.8 571.1 297.7 565 302.4 552.6L308.3 537.3C331.9 475.9 344 410.7 344 344.9L344 320z"></path></svg></span>
+          <div class="caps-row__key">
+            <span class="caps-index" data-i18n="caps.items.0.index">01</span>
+            <h3 class="caps-name" data-i18n="caps.items.0.name">Enterprise and B2B</h3>
+          </div>
+          <div class="caps-detail">
+            <p class="caps-lead" data-i18n="caps.items.0.lead">I design internal tools people are required to use, where a bad flow is paid for in support tickets rather than lost sign-ups.</p>
+            <p class="caps-core" data-i18n="caps.items.0.core">SAP Fiori Design Guidelines · Role-based access control · Complex approval workflows · Legacy modernisation</p>
+          <p class="caps-also"><span data-i18n="caps.alsoPrefix">Also:</span> <span data-i18n="caps.items.0.also">ERP and internal-tool UX · Admin dashboards · Multi-tenant architecture</span></p>
+          </div>
+        </div>
+        <div class="caps-row caps-row--right" tabindex="0" data-caps-filters="enterprise systems">
+          <span class="caps-arrow" aria-hidden="true"><span class="caps-arrow__open">&#8599;</span><svg class="caps-fingerprint" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true" focusable="false"><path d="M112 320C112 205.1 205.1 112 320 112C383.1 112 439.6 140.1 477.8 184.5C486.4 194.6 501.6 195.7 511.6 187.1C521.6 178.5 522.8 163.3 514.2 153.3C467.3 98.6 397.7 64 320 64C178.6 64 64 178.6 64 320L64 360C64 373.3 74.7 384 88 384C101.3 384 112 373.3 112 360L112 320zM570.5 267.1C567.8 254.1 555 245.8 542.1 248.6C529.2 251.4 520.8 264.1 523.6 277C526.5 290.9 528.1 305.3 528.1 320.1L528.1 360.1C528.1 373.4 538.8 384.1 552.1 384.1C565.4 384.1 576.1 373.4 576.1 360.1L576.1 320.1C576.1 302 574.2 284.3 570.6 267.2zM320 144C301 144 282.6 147 265.5 152.6C250.3 157.6 246.8 176.3 257.2 188.5C264.3 196.8 276 199.3 286.6 196.4C297.2 193.5 308.4 192 320 192C390.7 192 448 249.3 448 320L448 344.9C448 370.1 446.5 395.2 443.6 420.2C441.9 434.8 453 448 467.8 448C479.6 448 489.7 439.4 491.1 427.7C494.4 400.3 496.1 372.7 496.1 345L496.1 320.1C496.1 222.9 417.3 144.1 320.1 144.1zM214.7 212.7C205.6 202.1 189.4 201.3 180.8 212.3C157.7 242.1 144 279.4 144 320L144 344.9C144 369.1 141.4 393.3 136.2 416.8C132.8 432.4 144.1 447.9 160.1 447.9C170.6 447.9 180 440.9 182.3 430.6C188.7 402.5 192 373.8 192 344.8L192 319.9C192 292.7 200.5 267.5 214.9 246.8C222.1 236.4 222.9 222.2 214.7 212.6zM320 224C267 224 224 267 224 320L224 344.9C224 380.8 219.4 416.4 210.2 451C206.4 465.3 216.9 480 231.7 480C241.2 480 249.6 473.8 252.1 464.6C262.6 425.6 268 385.4 268 344.9L268 320C268 291.3 291.3 268 320 268C348.7 268 372 291.3 372 320L372 344.9C372 381.2 368.5 417.3 361.6 452.8C358.9 466.7 369.3 480 383.4 480C393.6 480 402.4 473 404.4 463C412.1 424.2 416 384.7 416 344.9L416 320C416 267 373 224 320 224zM344 320C344 306.7 333.3 296 320 296C306.7 296 296 306.7 296 320L296 344.9C296 404.8 285 464.2 263.5 520.1L257.6 535.4C252.8 547.8 259 561.7 271.4 566.4C283.8 571.1 297.7 565 302.4 552.6L308.3 537.3C331.9 475.9 344 410.7 344 344.9L344 320z"></path></svg></span>
+          <div class="caps-row__key">
+            <span class="caps-index" data-i18n="caps.items.1.index">02</span>
+            <h3 class="caps-name" data-i18n="caps.items.1.name">Accessibility</h3>
+          </div>
+          <div class="caps-detail">
+            <p class="caps-lead" data-i18n="caps.items.1.lead">Since June 2025 the European Accessibility Act has made this a legal requirement in the EU, not a nice-to-have. I audit existing products and build components that ship accessible by default.</p>
+            <p class="caps-core" data-i18n="caps.items.1.core">WCAG 2.1 / 2.2 AA · European Accessibility Act and BFSG · Accessibility audits</p>
+          <p class="caps-also"><span data-i18n="caps.alsoPrefix">Also:</span> <span data-i18n="caps.items.1.also">Keyboard navigation · Focus management · Screen-reader-ready semantics</span></p>
+          </div>
+        </div>
+        <div class="caps-row caps-row--left" tabindex="0" data-caps-filters="systems">
+          <span class="caps-arrow" aria-hidden="true"><span class="caps-arrow__open">&#8599;</span><svg class="caps-fingerprint" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true" focusable="false"><path d="M112 320C112 205.1 205.1 112 320 112C383.1 112 439.6 140.1 477.8 184.5C486.4 194.6 501.6 195.7 511.6 187.1C521.6 178.5 522.8 163.3 514.2 153.3C467.3 98.6 397.7 64 320 64C178.6 64 64 178.6 64 320L64 360C64 373.3 74.7 384 88 384C101.3 384 112 373.3 112 360L112 320zM570.5 267.1C567.8 254.1 555 245.8 542.1 248.6C529.2 251.4 520.8 264.1 523.6 277C526.5 290.9 528.1 305.3 528.1 320.1L528.1 360.1C528.1 373.4 538.8 384.1 552.1 384.1C565.4 384.1 576.1 373.4 576.1 360.1L576.1 320.1C576.1 302 574.2 284.3 570.6 267.2zM320 144C301 144 282.6 147 265.5 152.6C250.3 157.6 246.8 176.3 257.2 188.5C264.3 196.8 276 199.3 286.6 196.4C297.2 193.5 308.4 192 320 192C390.7 192 448 249.3 448 320L448 344.9C448 370.1 446.5 395.2 443.6 420.2C441.9 434.8 453 448 467.8 448C479.6 448 489.7 439.4 491.1 427.7C494.4 400.3 496.1 372.7 496.1 345L496.1 320.1C496.1 222.9 417.3 144.1 320.1 144.1zM214.7 212.7C205.6 202.1 189.4 201.3 180.8 212.3C157.7 242.1 144 279.4 144 320L144 344.9C144 369.1 141.4 393.3 136.2 416.8C132.8 432.4 144.1 447.9 160.1 447.9C170.6 447.9 180 440.9 182.3 430.6C188.7 402.5 192 373.8 192 344.8L192 319.9C192 292.7 200.5 267.5 214.9 246.8C222.1 236.4 222.9 222.2 214.7 212.6zM320 224C267 224 224 267 224 320L224 344.9C224 380.8 219.4 416.4 210.2 451C206.4 465.3 216.9 480 231.7 480C241.2 480 249.6 473.8 252.1 464.6C262.6 425.6 268 385.4 268 344.9L268 320C268 291.3 291.3 268 320 268C348.7 268 372 291.3 372 320L372 344.9C372 381.2 368.5 417.3 361.6 452.8C358.9 466.7 369.3 480 383.4 480C393.6 480 402.4 473 404.4 463C412.1 424.2 416 384.7 416 344.9L416 320C416 267 373 224 320 224zM344 320C344 306.7 333.3 296 320 296C306.7 296 296 306.7 296 320L296 344.9C296 404.8 285 464.2 263.5 520.1L257.6 535.4C252.8 547.8 259 561.7 271.4 566.4C283.8 571.1 297.7 565 302.4 552.6L308.3 537.3C331.9 475.9 344 410.7 344 344.9L344 320z"></path></svg></span>
+          <div class="caps-row__key">
+            <span class="caps-index" data-i18n="caps.items.2.index">03</span>
+            <h3 class="caps-name" data-i18n="caps.items.2.name">Design systems</h3>
+          </div>
+          <div class="caps-detail">
+            <p class="caps-lead" data-i18n="caps.items.2.lead">I build the shared vocabulary between design and engineering, and the governance that stops it drifting apart six months later.</p>
+            <p class="caps-core" data-i18n="caps.items.2.core">Design tokens · Component libraries · Design system documentation · UI governance</p>
+          <p class="caps-also"><span data-i18n="caps.alsoPrefix">Also:</span> <span data-i18n="caps.items.2.also">Figma variables and auto layout · Atomic design · Design-to-code handoff</span></p>
+          </div>
+        </div>
+        <div class="caps-row caps-row--right" tabindex="0" data-caps-filters="enterprise ecommerce">
+          <span class="caps-arrow" aria-hidden="true"><span class="caps-arrow__open">&#8599;</span><svg class="caps-fingerprint" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true" focusable="false"><path d="M112 320C112 205.1 205.1 112 320 112C383.1 112 439.6 140.1 477.8 184.5C486.4 194.6 501.6 195.7 511.6 187.1C521.6 178.5 522.8 163.3 514.2 153.3C467.3 98.6 397.7 64 320 64C178.6 64 64 178.6 64 320L64 360C64 373.3 74.7 384 88 384C101.3 384 112 373.3 112 360L112 320zM570.5 267.1C567.8 254.1 555 245.8 542.1 248.6C529.2 251.4 520.8 264.1 523.6 277C526.5 290.9 528.1 305.3 528.1 320.1L528.1 360.1C528.1 373.4 538.8 384.1 552.1 384.1C565.4 384.1 576.1 373.4 576.1 360.1L576.1 320.1C576.1 302 574.2 284.3 570.6 267.2zM320 144C301 144 282.6 147 265.5 152.6C250.3 157.6 246.8 176.3 257.2 188.5C264.3 196.8 276 199.3 286.6 196.4C297.2 193.5 308.4 192 320 192C390.7 192 448 249.3 448 320L448 344.9C448 370.1 446.5 395.2 443.6 420.2C441.9 434.8 453 448 467.8 448C479.6 448 489.7 439.4 491.1 427.7C494.4 400.3 496.1 372.7 496.1 345L496.1 320.1C496.1 222.9 417.3 144.1 320.1 144.1zM214.7 212.7C205.6 202.1 189.4 201.3 180.8 212.3C157.7 242.1 144 279.4 144 320L144 344.9C144 369.1 141.4 393.3 136.2 416.8C132.8 432.4 144.1 447.9 160.1 447.9C170.6 447.9 180 440.9 182.3 430.6C188.7 402.5 192 373.8 192 344.8L192 319.9C192 292.7 200.5 267.5 214.9 246.8C222.1 236.4 222.9 222.2 214.7 212.6zM320 224C267 224 224 267 224 320L224 344.9C224 380.8 219.4 416.4 210.2 451C206.4 465.3 216.9 480 231.7 480C241.2 480 249.6 473.8 252.1 464.6C262.6 425.6 268 385.4 268 344.9L268 320C268 291.3 291.3 268 320 268C348.7 268 372 291.3 372 320L372 344.9C372 381.2 368.5 417.3 361.6 452.8C358.9 466.7 369.3 480 383.4 480C393.6 480 402.4 473 404.4 463C412.1 424.2 416 384.7 416 344.9L416 320C416 267 373 224 320 224zM344 320C344 306.7 333.3 296 320 296C306.7 296 296 306.7 296 320L296 344.9C296 404.8 285 464.2 263.5 520.1L257.6 535.4C252.8 547.8 259 561.7 271.4 566.4C283.8 571.1 297.7 565 302.4 552.6L308.3 537.3C331.9 475.9 344 410.7 344 344.9L344 320z"></path></svg></span>
+          <div class="caps-row__key">
+            <span class="caps-index" data-i18n="caps.items.3.index">04</span>
+            <h3 class="caps-name" data-i18n="caps.items.3.name">UX and research</h3>
+          </div>
+          <div class="caps-detail">
+            <p class="caps-lead" data-i18n="caps.items.3.lead">I work to ISO 9241-110 and validate decisions with real users before they reach production.</p>
+            <p class="caps-core" data-i18n="caps.items.3.core">Usability testing · User interviews · Heuristic evaluation · Information architecture · ISO 9241-110</p>
+          <p class="caps-also"><span data-i18n="caps.alsoPrefix">Also:</span> <span data-i18n="caps.items.3.also">Journey mapping · Card sorting · A/B testing · Interaction design</span></p>
+          </div>
+        </div>
+        <div class="caps-row caps-row--left" tabindex="0" data-caps-filters="ecommerce">
+          <span class="caps-arrow" aria-hidden="true"><span class="caps-arrow__open">&#8599;</span><svg class="caps-fingerprint" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true" focusable="false"><path d="M112 320C112 205.1 205.1 112 320 112C383.1 112 439.6 140.1 477.8 184.5C486.4 194.6 501.6 195.7 511.6 187.1C521.6 178.5 522.8 163.3 514.2 153.3C467.3 98.6 397.7 64 320 64C178.6 64 64 178.6 64 320L64 360C64 373.3 74.7 384 88 384C101.3 384 112 373.3 112 360L112 320zM570.5 267.1C567.8 254.1 555 245.8 542.1 248.6C529.2 251.4 520.8 264.1 523.6 277C526.5 290.9 528.1 305.3 528.1 320.1L528.1 360.1C528.1 373.4 538.8 384.1 552.1 384.1C565.4 384.1 576.1 373.4 576.1 360.1L576.1 320.1C576.1 302 574.2 284.3 570.6 267.2zM320 144C301 144 282.6 147 265.5 152.6C250.3 157.6 246.8 176.3 257.2 188.5C264.3 196.8 276 199.3 286.6 196.4C297.2 193.5 308.4 192 320 192C390.7 192 448 249.3 448 320L448 344.9C448 370.1 446.5 395.2 443.6 420.2C441.9 434.8 453 448 467.8 448C479.6 448 489.7 439.4 491.1 427.7C494.4 400.3 496.1 372.7 496.1 345L496.1 320.1C496.1 222.9 417.3 144.1 320.1 144.1zM214.7 212.7C205.6 202.1 189.4 201.3 180.8 212.3C157.7 242.1 144 279.4 144 320L144 344.9C144 369.1 141.4 393.3 136.2 416.8C132.8 432.4 144.1 447.9 160.1 447.9C170.6 447.9 180 440.9 182.3 430.6C188.7 402.5 192 373.8 192 344.8L192 319.9C192 292.7 200.5 267.5 214.9 246.8C222.1 236.4 222.9 222.2 214.7 212.6zM320 224C267 224 224 267 224 320L224 344.9C224 380.8 219.4 416.4 210.2 451C206.4 465.3 216.9 480 231.7 480C241.2 480 249.6 473.8 252.1 464.6C262.6 425.6 268 385.4 268 344.9L268 320C268 291.3 291.3 268 320 268C348.7 268 372 291.3 372 320L372 344.9C372 381.2 368.5 417.3 361.6 452.8C358.9 466.7 369.3 480 383.4 480C393.6 480 402.4 473 404.4 463C412.1 424.2 416 384.7 416 344.9L416 320C416 267 373 224 320 224zM344 320C344 306.7 333.3 296 320 296C306.7 296 296 306.7 296 320L296 344.9C296 404.8 285 464.2 263.5 520.1L257.6 535.4C252.8 547.8 259 561.7 271.4 566.4C283.8 571.1 297.7 565 302.4 552.6L308.3 537.3C331.9 475.9 344 410.7 344 344.9L344 320z"></path></svg></span>
+          <div class="caps-row__key">
+            <span class="caps-index" data-i18n="caps.items.4.index">05</span>
+            <h3 class="caps-name" data-i18n="caps.items.4.name">E-commerce</h3>
+          </div>
+          <div class="caps-detail">
+            <p class="caps-lead" data-i18n="caps.items.4.lead">Conversion work on marketplaces, where the platform writes half the brief and the result is measured in sales.</p>
+            <p class="caps-core" data-i18n="caps.items.4.core">Amazon A+ Content and Brand Story · Product-detail and checkout flows · Conversion-oriented redesign</p>
+          </div>
+        </div>
+        <div class="caps-row caps-row--right" tabindex="0" data-caps-filters="systems">
+          <span class="caps-arrow" aria-hidden="true"><span class="caps-arrow__open">&#8599;</span><svg class="caps-fingerprint" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true" focusable="false"><path d="M112 320C112 205.1 205.1 112 320 112C383.1 112 439.6 140.1 477.8 184.5C486.4 194.6 501.6 195.7 511.6 187.1C521.6 178.5 522.8 163.3 514.2 153.3C467.3 98.6 397.7 64 320 64C178.6 64 64 178.6 64 320L64 360C64 373.3 74.7 384 88 384C101.3 384 112 373.3 112 360L112 320zM570.5 267.1C567.8 254.1 555 245.8 542.1 248.6C529.2 251.4 520.8 264.1 523.6 277C526.5 290.9 528.1 305.3 528.1 320.1L528.1 360.1C528.1 373.4 538.8 384.1 552.1 384.1C565.4 384.1 576.1 373.4 576.1 360.1L576.1 320.1C576.1 302 574.2 284.3 570.6 267.2zM320 144C301 144 282.6 147 265.5 152.6C250.3 157.6 246.8 176.3 257.2 188.5C264.3 196.8 276 199.3 286.6 196.4C297.2 193.5 308.4 192 320 192C390.7 192 448 249.3 448 320L448 344.9C448 370.1 446.5 395.2 443.6 420.2C441.9 434.8 453 448 467.8 448C479.6 448 489.7 439.4 491.1 427.7C494.4 400.3 496.1 372.7 496.1 345L496.1 320.1C496.1 222.9 417.3 144.1 320.1 144.1zM214.7 212.7C205.6 202.1 189.4 201.3 180.8 212.3C157.7 242.1 144 279.4 144 320L144 344.9C144 369.1 141.4 393.3 136.2 416.8C132.8 432.4 144.1 447.9 160.1 447.9C170.6 447.9 180 440.9 182.3 430.6C188.7 402.5 192 373.8 192 344.8L192 319.9C192 292.7 200.5 267.5 214.9 246.8C222.1 236.4 222.9 222.2 214.7 212.6zM320 224C267 224 224 267 224 320L224 344.9C224 380.8 219.4 416.4 210.2 451C206.4 465.3 216.9 480 231.7 480C241.2 480 249.6 473.8 252.1 464.6C262.6 425.6 268 385.4 268 344.9L268 320C268 291.3 291.3 268 320 268C348.7 268 372 291.3 372 320L372 344.9C372 381.2 368.5 417.3 361.6 452.8C358.9 466.7 369.3 480 383.4 480C393.6 480 402.4 473 404.4 463C412.1 424.2 416 384.7 416 344.9L416 320C416 267 373 224 320 224zM344 320C344 306.7 333.3 296 320 296C306.7 296 296 306.7 296 320L296 344.9C296 404.8 285 464.2 263.5 520.1L257.6 535.4C252.8 547.8 259 561.7 271.4 566.4C283.8 571.1 297.7 565 302.4 552.6L308.3 537.3C331.9 475.9 344 410.7 344 344.9L344 320z"></path></svg></span>
+          <div class="caps-row__key">
+            <span class="caps-index" data-i18n="caps.items.5.index">06</span>
+            <h3 class="caps-name" data-i18n="caps.items.5.name">Tools and front-end</h3>
+          </div>
+          <div class="caps-detail">
+            <p class="caps-lead" data-i18n="caps.items.5.lead">I hand over work engineers can build from, and I can read and adjust the front-end myself.</p>
+            <p class="caps-core" data-i18n="caps.items.5.core">Figma · Framer · HTML · CSS · Tailwind CSS</p>
+          <p class="caps-also"><span data-i18n="caps.alsoPrefix">Also:</span> <span data-i18n="caps.items.5.also">Adobe Creative Cloud · React component structure · Git basics</span></p>
+          </div>
+        </div>
+        <div class="caps-row caps-row--left" tabindex="0" data-caps-filters="systems">
+          <span class="caps-arrow" aria-hidden="true"><span class="caps-arrow__open">&#8599;</span><svg class="caps-fingerprint" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true" focusable="false"><path d="M112 320C112 205.1 205.1 112 320 112C383.1 112 439.6 140.1 477.8 184.5C486.4 194.6 501.6 195.7 511.6 187.1C521.6 178.5 522.8 163.3 514.2 153.3C467.3 98.6 397.7 64 320 64C178.6 64 64 178.6 64 320L64 360C64 373.3 74.7 384 88 384C101.3 384 112 373.3 112 360L112 320zM570.5 267.1C567.8 254.1 555 245.8 542.1 248.6C529.2 251.4 520.8 264.1 523.6 277C526.5 290.9 528.1 305.3 528.1 320.1L528.1 360.1C528.1 373.4 538.8 384.1 552.1 384.1C565.4 384.1 576.1 373.4 576.1 360.1L576.1 320.1C576.1 302 574.2 284.3 570.6 267.2zM320 144C301 144 282.6 147 265.5 152.6C250.3 157.6 246.8 176.3 257.2 188.5C264.3 196.8 276 199.3 286.6 196.4C297.2 193.5 308.4 192 320 192C390.7 192 448 249.3 448 320L448 344.9C448 370.1 446.5 395.2 443.6 420.2C441.9 434.8 453 448 467.8 448C479.6 448 489.7 439.4 491.1 427.7C494.4 400.3 496.1 372.7 496.1 345L496.1 320.1C496.1 222.9 417.3 144.1 320.1 144.1zM214.7 212.7C205.6 202.1 189.4 201.3 180.8 212.3C157.7 242.1 144 279.4 144 320L144 344.9C144 369.1 141.4 393.3 136.2 416.8C132.8 432.4 144.1 447.9 160.1 447.9C170.6 447.9 180 440.9 182.3 430.6C188.7 402.5 192 373.8 192 344.8L192 319.9C192 292.7 200.5 267.5 214.9 246.8C222.1 236.4 222.9 222.2 214.7 212.6zM320 224C267 224 224 267 224 320L224 344.9C224 380.8 219.4 416.4 210.2 451C206.4 465.3 216.9 480 231.7 480C241.2 480 249.6 473.8 252.1 464.6C262.6 425.6 268 385.4 268 344.9L268 320C268 291.3 291.3 268 320 268C348.7 268 372 291.3 372 320L372 344.9C372 381.2 368.5 417.3 361.6 452.8C358.9 466.7 369.3 480 383.4 480C393.6 480 402.4 473 404.4 463C412.1 424.2 416 384.7 416 344.9L416 320C416 267 373 224 320 224zM344 320C344 306.7 333.3 296 320 296C306.7 296 296 306.7 296 320L296 344.9C296 404.8 285 464.2 263.5 520.1L257.6 535.4C252.8 547.8 259 561.7 271.4 566.4C283.8 571.1 297.7 565 302.4 552.6L308.3 537.3C331.9 475.9 344 410.7 344 344.9L344 320z"></path></svg></span>
+          <div class="caps-row__key">
+            <span class="caps-index" data-i18n="caps.items.6.index">07</span>
+            <h3 class="caps-name" data-i18n="caps.items.6.name">AI-assisted design</h3>
+          </div>
+          <div class="caps-detail">
+            <p class="caps-lead" data-i18n="caps.items.6.lead">I prototype with AI tools daily, and I know where the EU AI Act draws the line on transparency.</p>
+            <p class="caps-core" data-i18n="caps.items.6.core">Prompt-driven prototyping · Claude Code · Claude Design · Figma Make · EU AI Act transparency requirements</p>
+          <p class="caps-also"><span data-i18n="caps.alsoPrefix">Also:</span> <span data-i18n="caps.items.6.also">Gemini · Midjourney · Lovable</span></p>
+          </div>
+        </div>
+        <div class="caps-row caps-row--right" tabindex="0" data-caps-filters="enterprise ecommerce">
+          <span class="caps-arrow" aria-hidden="true"><span class="caps-arrow__open">&#8599;</span><svg class="caps-fingerprint" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true" focusable="false"><path d="M112 320C112 205.1 205.1 112 320 112C383.1 112 439.6 140.1 477.8 184.5C486.4 194.6 501.6 195.7 511.6 187.1C521.6 178.5 522.8 163.3 514.2 153.3C467.3 98.6 397.7 64 320 64C178.6 64 64 178.6 64 320L64 360C64 373.3 74.7 384 88 384C101.3 384 112 373.3 112 360L112 320zM570.5 267.1C567.8 254.1 555 245.8 542.1 248.6C529.2 251.4 520.8 264.1 523.6 277C526.5 290.9 528.1 305.3 528.1 320.1L528.1 360.1C528.1 373.4 538.8 384.1 552.1 384.1C565.4 384.1 576.1 373.4 576.1 360.1L576.1 320.1C576.1 302 574.2 284.3 570.6 267.2zM320 144C301 144 282.6 147 265.5 152.6C250.3 157.6 246.8 176.3 257.2 188.5C264.3 196.8 276 199.3 286.6 196.4C297.2 193.5 308.4 192 320 192C390.7 192 448 249.3 448 320L448 344.9C448 370.1 446.5 395.2 443.6 420.2C441.9 434.8 453 448 467.8 448C479.6 448 489.7 439.4 491.1 427.7C494.4 400.3 496.1 372.7 496.1 345L496.1 320.1C496.1 222.9 417.3 144.1 320.1 144.1zM214.7 212.7C205.6 202.1 189.4 201.3 180.8 212.3C157.7 242.1 144 279.4 144 320L144 344.9C144 369.1 141.4 393.3 136.2 416.8C132.8 432.4 144.1 447.9 160.1 447.9C170.6 447.9 180 440.9 182.3 430.6C188.7 402.5 192 373.8 192 344.8L192 319.9C192 292.7 200.5 267.5 214.9 246.8C222.1 236.4 222.9 222.2 214.7 212.6zM320 224C267 224 224 267 224 320L224 344.9C224 380.8 219.4 416.4 210.2 451C206.4 465.3 216.9 480 231.7 480C241.2 480 249.6 473.8 252.1 464.6C262.6 425.6 268 385.4 268 344.9L268 320C268 291.3 291.3 268 320 268C348.7 268 372 291.3 372 320L372 344.9C372 381.2 368.5 417.3 361.6 452.8C358.9 466.7 369.3 480 383.4 480C393.6 480 402.4 473 404.4 463C412.1 424.2 416 384.7 416 344.9L416 320C416 267 373 224 320 224zM344 320C344 306.7 333.3 296 320 296C306.7 296 296 306.7 296 320L296 344.9C296 404.8 285 464.2 263.5 520.1L257.6 535.4C252.8 547.8 259 561.7 271.4 566.4C283.8 571.1 297.7 565 302.4 552.6L308.3 537.3C331.9 475.9 344 410.7 344 344.9L344 320z"></path></svg></span>
+          <div class="caps-row__key">
+            <span class="caps-index" data-i18n="caps.items.7.index">08</span>
+            <h3 class="caps-name" data-i18n="caps.items.7.name">Measurement and ways of working</h3>
+          </div>
+          <div class="caps-detail">
+            <p class="caps-lead" data-i18n="caps.items.7.lead">I work in a small cross-functional team and defend decisions in critique, then check them against the numbers.</p>
+            <p class="caps-core" data-i18n="caps.items.7.core">Agile / Scrum · Stakeholder management · Design critique · Workshop facilitation</p>
+          <p class="caps-also"><span data-i18n="caps.alsoPrefix">Also:</span> <span data-i18n="caps.items.7.also">Google Analytics 4 · Matomo · Hotjar · Maze · Optimizely</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       04 — ABOUT (portrait slot, text column, facts list)
+       ============================================================ -->
+  <section id="about" aria-labelledby="about-heading">
+    <div class="mx-auto max-w-container px-gut py-rhythm lg:px-gut-lg lg:py-rhythm-lg">
+      <h2 id="about-heading" class="font-display text-s48 font-extrabold tracking-display text-ink">
+        <span class="block text-accent" data-i18n="about.heading_dim">Hi, I'm</span>
+        <span class="block" data-i18n="about.heading_strong">Boris Onofrei</span>
+      </h2>
+      <p class="mt-6 max-w-measure text-s17 text-ink" data-i18n="about.p1">I came to design from law, and the habit stayed: I think in structure. Three years in-house at a German company — first design system built from zero, UX for an internal SAP rollout, e-commerce flows redesigned for +22% engagement — plus B2B SaaS work for freelance clients in the EU and the US. Research to shipped interface, accessible to WCAG 2.1 AA, never a pile of screens.</p>
+
+      <div class="about-bento mt-12 lg:mt-16">
+        <div class="about-bento__row">
+          <div class="about-card">
+            <p class="label text-graphite" data-i18n="about.facts.0.term">Based in</p>
+            <p class="mt-2 text-s17 text-ink" data-i18n="about.facts.0.value">Germany</p>
+            <p class="about-card__minor mt-2" data-i18n="about.facts.0.value2">European Union</p>
+          </div>
+          <div class="about-card">
+            <p class="label text-graphite" data-i18n="about.facts.2.term">Languages</p>
+            <p class="mt-2 text-s17 text-ink" data-i18n="about.facts.2.value">English C1 / German B1</p>
+            <p class="about-card__minor mt-2" data-i18n="about.facts.2.value2">Ukrainian / Russian</p>
+          </div>
+        </div>
+
+        <div class="about-bento__row about-bento__row--tall">
+          <div class="about-card">
+            <p class="label text-graphite" data-i18n="about.facts.1.term">Experience</p>
+            <p class="mt-2 text-s17 text-ink" data-i18n="about.facts.1.value">3+ years in-house in Germany</p>
+            <p class="about-card__minor mt-2" data-i18n="about.facts.1.value2">And freelance EU and US</p>
+          </div>
+          <div class="about-card about-card--accent">
+            <p class="label" data-i18n="about.facts.3.term">Focus</p>
+            <p class="mt-2 text-s17 text-ink" data-i18n="about.facts.3.value">Product design / E‑commerce / Enterprise B2B</p>
+            <p class="about-card__minor mt-2" data-i18n="about.facts.3.value2">Design systems</p>
+          </div>
+        </div>
+
+        <!-- PORTRAIT SLOT — replace with the black-and-white portrait -->
+        <div class="about-bento__portrait">
+          <ul class="about-portrait__tags" role="list">
+            <li class="hero-tag">creativity</li>
+            <li class="hero-tag">hard work</li>
+            <li class="hero-tag">motivation</li>
+          </ul>
+          <img src="./assets/images/about/portrait-bw.webp" alt="Boris Onofrei, product designer, black-and-white portrait"
+               data-i18n-alt="about.portraitAlt" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       04b — EXPERIENCE (key points on the page, full CV as PDF)
+       ============================================================ -->
+  <section id="experience" aria-label="Experience" data-i18n-aria="nav.experience" class="border-b border-mist">
+    <div class="mx-auto max-w-container px-gut pb-rhythm pt-14 lg:px-gut-lg lg:pb-rhythm-lg lg:pt-20">
+        <div class="flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center sm:gap-6">
+          <a href="./assets/docs/Boris_Onofrei_CV_ProductDesigner_EN.pdf" download data-i18n-href="nav.cvHref" class="btn-solid text-s17 w-full justify-center sm:w-auto sm:justify-start">
+            <span data-i18n="exp.cv">Download CV (PDF)</span>
+            <svg class="btn-solid__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v10m0 0-4.5-4.5M10 13l4.5-4.5M4 17h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </a>
+          <a href="./assets/docs/Boris_Onofrei_Lebenslauf_Produktdesigner_DE.pdf" download lang="de" data-i18n-href="exp.altHref" data-i18n-lang="exp.altLang" class="btn-ghost btn-ghost--ink text-s17 w-full justify-center sm:w-auto sm:justify-start">
+            <span data-i18n="exp.alt">Lebenslauf auf Deutsch (PDF)</span>
+            <svg class="btn-solid__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v10m0 0-4.5-4.5M10 13l4.5-4.5M4 17h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </a>
+        </div>
+      <ol class="exp-list mt-10 lg:mt-12" role="list">
+        <li class="exp-card">
+          <div>
+            <p class="label text-s15 text-graphite" data-i18n="exp.items.horl.date">09/2023 – now</p>
+            <h3 class="exp-card__role" data-i18n="exp.items.horl.role">Product Designer, UX/UI &amp; Web</h3>
+            <p class="exp-card__org" data-i18n="exp.items.horl.org">Horl 1993 GmbH, Freiburg · promoted to mid-level in 01/2025</p>
+          </div>
+          <ul class="exp-card__points" role="list" data-i18n-list="exp.items.horl.points"><li>Built Horl's first product design system from 0 to 1: tokens, component library and usage guidelines in Figma, adopted across web and mobile.</li><li>Led the redesign of priority e-commerce flows, delivered to WCAG 2.1 AA: +22% user engagement.</li><li>Owned UX flows and interface logic for the internal SAP rollout, following SAP Fiori Design Guidelines.</li><li>Led Amazon brand creative across listings, A+ Content and Brand Story: +17% sales on priority SKUs.</li></ul>
+        </li>
+        <li class="exp-card">
+          <div>
+            <p class="label text-s15 text-graphite" data-i18n="exp.items.freelance.date">2023 – now</p>
+            <h3 class="exp-card__role" data-i18n="exp.items.freelance.role">Freelance Product Designer</h3>
+            <p class="exp-card__org" data-i18n="exp.items.freelance.org">Remote · Envisia, Dekozauber and B2B clients under NDA</p>
+          </div>
+          <ul class="exp-card__points" role="list" data-i18n-list="exp.items.freelance.points"><li>Envisia, a multi-tenant contract-management SaaS in production: end-to-end UX for assignment workflows, admin dashboards and role-based access.</li><li>Rebuilt employee onboarding as a guided wizard, from 45 to 14 minutes, with fewer data-entry errors.</li><li>Took concepts to working prototypes in days with Claude Code, Lovable and Figma Make.</li></ul>
+        </li>
+        <li class="exp-card">
+          <div>
+            <p class="label text-s15 text-graphite" data-i18n="exp.items.intern.date">01 – 09/2023</p>
+            <h3 class="exp-card__role" data-i18n="exp.items.intern.role">Design Intern</h3>
+            <p class="exp-card__org" data-i18n="exp.items.intern.org">Eurobrands Group, Cologne</p>
+          </div>
+          <ul class="exp-card__points" role="list" data-i18n-list="exp.items.intern.points"><li>User surveys and competitive analysis for landing pages and paid campaigns; creative for Meta campaigns; CRM usability for internal teams.</li></ul>
+        </li>
+        <li class="exp-card">
+          <div>
+            <p class="label text-s15 text-graphite" data-i18n="exp.items.edu.date">2021</p>
+            <h3 class="exp-card__role" data-i18n="exp.items.edu.role">LL.B., Economic and Civil Law</h3>
+            <p class="exp-card__org" data-i18n="exp.items.edu.org">National University “Odesa Law Academy”, Ukraine</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       05 — CONTACT (email link, LinkedIn, CV)
+       ============================================================ -->
+  <section id="contact" aria-labelledby="contact-heading" class="contact-dark">
+    <div class="mx-auto max-w-container px-gut py-rhythm lg:px-gut-lg lg:py-rhythm-lg">
+      <h2 id="contact-heading" class="font-display text-s48 font-extrabold tracking-display text-white">
+        <span class="contact-heading__dim text-white/50" data-i18n="contact.heading_dim">Interested?</span>
+        <span data-i18n="contact.heading">Get in touch:</span>
+      </h2>
+      <p class="mt-5 max-w-measure text-s20 text-white/80" data-i18n="contact.body">Happy to walk through any of these projects in detail, or to talk about design systems, enterprise UX and accessibility in general.</p>
+
+      <p class="contact-email-line mt-10 lg:mt-12">
+        <a href="mailto:boris.onofrei.design@gmail.com" class="contact-email font-display text-s34 font-extrabold tracking-display text-white no-underline">boris.onofrei.design<wbr>@gmail.com</a>
+      </p>
+
+      <div class="mt-8 flex flex-col items-stretch gap-6 sm:flex-row sm:flex-wrap sm:items-center">
+        <div class="flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center sm:gap-6">
+          <a href="https://www.linkedin.com/in/boris-onofrei" rel="me noopener" target="_blank"
+             class="btn-solid text-s17 w-full justify-center sm:w-auto sm:justify-start">
+            <span data-i18n="contact.linkedin">LinkedIn</span>
+            <svg class="btn-solid__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M3 10h13m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER — copyright line, LinkedIn, email
+     ============================================================ -->
+<footer class="contact-dark">
+  <div class="mx-auto flex max-w-container flex-col gap-4 px-gut py-10 sm:flex-row sm:items-center sm:justify-between lg:px-gut-lg">
+    <p class="text-s15 text-white/70" data-i18n="footer.copyright">© 2026 Boris Onofrei · Freiburg, Germany</p>
+    <ul class="flex flex-wrap items-center gap-x-8 gap-y-1" role="list">
+      <li>
+        <a href="https://www.linkedin.com/in/boris-onofrei" rel="me noopener" target="_blank"
+           class="nav-link inline-flex min-h-[44px] items-center text-s15 font-medium text-white no-underline">
+          LinkedIn
+        </a>
+      </li>
+      <li>
+        <a href="mailto:boris.onofrei.design@gmail.com"
+           class="nav-link inline-flex min-h-[44px] items-center text-s15 font-medium text-white no-underline">
+          boris.onofrei.design@gmail.com
+        </a>
+      </li>
+      <li><a href="./impressum.html" data-page-link class="nav-link inline-flex min-h-[44px] items-center text-s15 font-medium text-white no-underline" data-i18n="footer.imprint">Legal notice</a></li>
+      <li><a href="./datenschutz.html" data-page-link class="nav-link inline-flex min-h-[44px] items-center text-s15 font-medium text-white no-underline" data-i18n="footer.privacy">Privacy</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- ============================================================
+     OVERLAY — CV (white sheet, language-matched, PDF downloads)
+     ============================================================ -->
+<div id="cv-overlay" class="overlay fixed inset-0 z-50" hidden>
+  <div class="overlay__backdrop absolute inset-0" data-cv-close></div>
+  <div class="absolute inset-0 flex items-stretch justify-center sm:items-center sm:py-6">
+    <div class="overlay__panel relative flex h-full w-full max-w-[920px] flex-col overflow-hidden bg-white sm:h-auto sm:max-h-[92vh] sm:rounded-card sm:border sm:border-mist"
+         role="dialog" aria-modal="true" aria-labelledby="cv-overlay-title">
+
+      <div id="cv-head" class="cv-head sticky top-0 z-10 flex items-start justify-between gap-4 bg-white px-gut lg:px-gut-lg">
+        <div class="min-w-0">
+          <h2 id="cv-overlay-title" class="cv-head__name font-display font-extrabold uppercase tracking-display text-ink">Boris Onofrei</h2>
+          <p class="cv-head__role mt-2 text-graphite" data-cv-lang="en">Product Designer / UX Designer · UX/UI · Design Systems · Enterprise &amp; E-Commerce</p>
+          <p class="cv-head__role mt-2 text-graphite" data-cv-lang="de" hidden>Product Designer / UX Designer · UX/UI · Designsysteme · Enterprise &amp; E-Commerce</p>
+        </div>
+        <button type="button" id="cv-close"
+                class="nav-link -mr-2 mt-1 inline-flex h-11 w-11 shrink-0 items-center justify-center text-ink"
+                data-cv-close data-i18n-aria="work.closeLabel" aria-label="Close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <div id="cv-scroll" class="flex-1 overflow-y-auto px-gut pb-10 lg:px-gut-lg lg:pb-12">
+
+        <!-- ENGLISH -->
+        <div data-cv-lang="en">
+          <p class="text-s15 text-graphite">Freiburg, Germany · +49 160 95314627 · boris.onofrei.design@gmail.com · <a href="https://www.linkedin.com/in/boris-onofrei/" target="_blank" rel="noopener" class="text-accent">linkedin.com/in/boris-onofrei</a></p>
+          <p class="mt-1 text-s15 text-graphite">Authorized to work in Germany · Open to on-site, hybrid and remote (EU) · Open to relocation</p>
+
+          <h3 class="label mt-12 border-t border-mist pt-4 text-graphite">Profile</h3>
+          <p class="mt-4 max-w-measure text-s17 text-graphite">Product Designer (UX/UI) with 3+ years designing B2B SaaS, enterprise and e-commerce products end to end — from product discovery and user research to shipped interface. Built a company-wide design system from 0-to-1, own research-to-ship cycles, and deliver accessible interfaces to WCAG 2.1 AA. Enterprise experience includes UX for an internal SAP rollout following SAP Fiori Design Guidelines. Law degree adds structured analytical method and working fluency with GDPR and accessibility regulation.</p>
+
+          <h3 class="label mt-12 border-t border-mist pt-4 text-graphite">Professional experience</h3>
+
+          <div class="mt-6">
+            <p class="text-s17 font-bold text-ink">Product Designer — UX/UI &amp; Web · Horl 1993 GmbH, Freiburg, Germany · Sep 2023 – Present</p>
+            <p class="mt-2 max-w-measure text-s15 text-graphite">Contract title: Graphic Designer. Promoted from junior to mid-level (Jan 2025); one of two digital designers in a four-person team.</p>
+            <ul class="mt-4 flex max-w-measure list-disc flex-col gap-3 pl-5 text-s17 text-graphite">
+              <li>Designed and shipped Horl’s first product design system from 0-to-1 — design tokens, component library and usage guidelines in Figma — adopted across web and mobile by design and engineering.</li>
+              <li>Led the end-to-end redesign of priority e-commerce flows: +22% user engagement (Google Analytics 4).</li>
+              <li>Owned UX flows and interface logic for the internal SAP rollout, applying SAP Fiori Design Guidelines and aligning operations stakeholders with engineering across complex approval workflows.</li>
+              <li>Ran 15+ usability tests and 10+ user interviews (think-aloud, card sorting, heuristic evaluation) in Maze and Hotjar; converted findings into shipped information architecture and navigation changes.</li>
+              <li>Delivered redesigned flows to WCAG 2.1 AA — colour contrast, focus order, keyboard navigation, semantic structure — in line with EAA/BFSG requirements.</li>
+              <li>Led Amazon brand creative (listings, A+ Content, Brand Story): +17% sales across priority SKUs (Amazon Brand Analytics).</li>
+              <li>Built interactive prototypes in Figma and Framer; tightened developer handoff through token-based specs and documented component states.</li>
+            </ul>
+          </div>
+
+          <div class="mt-10">
+            <p class="text-s17 font-bold text-ink">Freelance Product Designer · Remote · 2023 – Present</p>
+            <p class="mt-2 max-w-measure text-s15 text-graphite">Selected clients: Envisia (B2B telecom SaaS), Dekozauber by Pierre Kublik, further B2B clients under NDA.</p>
+            <ul class="mt-4 flex max-w-measure list-disc flex-col gap-3 pl-5 text-s17 text-graphite">
+              <li>Envisia — multi-tenant B2B contract-management SaaS in production: owned end-to-end UX for contract-assignment workflows, admin dashboards and role-based access; Tailwind design tokens, component-driven design, WCAG 2.1 AA, GDPR-compliant.</li>
+              <li>Rebuilt employee onboarding as a guided wizard, cutting the flow from 45 to 14 minutes (−68%); reduced data-entry errors through centralised validation and progressive disclosure.</li>
+              <li>Designed B2B SaaS interfaces for further NDA clients — admin dashboards, multi-step workflows, role-based access patterns.</li>
+              <li>Used AI-assisted tooling (Claude Code, Lovable, Figma Make) to take concepts to working prototypes in days instead of weeks.</li>
+            </ul>
+          </div>
+
+          <div class="mt-10">
+            <p class="text-s17 font-bold text-ink">Design Intern · Eurobrands Group, Cologne, Germany · Jan 2023 – Sep 2023</p>
+            <ul class="mt-4 flex max-w-measure list-disc flex-col gap-3 pl-5 text-s17 text-graphite">
+              <li>Ran UX research (user surveys, competitive analysis) to inform landing page and campaign design.</li>
+              <li>Designed landing pages on cognitive-psychology and UCD principles, lifting engagement across paid acquisition; produced creative for Meta campaigns and improved CRM interface usability for internal teams.</li>
+            </ul>
+          </div>
+
+          <h3 class="label mt-12 border-t border-mist pt-4 text-graphite">Skills</h3>
+          <dl class="mt-6 flex flex-col gap-5">
+            <div><dt class="text-s17 font-bold text-ink">UX/UI &amp; Research</dt><dd class="mt-1 max-w-measure text-s17 text-graphite">User experience (UX) design, user interface (UI) design, visual design, product discovery, user-centred design (UCD), design thinking, user research, user interviews, usability testing, heuristic evaluation, card sorting, A/B testing, user journey mapping, personas, wireframing, information architecture, interaction design, user flows, prototyping, responsive and mobile-first design</dd></div>
+            <div><dt class="text-s17 font-bold text-ink">Design Systems</dt><dd class="mt-1 max-w-measure text-s17 text-graphite">Design tokens, component libraries, atomic design, Figma Variables and Auto Layout, design system documentation, UI governance, design-to-code handoff</dd></div>
+            <div><dt class="text-s17 font-bold text-ink">Accessibility</dt><dd class="mt-1 max-w-measure text-s17 text-graphite">WCAG 2.1 / 2.2 AA, European Accessibility Act (EAA), BFSG, accessibility audits, keyboard navigation, focus management, screen-reader-ready semantics</dd></div>
+            <div><dt class="text-s17 font-bold text-ink">Enterprise &amp; B2B</dt><dd class="mt-1 max-w-measure text-s17 text-graphite">SAP Fiori Design Guidelines, ERP and internal-tool UX, admin dashboards, multi-tenant SaaS, role-based access control (RBAC), complex approval workflows</dd></div>
+            <div><dt class="text-s17 font-bold text-ink">E-Commerce</dt><dd class="mt-1 max-w-measure text-s17 text-graphite">Conversion-oriented redesign, product-detail and checkout flows, Amazon A+ Content and Brand Story</dd></div>
+            <div><dt class="text-s17 font-bold text-ink">Tools &amp; Front-End</dt><dd class="mt-1 max-w-measure text-s17 text-graphite">Figma, Framer, Adobe Creative Cloud (Photoshop, Illustrator, InDesign), HTML, CSS, Tailwind CSS, working knowledge of React component structure, Git basics</dd></div>
+            <div><dt class="text-s17 font-bold text-ink">AI-Assisted Design</dt><dd class="mt-1 max-w-measure text-s17 text-graphite">Claude Code, Claude Design, Figma Make, Lovable; prompt-driven prototyping</dd></div>
+            <div><dt class="text-s17 font-bold text-ink">Analytics &amp; Ways of Working</dt><dd class="mt-1 max-w-measure text-s17 text-graphite">Google Analytics 4, Hotjar, Maze; Jira, Miro, Notion, Agile / Scrum, cross-functional collaboration, stakeholder management, design critique, workshop facilitation</dd></div>
+          </dl>
+
+          <h3 class="label mt-12 border-t border-mist pt-4 text-graphite">Languages</h3>
+          <p class="mt-4 max-w-measure text-s17 text-graphite">English C1 · German B1 (course in progress) · Russian native · Ukrainian native</p>
+
+          <h3 class="label mt-12 border-t border-mist pt-4 text-graphite">Education</h3>
+          <p class="mt-4 max-w-measure text-s17 text-graphite">Bachelor of Laws (LL.B.), Economic and Civil Law · National University “Odesa Law Academy”, Odesa, Ukraine · 2021</p>
+        </div>
+
+        <!-- DEUTSCH -->
+        <div data-cv-lang="de" hidden>
+          <p class="text-s15 text-graphite">Freiburg, Deutschland · +49 160 95314627 · boris.onofrei.design@gmail.com · <a href="https://www.linkedin.com/in/boris-onofrei/" target="_blank" rel="noopener" class="text-accent">linkedin.com/in/boris-onofrei</a></p>
+          <p class="mt-1 text-s15 text-graphite">Uneingeschränkte Arbeitserlaubnis in Deutschland · Vor Ort, hybrid und remote (EU) · Umzugsbereit</p>
+
+          <h3 class="label mt-12 border-t border-mist pt-4 text-graphite">Profil</h3>
+          <p class="mt-4 max-w-measure text-s17 text-graphite">Product Designer (UX/UI) mit über 3 Jahren Erfahrung in der End-to-End-Gestaltung von Produkten für B2B-SaaS, Enterprise und E-Commerce — von Product Discovery und Nutzerforschung bis zur ausgelieferten Oberfläche. Aufbau eines unternehmensweiten Designsystems von 0 auf 1, Verantwortung für Research-to-Ship-Zyklen, barrierefreie Umsetzung nach WCAG 2.1 AA. Erfahrung im Enterprise-Umfeld: UX für eine interne SAP-Einführung nach SAP Fiori Design Guidelines. Juristischer Hintergrund: strukturierte Methodik und sichere Anwendung von DSGVO- und Barrierefreiheitsvorgaben.</p>
+
+          <h3 class="label mt-12 border-t border-mist pt-4 text-graphite">Berufserfahrung</h3>
+
+          <div class="mt-6">
+            <p class="text-s17 font-bold text-ink">Product Designer — UX/UI &amp; Web · Horl 1993 GmbH, Freiburg · 09/2023 – heute</p>
+            <p class="mt-2 max-w-measure text-s15 text-graphite">Vertragstitel: Grafikdesigner. Beförderung von Junior auf Mid-Level (01/2025); einer von zwei Designern im Digital-Track eines vierköpfigen Designteams.</p>
+            <ul class="mt-4 flex max-w-measure list-disc flex-col gap-3 pl-5 text-s17 text-graphite">
+              <li>Konzeption und Einführung des ersten Produktdesignsystems von Horl von 0 auf 1 — Design-Tokens, Komponentenbibliothek und Nutzungsrichtlinien in Figma — übernommen in Web und Mobile von Design und Engineering.</li>
+              <li>Leitung des End-to-End-Redesigns priorisierter E-Commerce-Flows: +22 % Nutzerinteraktion (Google Analytics 4).</li>
+              <li>Verantwortung für UX-Flows und Interface-Logik der internen SAP-Einführung nach SAP Fiori Design Guidelines; Abstimmung zwischen Operations und Engineering bei komplexen Genehmigungsworkflows.</li>
+              <li>Durchführung von 15+ Usability-Tests und 10+ Nutzerinterviews (Think-Aloud, Card-Sorting, heuristische Evaluation) mit Maze und Hotjar; Umsetzung der Erkenntnisse in Informationsarchitektur und Navigation.</li>
+              <li>Barrierefreie Umsetzung der Redesigns nach WCAG 2.1 AA — Kontraste, Fokusreihenfolge, Tastaturnavigation, semantische Struktur — im Einklang mit BFSG/EAA.</li>
+              <li>Leitung des Amazon-Markencreatives (Listings, A+ Content, Brand Story): +17 % Umsatz bei priorisierten SKUs (Amazon Brand Analytics).</li>
+              <li>Erstellung interaktiver Prototypen in Figma und Framer; optimierte Entwickler-Übergabe durch token-basierte Specs und dokumentierte Komponentenzustände.</li>
+            </ul>
+          </div>
+
+          <div class="mt-10">
+            <p class="text-s17 font-bold text-ink">Freiberuflicher Product Designer · Remote · 2023 – heute</p>
+            <p class="mt-2 max-w-measure text-s15 text-graphite">Ausgewählte Kunden: Envisia (B2B-SaaS, Telekommunikation), Dekozauber by Pierre Kublik, weitere B2B-Kunden unter NDA.</p>
+            <ul class="mt-4 flex max-w-measure list-disc flex-col gap-3 pl-5 text-s17 text-graphite">
+              <li>Envisia — Multi-Tenant-B2B-SaaS für Vertragsmanagement im Produktivbetrieb: End-to-End-UX für Workflows zur Vertragszuweisung, Admin-Dashboards und rollenbasierten Zugriff; Tailwind Design-Tokens, komponentenbasiertes Design, WCAG 2.1 AA, DSGVO-konform.</li>
+              <li>Neugestaltung des Mitarbeiter-Onboardings als geführter Wizard: Reduktion von 45 auf 14 Minuten (−68 %); weniger Eingabefehler durch zentrale Validierung und Progressive Disclosure.</li>
+              <li>Gestaltung von B2B-SaaS-Oberflächen für weitere Kunden (NDA): Admin-Dashboards, mehrstufige Workflows, rollenbasierte Zugriffsmuster.</li>
+              <li>Einsatz KI-gestützter Werkzeuge (Claude Code, Lovable, Figma Make) — vom Konzept zum funktionsfähigen Prototyp in Tagen statt Wochen.</li>
+            </ul>
+          </div>
+
+          <div class="mt-10">
+            <p class="text-s17 font-bold text-ink">Design-Praktikant · Eurobrands Group, Köln · 01/2023 – 09/2023</p>
+            <ul class="mt-4 flex max-w-measure list-disc flex-col gap-3 pl-5 text-s17 text-graphite">
+              <li>UX-Research (Nutzerbefragungen, Wettbewerbsanalyse) als Grundlage für Landingpage- und Kampagnendesign.</li>
+              <li>Konzeption von Landingpages nach kognitionspsychologischen und UCD-Prinzipien; höhere Nutzerinteraktion in bezahlten Kampagnen; Creatives für Meta-Kampagnen; Verbesserung der CRM-Usability intern.</li>
+            </ul>
+          </div>
+
+          <h3 class="label mt-12 border-t border-mist pt-4 text-graphite">Kenntnisse</h3>
+          <dl class="mt-6 flex flex-col gap-5">
+            <div><dt class="text-s17 font-bold text-ink">UX/UI &amp; Research</dt><dd class="mt-1 max-w-measure text-s17 text-graphite">User Experience (UX) Design, User Interface (UI) Design, Visual Design, Product Discovery, User-Centered Design (UCD), Design Thinking, Nutzerforschung, Nutzerinterviews, Usability-Testing, heuristische Evaluation, Card-Sorting, A/B-Testing, User Journey Mapping, Personas, Wireframing, Informationsarchitektur, Interaktionsdesign, User Flows, Prototyping, Responsive und Mobile-First</dd></div>
+            <div><dt class="text-s17 font-bold text-ink">Designsysteme</dt><dd class="mt-1 max-w-measure text-s17 text-graphite">Design-Tokens, Komponentenbibliotheken, Atomic Design, Figma Variables und Auto Layout, Dokumentation von Designsystemen, UI-Governance, Design-to-Code</dd></div>
+            <div><dt class="text-s17 font-bold text-ink">Barrierefreiheit</dt><dd class="mt-1 max-w-measure text-s17 text-graphite">WCAG 2.1 / 2.2 AA, European Accessibility Act (EAA), BFSG, Accessibility-Audits, Tastaturnavigation, Fokusmanagement, Screenreader-taugliche Semantik</dd></div>
+            <div><dt class="text-s17 font-bold text-ink">Enterprise &amp; B2B</dt><dd class="mt-1 max-w-measure text-s17 text-graphite">SAP Fiori Design Guidelines, ERP- und Internal-Tool-UX, Admin-Dashboards, Multi-Tenant-SaaS, rollenbasierte Zugriffssteuerung (RBAC), komplexe Genehmigungsworkflows</dd></div>
+            <div><dt class="text-s17 font-bold text-ink">E-Commerce</dt><dd class="mt-1 max-w-measure text-s17 text-graphite">Conversion-orientiertes Redesign, Produktdetail- und Checkout-Flows, Amazon A+ Content und Brand Story</dd></div>
+            <div><dt class="text-s17 font-bold text-ink">Werkzeuge &amp; Frontend</dt><dd class="mt-1 max-w-measure text-s17 text-graphite">Figma, Framer, Adobe Creative Cloud (Photoshop, Illustrator, InDesign), HTML, CSS, Tailwind CSS, Grundkenntnisse React-Komponentenstruktur, Git-Grundlagen</dd></div>
+            <div><dt class="text-s17 font-bold text-ink">KI-gestütztes Design</dt><dd class="mt-1 max-w-measure text-s17 text-graphite">Claude Code, Claude Design, Figma Make, Lovable; Prompt-basiertes Prototyping</dd></div>
+            <div><dt class="text-s17 font-bold text-ink">Analytics &amp; Arbeitsweise</dt><dd class="mt-1 max-w-measure text-s17 text-graphite">Google Analytics 4, Hotjar, Maze; Jira, Miro, Notion, Agile / Scrum, funktionsübergreifende Zusammenarbeit, Stakeholder-Management, Design-Critique, Workshop-Moderation</dd></div>
+          </dl>
+
+          <h3 class="label mt-12 border-t border-mist pt-4 text-graphite">Sprachen</h3>
+          <p class="mt-4 max-w-measure text-s17 text-graphite">Englisch C1 · Deutsch B1 (Kurs läuft) · Russisch Muttersprache · Ukrainisch Muttersprache</p>
+
+          <h3 class="label mt-12 border-t border-mist pt-4 text-graphite">Ausbildung</h3>
+          <p class="mt-4 max-w-measure text-s17 text-graphite">Bachelor of Laws (LL.B.), Wirtschafts- und Zivilrecht · National University „Odesa Law Academy“, Odesa, Ukraine · 2021</p>
+        </div>
+      </div>
+
+      <div class="sticky bottom-0 z-10 border-t border-mist bg-white px-gut py-4 lg:px-gut-lg">
+        <div class="flex flex-wrap items-center justify-start gap-3">
+          <a href="./assets/docs/Boris_Onofrei_CV_ProductDesigner_EN.pdf" download class="btn-solid text-s17">
+            <span>Download CV PDF (English)</span>
+            <svg class="btn-solid__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M3 10h13m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+          <a href="./assets/docs/Boris_Onofrei_Lebenslauf_Produktdesigner_DE.pdf" download class="btn-solid text-s17">
+            <span>Lebenslauf PDF herunterladen (Deutsch)</span>
+            <svg class="btn-solid__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M3 10h13m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SCRIPT — COPY object (en/de) and the language mechanism
+     ============================================================ -->
+<script src="./assets/js/main.js"></script>
+
+</body>
+</html>
