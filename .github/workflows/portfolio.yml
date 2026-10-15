@@ -1,0 +1,72 @@
+name: Portfolio CI/CD
+
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate static site
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Check local pages and assets
+        run: python3 deploy/validate_site.py site
+      - name: Check JavaScript syntax
+        run: find site -type f -name '*.js' -print0 | xargs -0 -r -n1 node --check
+      - name: Test deployment safeguards
+        run: python3 -m unittest discover -s deploy/tests -v
+
+  deploy:
+    name: Deploy portfolio
+    needs: validate
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    concurrency:
+      group: portfolio-production
+      cancel-in-progress: false
+    environment:
+      name: portfolio-production
+      url: https://portfolio.bo-design.info/
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Configure dedicated SSH key
+        env:
+          DEPLOY_KEY: ${{ secrets.PORTFOLIO_DEPLOY_SSH_KEY }}
+        run: |
+          test -n "$DEPLOY_KEY" || { echo 'Add the PORTFOLIO_DEPLOY_SSH_KEY repository secret.'; exit 1; }
+          umask 077
+          mkdir -p "$RUNNER_TEMP/portfolio-ssh"
+          printf '%s\n' "$DEPLOY_KEY" > "$RUNNER_TEMP/portfolio-ssh/key"
+          cp deploy/known_hosts "$RUNNER_TEMP/portfolio-ssh/known_hosts"
+          ssh-keygen -y -f "$RUNNER_TEMP/portfolio-ssh/key" > /dev/null
+      - name: Upload, validate and activate release
+        run: |
+          tar -czf "$RUNNER_TEMP/portfolio.tar.gz" --exclude='.DS_Store' --exclude='README.md' -C site .
+          ssh -T -i "$RUNNER_TEMP/portfolio-ssh/key" \
+            -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes \
+            -o UserKnownHostsFile="$RUNNER_TEMP/portfolio-ssh/known_hosts" \
+            -o ConnectTimeout=15 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 \
+            portfolio-deploy@46.225.53.242 \
+            "deploy ${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
+            < "$RUNNER_TEMP/portfolio.tar.gz"
+      - name: Check public HTTPS
+        run: |
+          curl --fail --silent --show-error --retry 3 --connect-timeout 10 --max-time 30 \
+            https://portfolio.bo-design.info/ -o /dev/null
+          printf 'Deployed `%s` to https://portfolio.bo-design.info/\n' "$GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
+      - name: Remove temporary credentials
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/portfolio-ssh" "$RUNNER_TEMP/portfolio.tar.gz"
