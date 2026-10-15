@@ -5,13 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title data-i18n="legal.imprintTitle">Impressum · Boris Onofrei</title>
 <meta name="author" content="Boris Onofrei">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#F5F4F1">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="./assets/images/meta/apple-touch-icon.png">
 <link rel="preload" href="./assets/fonts/Satoshi-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./assets/css/main.css">
-<link rel="stylesheet" href="./assets/css/tailwind.css">
+<link rel="stylesheet" href="./assets/css/main.css?v=20261011e">
+<link rel="stylesheet" href="./assets/css/tailwind.css?v=20261011e">
+  <!-- Icons: Font Awesome Free 7.3.1 by @fontawesome, https://fontawesome.com/license/free (Icons: CC BY 4.0) -->
 </head>
 <body class="font-body bg-paper text-ink antialiased" data-root="./">
 <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-gut focus:top-4 focus:z-50 focus:bg-surface focus:px-4 focus:py-3 focus:text-s15 focus:font-medium" data-i18n="a11y.skip">Skip to content</a>
@@ -20,8 +21,9 @@
     <a href="./index.html" data-page-link class="font-display text-s17 font-extrabold tracking-display text-ink no-underline nav-link">Boris&nbsp;Onofrei</a>
 
     <div class="flex items-center gap-2">
-      <ul class="hidden items-center gap-2 md:flex" role="list">
+      <ul class="nav-wide hidden items-center gap-2" role="list">
         <li><a href="./index.html#work" data-page-link class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.work">Work</a></li>
+        <li><a href="./index.html#capabilities" data-page-link class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.skills">Skills</a></li>
         <li><a href="./index.html#about" data-page-link class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.about">About</a></li>
         <li><a href="./index.html#experience" data-page-link class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.experience">Experience</a></li>
         <li><a href="./index.html#contact" data-page-link class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.contact">Contact</a></li>
@@ -29,25 +31,27 @@
 
       <a id="cv-link" class="btn-cv" href="./assets/docs/Boris_Onofrei_CV_ProductDesigner_EN.pdf" download data-i18n="nav.cv" data-i18n-href="nav.cvHref">CV (PDF)</a>
 
-      <div class="hidden items-center border-mist md:flex md:border-l md:pl-3" role="group" aria-label="Language" data-i18n-aria="a11y.language">
+      <div class="nav-wide hidden items-center border-mist md:border-l md:pl-3" role="group" aria-label="Language" data-i18n-aria="a11y.language">
         <button type="button" id="lang-en" data-lang="en" class="inline-flex min-h-[44px] min-w-[38px] items-center justify-center label text-ink font-medium sm:min-w-[44px]" aria-pressed="true">EN</button>
         <span class="label hidden px-1 text-graphite sm:inline" aria-hidden="true">/</span>
         <button type="button" id="lang-de" data-lang="de" class="inline-flex min-h-[44px] min-w-[38px] items-center justify-center label text-graphite sm:min-w-[44px]" aria-pressed="false">DE</button>
       </div>
 
-      <button type="button" id="menu-button" class="nav-link -mr-2 ml-1 inline-flex h-11 w-11 items-center justify-center text-ink md:hidden" aria-controls="menu-panel" aria-expanded="false" data-i18n-aria="a11y.menu" aria-label="Menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg>
+      <button type="button" id="menu-button" class="nav-link -mr-2 ml-1 inline-flex h-11 w-11 items-center justify-center text-ink nav-narrow" aria-controls="menu-panel" aria-expanded="false" data-i18n-aria="a11y.menu" aria-label="Menu">
+        <!-- Font Awesome Free 7.3.1, Solid: bars -->
+        <svg width="24" height="24" viewBox="0 0 640 640" aria-hidden="true" focusable="false"><path fill="currentColor" d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"></path></svg>
       </button>
     </div>
   </nav>
 
-  <div id="menu-panel" class="border-t border-mist bg-paper md:hidden" hidden>
+  <div id="menu-panel" class="nav-narrow border-t border-mist bg-paper" hidden>
     <ul class="mx-auto flex max-w-container flex-col px-gut py-2" role="list">
       <li><a href="./index.html#work" data-page-link class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.work">Work</a></li>
+      <li><a href="./index.html#capabilities" data-page-link class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.skills">Skills</a></li>
       <li><a href="./index.html#about" data-page-link class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.about">About</a></li>
       <li><a href="./index.html#experience" data-page-link class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.experience">Experience</a></li>
       <li><a href="./index.html#contact" data-page-link class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.contact">Contact</a></li>
-      <li class="flex min-h-[44px] items-center gap-3 pt-1" role="group" aria-label="Language">
+      <li class="flex min-h-[44px] items-center gap-3 pt-1" role="group" aria-label="Language" data-i18n-aria="a11y.language">
         <span class="label text-graphite" data-i18n="a11y.language">Language</span>
         <span class="flex items-center gap-1">
           <button type="button" data-lang="en" class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center label text-ink font-medium" aria-pressed="true">EN</button>
@@ -97,7 +101,7 @@
 
 <footer class="contact-dark">
   <div class="mx-auto flex max-w-container flex-col gap-4 px-gut py-10 sm:flex-row sm:items-center sm:justify-between lg:px-gut-lg">
-    <p class="text-s15 text-white/70" data-i18n="footer.copyright">© 2026 Boris Onofrei · Freiburg, Germany</p>
+    <p class="text-s15 text-white/70" data-i18n="footer.copyright">© 2026 Boris Onofrei · Bad Krozingen, Germany</p>
     <ul class="flex flex-wrap items-center gap-x-8 gap-y-1" role="list">
       <li><a href="https://www.linkedin.com/in/boris-onofrei" rel="me noopener" target="_blank" class="nav-link inline-flex min-h-[44px] items-center text-s15 font-medium text-white no-underline">LinkedIn</a></li>
       <li><a href="mailto:boris.onofrei.design@gmail.com" class="nav-link inline-flex min-h-[44px] items-center text-s15 font-medium text-white no-underline">boris.onofrei.design@gmail.com</a></li>
@@ -107,6 +111,6 @@
   </div>
 </footer>
 
-<script src="./assets/js/main.js"></script>
+<script src="./assets/js/main.js?v=20261011e"></script>
 </body>
 </html>

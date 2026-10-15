@@ -22,6 +22,7 @@
       },
       "nav": {
         "work": "Work",
+        "skills": "Skills",
         "about": "About",
         "contact": "Contact",
         "cv": "CV (PDF)",
@@ -91,7 +92,7 @@
       "caps": {
         "label": "Capabilities",
         "heading": "What I do",
-        "heading_dim": "My profile.",
+        "heading_dim": "Core skills.",
         "heading_strong": "What I do:",
         "filterGroup": "Filter capabilities",
         "alsoPrefix": "Also:",
@@ -160,6 +161,18 @@
           }
         ]
       },
+      "skills": {
+        "heading_dim": "My profile.",
+        "heading_strong": "What I bring:",
+        "items": [
+          { "title": "Legal precision", "text": "My law degree taught me to read the fine print and spot the edge case nobody covered. I turn dense requirements into clear design rules." },
+          { "title": "Business sense", "text": "Freelancing for EU and US clients taught me to think in budgets, deadlines and results. I start with the outcome, not the screen." },
+          { "title": "End-to-end ownership", "text": "I take work from first brief to launch, and I’m still there afterwards for the fixes and updates nobody planned for." },
+          { "title": "Honest design", "text": "No dark patterns or manipulative consent banners. Honest flows build lasting trust, and under EU law they’re also the safer choice." },
+          { "title": "Discretion", "text": "My client and in-house work is under NDA, and it stays that way. Unreleased products, roadmaps and internal figures are safe with me." },
+          { "title": "Collaboration and handoff", "text": "Aligning engineering, product and operations, then handing off token-based specs and documented states developers can build from." }
+        ]
+      },
       "about": {
         "label": "About me:",
         "heading": "Hi, I'm Boris Onofrei",
@@ -175,7 +188,7 @@
           },
           {
             "term": "Experience",
-            "value": "3+ years in-house in Germany",
+            "value": "3+ YEARS IN-HOUSE IN GERMANY",
             "value2": "Plus freelance work in the EU and US"
           },
           {
@@ -200,7 +213,7 @@
         "cv": "CV (PDF)"
       },
       "footer": {
-        "copyright": "© 2026 Boris Onofrei · Freiburg, Germany",
+        "copyright": "© 2026 Boris Onofrei · Bad Krozingen, Germany",
         "imprint": "Legal notice",
         "privacy": "Privacy"
       },
@@ -282,6 +295,7 @@
       },
       "nav": {
         "work": "Arbeiten",
+        "skills": "Kompetenzen",
         "about": "Über mich",
         "contact": "Kontakt",
         "cv": "Lebenslauf (PDF)",
@@ -351,7 +365,7 @@
       "caps": {
         "label": "Fähigkeiten",
         "heading": "Was ich mache",
-        "heading_dim": "Mein Profil.",
+        "heading_dim": "Kern\u00ADkompetenzen.",
         "heading_strong": "Was ich mache:",
         "filterGroup": "Fähigkeiten filtern",
         "alsoPrefix": "Außerdem:",
@@ -371,14 +385,14 @@
           },
           {
             "index": "02",
-            "name": "Barrierefreiheit",
+            "name": "Barriere\u00ADfreiheit",
             "lead": "Seit Juni 2025 ist Barrierefreiheit durch den European Accessibility Act in der EU gesetzliche Pflicht, kein Nice-to-have. Ich prüfe bestehende Produkte und baue Komponenten, die von Anfang an barrierefrei sind.",
             "core": "WCAG 2.1 / 2.2 AA · European Accessibility Act und BFSG · Accessibility-Audits",
             "also": "Tastaturnavigation · Fokus-Management · Screenreader-taugliche Semantik"
           },
           {
             "index": "03",
-            "name": "Designsysteme",
+            "name": "Design\u00ADsysteme",
             "lead": "Ich baue das gemeinsame Vokabular von Design und Entwicklung — und die Governance, die verhindert, dass es sechs Monate später auseinanderläuft.",
             "core": "Design Tokens · Komponentenbibliotheken · Design-System-Dokumentation · UI-Governance",
             "also": "Figma Variables und Auto Layout · Atomic Design · Design-to-Code-Handoff"
@@ -418,6 +432,18 @@
             "core": "Agile / Scrum · Stakeholder-Management · Design-Kritik · Workshop-Moderation",
             "also": "Google Analytics 4 · Matomo · Hotjar · Maze · Optimizely"
           }
+        ]
+      },
+      "skills": {
+        "heading_dim": "Mein Profil.",
+        "heading_strong": "Was ich mitbringe:",
+        "items": [
+          { "title": "Juristische Präzision", "text": "Mein Jurastudium hat mich gelehrt, das Kleingedruckte zu lesen und den Sonderfall zu finden, an den niemand gedacht hat. Dichte Anforderungen übersetze ich in klare Designregeln." },
+          { "title": "Unternehmerisches Denken", "text": "Als Freelancer für Kunden aus der EU und den USA habe ich gelernt, in Budgets, Deadlines und Ergebnissen zu denken. Ich beginne beim Ziel, nicht beim Screen." },
+          { "title": "End-to-End-Verantwortung", "text": "Ich begleite Projekte vom ersten Briefing bis zum Launch und bin auch danach da, wenn Fixes und Updates anstehen, die niemand eingeplant hat." },
+          { "title": "Ehrliches Design", "text": "Keine Dark Patterns und keine manipulativen Consent-Banner. Ehrliche Flows schaffen dauerhaftes Vertrauen und sind nach EU-Recht auch die sicherere Wahl." },
+          { "title": "Diskretion", "text": "Meine Projekte für Kunden und Arbeitgeber stehen unter NDA, und dabei bleibt es. Unveröffentlichte Produkte, Roadmaps und interne Zahlen sind bei mir gut aufgehoben." },
+          { "title": "Zusammenarbeit und Übergabe", "text": "Abstimmung zwischen Engineering, Produkt und Operations, dann eine Übergabe mit token-basierten Specs und dokumentierten Zuständen, nach denen Entwickler direkt bauen können." }
         ]
       },
       "about": {
@@ -460,7 +486,7 @@
         "cv": "Lebenslauf (PDF)"
       },
       "footer": {
-        "copyright": "© 2026 Boris Onofrei · Freiburg, Deutschland",
+        "copyright": "© 2026 Boris Onofrei · Bad Krozingen, Deutschland",
         "imprint": "Impressum",
         "privacy": "Datenschutz"
       },
@@ -666,7 +692,7 @@
         var match = key === 'all' || tags.indexOf(key) > -1;
         row.classList.toggle('is-dim', !match);
         if (match) { row.setAttribute('tabindex', '0'); }
-        else { row.removeAttribute('tabindex'); row.blur(); }
+        else { row.removeAttribute('tabindex'); row.classList.remove('is-tapped'); row.blur(); }
       });
     }
 
@@ -675,53 +701,94 @@
     });
   }());
 
-  /* ---------- Capabilities: press and hold a card to open it (touch) ---------- */
+  /* ---------- Touch: a tap fills a card with the accent for 1 s (a mouse gets the CSS hover).
+     Case-study cards and buttons are left out: a tap on them already does something. ---------- */
   (function () {
-    var rows = Array.prototype.slice.call(document.querySelectorAll('.caps-row'));
-    if (!rows.length) { return; }
-    var touch  = window.matchMedia('(hover: none)');
-    var narrow = window.matchMedia('(max-width: 767px)');
-    var HOLD = 280;      // ms of stillness before the card opens
-    var SLOP = 12;       // px of finger travel that counts as a scroll, not a hold
+    var HOLD = 1000;
+    document.querySelectorAll('.about-card:not(.about-card--accent), .exp-card, .skill-card, .caps-row').forEach(function (card) {
+      var timer = null;
+      var pointer = '';
+      card.addEventListener('pointerdown', function (event) { pointer = event.pointerType; });
+      card.addEventListener('click', function (event) {
+        /* a finger, or any click on a device whose main input can't hover */
+        var touch = pointer === 'touch' || pointer === 'pen' || window.matchMedia('(hover: none), (pointer: coarse)').matches;
+        pointer = '';
+        if (!touch || event.target.closest('a, button')) { return; }
+        card.classList.add('is-tapped');
+        window.clearTimeout(timer);
+        timer = window.setTimeout(function () { card.classList.remove('is-tapped'); }, HOLD);
+      });
+    });
+  }());
 
-    rows.forEach(function (row) {
-      var timer = null, startX = 0, startY = 0, held = false;
+  /* ---------- Capabilities swipe row: a mouse can drag it too (fingers scroll it natively) ---------- */
+  (function () {
+    var rows = document.getElementById('caps-rows');
+    if (!rows) { return; }
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var drag = null, dragged = false, settleTimer = null;
+    function scrollable() { return rows.scrollWidth > rows.clientWidth + 1; }
 
-      function active() { return touch.matches && narrow.matches; }
+    /* snap positions of the cards, as scrollLeft values */
+    function stops() {
+      var pad = parseFloat(window.getComputedStyle(rows).scrollPaddingLeft) || 0;
+      var origin = rows.getBoundingClientRect().left - rows.scrollLeft;
+      var max = rows.scrollWidth - rows.clientWidth;
+      return Array.prototype.map.call(rows.children, function (card) {
+        return Math.max(0, Math.min(max, card.getBoundingClientRect().left - origin - pad));
+      });
+    }
+    var target = null;
+    function settle() {
+      rows.removeEventListener('scrollend', onEnd);
+      window.clearTimeout(settleTimer);
+      target = null;
+      rows.classList.remove('is-dragging');
+    }
+    /* the drag's own scrollLeft writes also fire scrollend: only settle once the card has landed */
+    function onEnd() { if (target === null || Math.abs(rows.scrollLeft - target) <= 1) { settle(); } }
 
-      function close() {
-        if (timer) { clearTimeout(timer); timer = null; }
-        if (held) { held = false; row.classList.remove('is-held'); }
+    rows.addEventListener('mousedown', function (event) {
+      if (event.button === 0 && scrollable()) { event.preventDefault(); } /* no text selection while dragging */
+    });
+    rows.addEventListener('pointerdown', function (event) {
+      dragged = false;
+      if (event.pointerType !== 'mouse' || event.button !== 0 || !scrollable()) { return; }
+      settle();
+      drag = { id: event.pointerId, x: event.clientX, left: rows.scrollLeft };
+    });
+    rows.addEventListener('pointermove', function (event) {
+      if (!drag || event.pointerId !== drag.id) { return; }
+      var dx = event.clientX - drag.x;
+      if (!dragged) {
+        if (Math.abs(dx) < 6) { return; }
+        dragged = true;
+        rows.classList.add('is-dragging');
+        rows.setPointerCapture(event.pointerId);
       }
-
-      row.addEventListener('touchstart', function (e) {
-        if (!active() || e.touches.length !== 1) { return; }
-        var t = e.touches[0];
-        startX = t.clientX; startY = t.clientY;
-        close();
-        timer = setTimeout(function () {
-          timer = null; held = true;
-          row.classList.add('is-held');
-          if (navigator.vibrate) { navigator.vibrate(8); }
-        }, HOLD);
-      }, { passive: true });
-
-      row.addEventListener('touchmove', function (e) {
-        if (!timer && !held) { return; }
-        var t = e.touches[0];
-        if (Math.abs(t.clientX - startX) > SLOP || Math.abs(t.clientY - startY) > SLOP) { close(); }
-      }, { passive: true });
-
-      row.addEventListener('touchend', close);
-      row.addEventListener('touchcancel', close);
-      row.addEventListener('contextmenu', function (e) { if (active()) { e.preventDefault(); } });
+      rows.scrollLeft = drag.left - dx;
     });
-
-    function reset() { rows.forEach(function (row) { row.classList.remove('is-held'); }); }
-    [touch, narrow].forEach(function (mq) {
-      if (mq.addEventListener) { mq.addEventListener('change', reset); }
-      else if (mq.addListener) { mq.addListener(reset); }
-    });
+    function end(event) {
+      if (!drag || event.pointerId !== drag.id) { return; }
+      var from = drag.left;
+      drag = null;
+      if (!dragged) { return; }
+      /* land on the nearest card, leaning the way it was dragged */
+      var now = rows.scrollLeft;
+      var aim = now + (now > from ? 1 : -1) * Math.min(120, rows.clientWidth * 0.15);
+      var best = now, gap = Infinity;
+      stops().forEach(function (x) { var d = Math.abs(x - aim); if (d < gap) { gap = d; best = x; } });
+      target = best;
+      rows.addEventListener('scrollend', onEnd);
+      settleTimer = window.setTimeout(settle, reduced.matches ? 0 : 700);
+      rows.scrollTo({ left: best, behavior: reduced.matches ? 'auto' : 'smooth' });
+    }
+    rows.addEventListener('pointerup', end);
+    rows.addEventListener('pointercancel', end);
+    /* a drag is not a tap */
+    rows.addEventListener('click', function (event) {
+      if (dragged) { event.preventDefault(); event.stopPropagation(); dragged = false; }
+    }, true);
   }());
 
   /* ---------- Mobile menu (plain panel, no drawer) ---------- */
@@ -746,9 +813,18 @@
     }
   });
 
-  window.matchMedia('(min-width: 768px)').addEventListener('change', function (event) {
-    if (event.matches) { setMenu(false); }
+  /* a tap or click anywhere outside the header closes the open menu */
+  document.addEventListener('click', function (event) {
+    if (!menuPanel.hidden && !event.target.closest('header')) { setMenu(false); }
   });
+
+  (function () {
+    var wide = window.matchMedia('(min-width: 1024px)');
+    var onWide = function (event) { if (event.matches) { setMenu(false); } };
+    /* older Safari only knows addListener; a TypeError here would stop the rest of this file */
+    if (wide.addEventListener) { wide.addEventListener('change', onWide); }
+    else if (wide.addListener) { wide.addListener(onWide); }
+  }());
 
   /* ---------- Work cards open their case-study page; the whole card is clickable ---------- */
   document.querySelectorAll('.work-card').forEach(function (card) {
@@ -756,6 +832,9 @@
     if (!link) { return; }
     card.addEventListener('click', function (event) {
       if (event.target.closest('a')) { return; }
+      /* selecting text in the card is not a click on it */
+      var sel = window.getSelection ? window.getSelection() : null;
+      if (sel && !sel.isCollapsed && card.contains(sel.anchorNode)) { return; }
       if (event.metaKey || event.ctrlKey) { window.open(link.href, '_blank', 'noopener'); return; }
       window.location.href = link.href;
     });
@@ -776,6 +855,27 @@
       event.preventDefault(); first.focus();
     }
   }
+
+  /* ---------- Home page: scroll progress in the header ---------- */
+  (function () {
+    if (document.getElementById('case-body')) { return; }
+    var bar = document.getElementById('read-progress-bar');
+    if (!bar) { return; }
+    var ticking = false;
+    function progress() {
+      ticking = false;
+      var total = document.documentElement.scrollHeight - window.innerHeight;
+      var p = total > 0 ? (window.pageYOffset || document.documentElement.scrollTop) / total : 0;
+      bar.style.transform = 'scaleX(' + Math.max(0, Math.min(1, p)) + ')';
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(progress); }
+    }, { passive: true });
+    window.addEventListener('resize', progress);
+    window.addEventListener('load', progress);
+    if ('ResizeObserver' in window) { new ResizeObserver(progress).observe(document.body); }
+    progress();
+  })();
 
   /* ---------- Case-study pages: reading progress and contents ---------- */
   (function () {
@@ -841,16 +941,23 @@
     var host = document.getElementById('case-body');
     if (!host) { return; }
 
-    function icon(paths, size) {
-      return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' + paths + '</svg>';
+    function icon(d, size) {
+      return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 640 640" aria-hidden="true" focusable="false"><path fill="currentColor" d="' + d + '"></path></svg>';
     }
+    /* Icons: Font Awesome Free 7.3.1 by @fontawesome, https://fontawesome.com/license/free (Icons: CC BY 4.0) */
     var ICON = {
-      expand:  icon('<path d="M15 3h6v6"></path><path d="M9 21H3v-6"></path><path d="m21 3-7 7"></path><path d="m3 21 7-7"></path>', 16),
-      zoomIn:  icon('<circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path><path d="M11 8v6"></path><path d="M8 11h6"></path>', 20),
-      zoomOut: icon('<circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path><path d="M8 11h6"></path>', 20),
-      close:   icon('<path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>', 20),
-      prev:    icon('<path d="m15 18-6-6 6-6"></path>', 22),
-      next:    icon('<path d="m9 18 6-6-6-6"></path>', 22)
+      /* Font Awesome Free 7.3.1, Solid: up-right-and-down-left-from-center */
+      expand:  icon('M408 64L552 64C565.3 64 576 74.7 576 88L576 232C576 241.7 570.2 250.5 561.2 254.2C552.2 257.9 541.9 255.9 535 249L496 210L409 297C399.6 306.4 384.4 306.4 375.1 297L343.1 265C333.7 255.6 333.7 240.4 343.1 231.1L430.1 144.1L391.1 105.1C384.2 98.2 382.2 87.9 385.9 78.9C389.6 69.9 398.3 64 408 64zM232 576L88 576C74.7 576 64 565.3 64 552L64 408C64 398.3 69.8 389.5 78.8 385.8C87.8 382.1 98.1 384.2 105 391L144 430L231 343C240.4 333.6 255.6 333.6 264.9 343L296.9 375C306.3 384.4 306.3 399.6 296.9 408.9L209.9 495.9L248.9 534.9C255.8 541.8 257.8 552.1 254.1 561.1C250.4 570.1 241.7 576 232 576z', 16),
+      /* Font Awesome Free 7.3.1, Solid: magnifying-glass-plus */
+      zoomIn:  icon('M480 272C480 317.9 465.1 360.3 440 394.7L566.6 521.4C579.1 533.9 579.1 554.2 566.6 566.7C554.1 579.2 533.8 579.2 521.3 566.7L394.7 440C360.3 465.1 317.9 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272zM272 176C258.7 176 248 186.7 248 200L248 248L200 248C186.7 248 176 258.7 176 272C176 285.3 186.7 296 200 296L248 296L248 344C248 357.3 258.7 368 272 368C285.3 368 296 357.3 296 344L296 296L344 296C357.3 296 368 285.3 368 272C368 258.7 357.3 248 344 248L296 248L296 200C296 186.7 285.3 176 272 176z', 19),
+      /* Font Awesome Free 7.3.1, Solid: magnifying-glass-minus */
+      zoomOut: icon('M480 272C480 317.9 465.1 360.3 440 394.7L566.6 521.4C579.1 533.9 579.1 554.2 566.6 566.7C554.1 579.2 533.8 579.2 521.3 566.7L394.7 440C360.3 465.1 317.9 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272zM200 248C186.7 248 176 258.7 176 272C176 285.3 186.7 296 200 296L344 296C357.3 296 368 285.3 368 272C368 258.7 357.3 248 344 248L200 248z', 19),
+      /* Font Awesome Free 7.3.1, Solid: xmark */
+      close:   icon('M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z', 19),
+      /* Font Awesome Free 7.3.1, Solid: chevron-left */
+      prev:    icon('M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z', 18),
+      /* Font Awesome Free 7.3.1, Solid: chevron-right */
+      next:    icon('M471.1 297.4C483.6 309.9 483.6 330.2 471.1 342.7L279.1 534.7C266.6 547.2 246.3 547.2 233.8 534.7C221.3 522.2 221.3 501.9 233.8 489.4L403.2 320L233.9 150.6C221.4 138.1 221.4 117.8 233.9 105.3C246.4 92.8 266.7 92.8 279.2 105.3L471.2 297.3z', 18)
     };
 
     /* every screenshot gets a full-size button (keyboard); the image itself is clickable too */
@@ -1197,7 +1304,24 @@
 
   cvScroll.addEventListener('scroll', function () {
     cvHead.classList.toggle('is-condensed', cvScroll.scrollTop > 16);
+  }, { passive: true });
+
+  /* the dimmed area around the sheet closes it (the centring frame sits above the backdrop) */
+  var cvFrame = cvPanel.parentElement;
+  cvFrame.addEventListener('click', function (event) {
+    if (event.target === cvFrame) { closeCv(); }
   });
+
+  /* lock the page behind the sheet; keep the width so nothing jumps when the scrollbar goes */
+  function lockPage() {
+    var gap = window.innerWidth - document.documentElement.clientWidth;
+    document.documentElement.style.overflow = 'hidden';
+    if (gap > 0) { document.body.style.paddingRight = gap + 'px'; }
+  }
+  function unlockPage() {
+    document.documentElement.style.overflow = '';
+    document.body.style.paddingRight = '';
+  }
 
   function onCvKeydown(event) {
     if (event.key === 'Escape') { event.preventDefault(); closeCv(); return; }
@@ -1206,13 +1330,14 @@
 
   function openCv(trigger) {
     if (cvOpen) { return; }
-    if (cvHideTimer) { window.clearTimeout(cvHideTimer); cvHideTimer = null; }
     cvOpen = true;
     cvLastFocused = trigger || null;
+    if (!cvHideTimer) { lockPage(); }
+    if (cvHideTimer) { window.clearTimeout(cvHideTimer); cvHideTimer = null; }
     cvOverlay.hidden = false;
-    document.body.style.overflow = 'hidden';
-    requestAnimationFrame(function () { cvOverlay.classList.add('is-open'); });
-    cvClose.focus();
+    void cvOverlay.offsetWidth; /* start the fade from the hidden state */
+    cvOverlay.classList.add('is-open');
+    cvClose.focus({ preventScroll: true });
     cvScroll.scrollTop = 0;
     cvHead.classList.remove('is-condensed');
     document.addEventListener('keydown', onCvKeydown);
@@ -1223,10 +1348,9 @@
     cvOpen = false;
     cvOverlay.classList.remove('is-open');
     document.removeEventListener('keydown', onCvKeydown);
-    document.body.style.overflow = '';
     var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    cvHideTimer = window.setTimeout(function () { cvOverlay.hidden = true; cvHideTimer = null; }, reduced ? 0 : 180);
-    if (cvLastFocused) { cvLastFocused.focus(); cvLastFocused = null; }
+    cvHideTimer = window.setTimeout(function () { cvOverlay.hidden = true; cvHideTimer = null; unlockPage(); }, reduced ? 0 : 180);
+    if (cvLastFocused) { cvLastFocused.focus({ preventScroll: true }); cvLastFocused = null; }
   }
 
   document.querySelectorAll('[data-cv-open]').forEach(function (el) {

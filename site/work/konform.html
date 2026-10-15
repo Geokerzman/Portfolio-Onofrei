@@ -6,21 +6,22 @@
 <title>Konform — WCAG audit platform · Boris Onofrei</title>
 <meta name="description" content="Accessibility scanners report symptoms page by page. Konform reports causes - and turns a 3,187-row backlog into 142 decisions. One row is one fix: every…">
 <meta name="author" content="Boris Onofrei">
-<meta name="theme-color" content="#FFFFFF">
-<link rel="canonical" href="https://portfolio.bo-design.info/work/konform.html">
+<meta name="theme-color" content="#F5F4F1">
+<link rel="canonical" href="https://borisonofrei.design/work/konform.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Konform — WCAG audit platform · Boris Onofrei">
 <meta property="og:description" content="Accessibility scanners report symptoms page by page. Konform reports causes - and turns a 3,187-row backlog into 142 decisions. One row is one fix: every…">
-<meta property="og:url" content="https://portfolio.bo-design.info/work/konform.html">
+<meta property="og:url" content="https://borisonofrei.design/work/konform.html">
 <meta property="og:site_name" content="Boris Onofrei">
-<meta property="og:image" content="https://portfolio.bo-design.info/assets/images/meta/og-image.jpg">
+<meta property="og:image" content="https://borisonofrei.design/assets/images/meta/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../assets/images/meta/apple-touch-icon.png">
 <link rel="preload" href="../assets/fonts/Satoshi-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/css/main.css">
-<link rel="stylesheet" href="../assets/css/tailwind.css">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261011e">
+<link rel="stylesheet" href="../assets/css/tailwind.css?v=20261011e">
+  <!-- Icons: Font Awesome Free 7.3.1 by @fontawesome, https://fontawesome.com/license/free (Icons: CC BY 4.0) -->
 </head>
 <body class="font-body bg-paper text-ink antialiased" data-root="../">
 <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-gut focus:top-4 focus:z-50 focus:bg-surface focus:px-4 focus:py-3 focus:text-s15 focus:font-medium" data-i18n="a11y.skip">Skip to content</a>
@@ -29,8 +30,9 @@
     <a href="../index.html" data-page-link class="font-display text-s17 font-extrabold tracking-display text-ink no-underline nav-link">Boris&nbsp;Onofrei</a>
 
     <div class="flex items-center gap-2">
-      <ul class="hidden items-center gap-2 md:flex" role="list">
+      <ul class="nav-wide hidden items-center gap-2" role="list">
         <li><a href="../index.html#work" data-page-link class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.work">Work</a></li>
+        <li><a href="../index.html#capabilities" data-page-link class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.skills">Skills</a></li>
         <li><a href="../index.html#about" data-page-link class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.about">About</a></li>
         <li><a href="../index.html#experience" data-page-link class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.experience">Experience</a></li>
         <li><a href="../index.html#contact" data-page-link class="nav-link inline-flex min-h-[44px] items-center px-3 text-s15 font-medium text-graphite no-underline" data-i18n="nav.contact">Contact</a></li>
@@ -38,25 +40,27 @@
 
       <a id="cv-link" class="btn-cv" href="../assets/docs/Boris_Onofrei_CV_ProductDesigner_EN.pdf" download data-i18n="nav.cv" data-i18n-href="nav.cvHref">CV (PDF)</a>
 
-      <div class="hidden items-center border-mist md:flex md:border-l md:pl-3" role="group" aria-label="Language" data-i18n-aria="a11y.language">
+      <div class="nav-wide hidden items-center border-mist md:border-l md:pl-3" role="group" aria-label="Language" data-i18n-aria="a11y.language">
         <button type="button" id="lang-en" data-lang="en" class="inline-flex min-h-[44px] min-w-[38px] items-center justify-center label text-ink font-medium sm:min-w-[44px]" aria-pressed="true">EN</button>
         <span class="label hidden px-1 text-graphite sm:inline" aria-hidden="true">/</span>
         <button type="button" id="lang-de" data-lang="de" class="inline-flex min-h-[44px] min-w-[38px] items-center justify-center label text-graphite sm:min-w-[44px]" aria-pressed="false">DE</button>
       </div>
 
-      <button type="button" id="menu-button" class="nav-link -mr-2 ml-1 inline-flex h-11 w-11 items-center justify-center text-ink md:hidden" aria-controls="menu-panel" aria-expanded="false" data-i18n-aria="a11y.menu" aria-label="Menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg>
+      <button type="button" id="menu-button" class="nav-link -mr-2 ml-1 inline-flex h-11 w-11 items-center justify-center text-ink nav-narrow" aria-controls="menu-panel" aria-expanded="false" data-i18n-aria="a11y.menu" aria-label="Menu">
+        <!-- Font Awesome Free 7.3.1, Solid: bars -->
+        <svg width="24" height="24" viewBox="0 0 640 640" aria-hidden="true" focusable="false"><path fill="currentColor" d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"></path></svg>
       </button>
     </div>
   </nav>
 
-  <div id="menu-panel" class="border-t border-mist bg-paper md:hidden" hidden>
+  <div id="menu-panel" class="nav-narrow border-t border-mist bg-paper" hidden>
     <ul class="mx-auto flex max-w-container flex-col px-gut py-2" role="list">
       <li><a href="../index.html#work" data-page-link class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.work">Work</a></li>
+      <li><a href="../index.html#capabilities" data-page-link class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.skills">Skills</a></li>
       <li><a href="../index.html#about" data-page-link class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.about">About</a></li>
       <li><a href="../index.html#experience" data-page-link class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.experience">Experience</a></li>
       <li><a href="../index.html#contact" data-page-link class="nav-link flex min-h-[44px] items-center border-b border-mist text-s17 font-medium text-ink no-underline" data-i18n="nav.contact">Contact</a></li>
-      <li class="flex min-h-[44px] items-center gap-3 pt-1" role="group" aria-label="Language">
+      <li class="flex min-h-[44px] items-center gap-3 pt-1" role="group" aria-label="Language" data-i18n-aria="a11y.language">
         <span class="label text-graphite" data-i18n="a11y.language">Language</span>
         <span class="flex items-center gap-1">
           <button type="button" data-lang="en" class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center label text-ink font-medium" aria-pressed="true">EN</button>
@@ -71,7 +75,7 @@
 <main id="main">
   <section class="case-hero" aria-labelledby="case-title">
     <div class="mx-auto max-w-container px-gut pt-6 lg:px-gut-lg lg:pt-10">
-      <a href="../index.html#work" class="case-back nav-link" data-page-link><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg><span data-i18n="case.back">All work</span></a>
+      <a href="../index.html#work" class="case-back nav-link" data-page-link><!-- Font Awesome Free 7.3.1, Solid: arrow-left --><svg width="18" height="18" viewBox="0 0 640 640" aria-hidden="true" focusable="false"><path fill="currentColor" d="M73.4 297.4C60.9 309.9 60.9 330.2 73.4 342.7L233.4 502.7C245.9 515.2 266.2 515.2 278.7 502.7C291.2 490.2 291.2 469.9 278.7 457.4L173.3 352L544 352C561.7 352 576 337.7 576 320C576 302.3 561.7 288 544 288L173.3 288L278.7 182.6C291.2 170.1 291.2 149.8 278.7 137.3C266.2 124.8 245.9 124.8 233.4 137.3L73.4 297.3z"></path></svg><span data-i18n="case.back">All work</span></a>
       <p class="label mt-10 text-s15 text-white/60 lg:mt-14" data-i18n="work.cases.0.label">02 / Case study</p>
       <h1 id="case-title" class="case-hero__title mt-4"><span data-i18n="work.cases.0.csHeadDim">Konform</span><span class="accent" data-i18n="work.cases.0.csHeadStrong">WCAG audit platform</span></h1>
       <p class="mt-6 max-w-measure text-s20 text-onmute" data-i18n="work.cases.0.context">Desktop web · Enterprise SaaS · AI triage</p>
@@ -79,7 +83,7 @@
     </div>
     <div class="case-cover-band mt-12 lg:mt-16">
       <div class="mx-auto max-w-container px-gut lg:px-gut-lg">
-        <div class="case-hero__cover"><img src="../assets/images/work/konform/case-cover.webp" alt="Konform report export screen shown on a monitor against a blue background: 847 violations closed, compose-report panel and the accessibility statement preview." fetchpriority="high" decoding="async"></div>
+        <div class="case-hero__cover"><img src="../assets/images/work/konform/case-cover.webp" width="2400" height="1350" alt="Konform report export screen shown on a monitor against a blue background: 847 violations closed, compose-report panel and the accessibility statement preview." fetchpriority="high" decoding="async"></div>
       </div>
     </div>
   </section>
@@ -123,7 +127,7 @@
             </nav>
           </details>
         </div>
-        <article id="case-body" class="case-article" aria-labelledby="case-title">
+        <article id="case-body" class="case-article" lang="en" aria-labelledby="case-title">
 <div id="overview" data-toc-target="">
   <p class="cs-lede">Accessibility scanners report symptoms page by page. Konform reports causes - and turns a 3,187-row backlog into 142 decisions. One row is one fix: every contrast failure traced to the same ghost button is a single change, not ninety-four. What used to be a sprint of spreadsheet work is now an afternoon of triage.</p>
   <p class="cs-foot">Self-initiated concept project · 2026</p>
@@ -156,12 +160,12 @@
     <p class="cs-p">A second view, the component registry, holds all 214 components on the site - passing, failing and untested - with their owner and their reach. It answers the question the inbox can't: which team carries the risk, and what has already been made safe.</p>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/issue-inbox.webp" alt="Konform issue inbox: 142 components listed with their WCAG criterion, severity, violation count, affected pages and owning team, sorted by impact."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/issue-inbox.webp" width="2400" height="1707" alt="Konform issue inbox: 142 components listed with their WCAG criterion, severity, violation count, affected pages and owning team, sorted by impact." loading="lazy" decoding="async"></div>
     <figcaption>Issue inbox - grouped by component</figcaption>
   </figure>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/components-registry.webp" alt="Component registry table listing all 214 components with category, page usage, WCAG criteria, violation count, owner and status, above summary tiles for total, passing, failing and unowned components."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/components-registry.webp" width="2400" height="1707" alt="Component registry table listing all 214 components with category, page usage, WCAG criteria, violation count, owner and status, above summary tiles for total, passing, failing and unowned components." loading="lazy" decoding="async"></div>
     <figcaption>Component registry - all 214 components</figcaption>
   </figure>
     <p class="cs-note">A "by page" toggle stayed in the design. Auditors and legal teams still think in URLs, and a tool that refuses their mental model doesn't get adopted.</p>
@@ -177,7 +181,7 @@
     <p class="cs-p">Every AI surface carries the same three markers: the gradient, the label, and a confidence value written as text. The gradient alone never signals provenance - that would fail the product's own accessibility rules.</p>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/issue-inbox-detail.webp" alt="Component detail panel for Button/ghost: the 1.4.3 contrast failure with before and after swatches, an AI suggested code diff at 96% confidence with accept, edit and dismiss actions, and a needs-human-review notice for two criteria."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/issue-inbox-detail.webp" width="2400" height="1707" alt="Component detail panel for Button/ghost: the 1.4.3 contrast failure with before and after swatches, an AI suggested code diff at 96% confidence with accept, edit and dismiss actions, and a needs-human-review notice for two criteria." loading="lazy" decoding="async"></div>
     <figcaption>Component detail - AI suggestion and manual review</figcaption>
   </figure>
     <p class="cs-close">A tool that claims to fix everything is a tool nobody trusts with a legal deadline.</p>
@@ -192,7 +196,7 @@
     <p class="cs-p">The AI hint here is one line, not a panel. It suggests an owner and a date based on who owns the neighbouring components, and it can be dismissed without touching the form.</p>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/assign-fix.webp" alt="Assign fix modal with a summary strip stating component, 847 violations closed, 94 pages and critical severity, followed by team, owner, priority, due date with days to the EAA deadline, labels, issue tracker link and a plain-language confirmation line."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/assign-fix.webp" width="2400" height="1707" alt="Assign fix modal with a summary strip stating component, 847 violations closed, 94 pages and critical severity, followed by team, owner, priority, due date with days to the EAA deadline, labels, issue tracker link and a plain-language confirmation line." loading="lazy" decoding="async"></div>
     <figcaption>Assign fix</figcaption>
   </figure>
   </section>
@@ -204,13 +208,13 @@
     <p class="cs-p">The lead needs the shape of the problem: compliance score, violations by severity, what moved this month, days to the deadline, and the components to fix first. Wide layout, three columns, everything comparable at a glance.</p>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/overview.webp" alt="Compliance dashboard showing compliance score, open violations by severity, root components and days to the EAA deadline, a six-week trend chart, an activity feed and a ranked fix-these-first table."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/overview.webp" width="2400" height="1707" alt="Compliance dashboard showing compliance score, open violations by severity, root components and days to the EAA deadline, a six-week trend chart, an activity feed and a ranked fix-these-first table." loading="lazy" decoding="async"></div>
     <figcaption>Compliance dashboard - the lead's view</figcaption>
   </figure>
     <p class="cs-p">The developer needs one task and no distractions. Collapsed sidebar. Three panes: the files involved, the code diff at line 42, and a live preview of the page with the offending element outlined. Contrast before and after, printed as numbers. Three verification checks, one of which openly says "needs human review".</p>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/fix-view.webp" alt="Developer fix view with a collapsed icon rail, the affected files list, the Button.tsx diff at line 42 changing the text token, and a live checkout preview with contrast, target size and verification results."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/fix-view.webp" width="2400" height="1707" alt="Developer fix view with a collapsed icon rail, the affected files list, the Button.tsx diff at line 42 changing the text token, and a live checkout preview with contrast, target size and verification results." loading="lazy" decoding="async"></div>
     <figcaption>Developer fix view</figcaption>
   </figure>
     <p class="cs-close">Role-based access isn't a permissions table - it's two different products sharing one data model.</p>
@@ -227,7 +231,7 @@
     <p class="cs-p">Above it, the re-scan result: 847 closed, 12 still open, 3 regressions. Regressions are shown, not hidden - a fix that came back is the thing an auditor asks about first.</p>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/report-export.webp" alt="Report export screen: a re-scan summary of 847 closed, 12 open and 3 regressions, section toggles for composing the report, and a live preview of the accessibility statement signed with scan #184."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/report-export.webp" width="2400" height="1707" alt="Report export screen: a re-scan summary of 847 closed, 12 open and 3 regressions, section toggles for composing the report, and a live preview of the accessibility statement signed with scan #184." loading="lazy" decoding="async"></div>
     <figcaption>Verification and report export</figcaption>
   </figure>
   </section>
@@ -251,87 +255,87 @@
     </ul>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/01-color-tokens.webp" alt="Colour tokens in light and dark theme with semantic severity pairs of colour, icon and text label."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/01-color-tokens.webp" width="2400" height="1491" alt="Colour tokens in light and dark theme with semantic severity pairs of colour, icon and text label." loading="lazy" decoding="async"></div>
     <figcaption>Colour tokens - light and dark</figcaption>
   </figure>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/02-ai-tokens.webp" alt="AI tokens: the AI gradient, accent and border, with the rule that AI output always carries a label, icon and confidence value."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/02-ai-tokens.webp" width="2400" height="607" alt="AI tokens: the AI gradient, accent and border, with the rule that AI output always carries a label, icon and confidence value." loading="lazy" decoding="async"></div>
     <figcaption>AI tokens - provenance</figcaption>
   </figure>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/03-typography.webp" alt="Type scale from 30px page titles down to 11px labels, with Inter and JetBrains Mono families and tabular figures."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/03-typography.webp" width="2400" height="1697" alt="Type scale from 30px page titles down to 11px labels, with Inter and JetBrains Mono families and tabular figures." loading="lazy" decoding="async"></div>
     <figcaption>Typography - Inter and JetBrains Mono</figcaption>
   </figure>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/04-space-radius.webp" alt="Spacing scale on a 4px base grid, four radius values and two elevation levels for cards and overlays."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/04-space-radius.webp" width="2400" height="785" alt="Spacing scale on a 4px base grid, four radius values and two elevation levels for cards and overlays." loading="lazy" decoding="async"></div>
     <figcaption>Spacing, radius, elevation</figcaption>
   </figure>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/05-layout-shell.webp" alt="Layout shell at 1440px: 64px icon rail, 64px top bar, tab bar and a three-column content area of list, detail and context panel."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/05-layout-shell.webp" width="2400" height="1460" alt="Layout shell at 1440px: 64px icon rail, 64px top bar, tab bar and a three-column content area of list, detail and context panel." loading="lazy" decoding="async"></div>
     <figcaption>Layout shell - rail, top bar, three columns</figcaption>
   </figure>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/06-sidebar.webp" alt="Sidebar navigation in three layouts: expanded at 280px, collapsed 72px icon rail with tooltip and flyout, and a third nesting level with focus and disabled states."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/06-sidebar.webp" width="2400" height="2510" alt="Sidebar navigation in three layouts: expanded at 280px, collapsed 72px icon rail with tooltip and flyout, and a third nesting level with focus and disabled states." loading="lazy" decoding="async"></div>
     <figcaption>Navigation - expanded, collapsed, nested</figcaption>
   </figure>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/07-buttons.webp" alt="Button matrix: five variants across default, hover, focus-visible, active, disabled and loading states at 44px minimum height."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/07-buttons.webp" width="2400" height="938" alt="Button matrix: five variants across default, hover, focus-visible, active, disabled and loading states at 44px minimum height." loading="lazy" decoding="async"></div>
     <figcaption>Buttons - 5 variants, 6 states</figcaption>
   </figure>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/08-form-controls.webp" alt="Form controls: text inputs in default, filled, focus, disabled and error states, select, pill search, checkbox, radio and toggle."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/08-form-controls.webp" width="2400" height="1050" alt="Form controls: text inputs in default, filled, focus, disabled and error states, select, pill search, checkbox, radio and toggle." loading="lazy" decoding="async"></div>
     <figcaption>Form controls</figcaption>
   </figure>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/09-badges-pills.webp" alt="Severity badges, status pills and owner chips, each pairing an icon, a text label and a colour."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/09-badges-pills.webp" width="2400" height="614" alt="Severity badges, status pills and owner chips, each pairing an icon, a text label and a colour." loading="lazy" decoding="async"></div>
     <figcaption>Badges, status pills, owner chips</figcaption>
   </figure>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/10-data-table.webp" alt="Data table at three row densities with selection, sorting, truncation tooltip and a bulk action bar."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/10-data-table.webp" width="2400" height="1249" alt="Data table at three row densities with selection, sorting, truncation tooltip and a bulk action bar." loading="lazy" decoding="async"></div>
     <figcaption>Data table - 36 / 44 / 52px rows</figcaption>
   </figure>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/11-filters-bulk.webp" alt="Filter bar with applied filter chips and clear all, above the bulk action bar that appears on selection."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/11-filters-bulk.webp" width="2400" height="661" alt="Filter bar with applied filter chips and clear all, above the bulk action bar that appears on selection." loading="lazy" decoding="async"></div>
     <figcaption>Filter bar and bulk actions</figcaption>
   </figure>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/12-list-detail.webp" alt="List column item states beside the detail panel with metadata, offending markup and routing actions."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/12-list-detail.webp" width="2400" height="1067" alt="List column item states beside the detail panel with metadata, offending markup and routing actions." loading="lazy" decoding="async"></div>
     <figcaption>List item and detail panel</figcaption>
   </figure>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/13-ai-blocks.webp" alt="AI suggestion block with confidence ring, model provenance and accept or edit actions, next to an AI limitation card and a suggested actions checklist."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/13-ai-blocks.webp" width="2400" height="1207" alt="AI suggestion block with confidence ring, model provenance and accept or edit actions, next to an AI limitation card and a suggested actions checklist." loading="lazy" decoding="async"></div>
     <figcaption>AI blocks - suggestion, limitation, checklist</figcaption>
   </figure>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/14-feedback.webp" alt="Inline banners, empty, loading and error states, toast, tooltip, dropdown menu and confirmation modal."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/14-feedback.webp" width="2400" height="2182" alt="Inline banners, empty, loading and error states, toast, tooltip, dropdown menu and confirmation modal." loading="lazy" decoding="async"></div>
     <figcaption>Feedback, states and overlays</figcaption>
   </figure>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/15-metrics.webp" alt="Compliance score with a labelled stacked bar and progress bars for remediation, verified fixes and scan progress."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/15-metrics.webp" width="2400" height="696" alt="Compliance score with a labelled stacked bar and progress bars for remediation, verified fixes and scan progress." loading="lazy" decoding="async"></div>
     <figcaption>Compliance score and progress</figcaption>
   </figure>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/16-icons.webp" alt="Icon set inlined as path data, with fixed role meanings for rail, status, feedback, AI, controls and actions."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/16-icons.webp" width="2400" height="2105" alt="Icon set inlined as path data, with fixed role meanings for rail, status, feedback, AI, controls and actions." loading="lazy" decoding="async"></div>
     <figcaption>Icons - fixed roles</figcaption>
   </figure>
 
   <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/17-accessibility.webp" alt="Five non-negotiable rules: focus ring, contrast, target size, never colour alone, and tinted grounds."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/design-system/17-accessibility.webp" width="2400" height="1413" alt="Five non-negotiable rules: focus ring, contrast, target size, never colour alone, and tinted grounds." loading="lazy" decoding="async"></div>
     <figcaption>Accessibility rules</figcaption>
   </figure>
   </section>
@@ -341,35 +345,35 @@
     <h2 class="cs-h" id="s09-h"><span>CONNECT. TRIAGE.</span><span class="cs-h__accent">FIX. PROVE.</span></h2>
     <p class="cs-p">The full flow, in order.</p>
     <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/connect.webp" alt="Connect your site screen with scan-type cards and an Add site dialog holding the site URL, scan depth, schedule and the WCAG 2.1 AA standard."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/connect.webp" width="2400" height="1707" alt="Connect your site screen with scan-type cards and an Add site dialog holding the site URL, scan depth, schedule and the WCAG 2.1 AA standard." loading="lazy" decoding="async"></div>
     <figcaption>01 - Connect a site and run the first scan</figcaption>
   </figure>
 <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/overview.webp" alt="Compliance dashboard with compliance score, open violations by severity, root components, days to the EAA deadline, a six-week trend chart and a ranked fix-these-first table."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/overview.webp" width="2400" height="1707" alt="Compliance dashboard with compliance score, open violations by severity, root components, days to the EAA deadline, a six-week trend chart and a ranked fix-these-first table." loading="lazy" decoding="async"></div>
     <figcaption>02 - Read the compliance picture</figcaption>
   </figure>
 <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/issue-inbox.webp" alt="Issue inbox listing 142 components with WCAG criterion, severity, violation count, affected pages and owner, sorted by impact."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/issue-inbox.webp" width="2400" height="1707" alt="Issue inbox listing 142 components with WCAG criterion, severity, violation count, affected pages and owner, sorted by impact." loading="lazy" decoding="async"></div>
     <figcaption>03 - Triage the inbox by component</figcaption>
   </figure>
 <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/issue-inbox-detail.webp" alt="Component detail panel for Button/ghost with the contrast failure, an AI suggested code diff at 96% confidence, and two criteria routed to manual review."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/issue-inbox-detail.webp" width="2400" height="1707" alt="Component detail panel for Button/ghost with the contrast failure, an AI suggested code diff at 96% confidence, and two criteria routed to manual review." loading="lazy" decoding="async"></div>
     <figcaption>04 - Open a component - what's wrong, the suggested fix, what needs a human</figcaption>
   </figure>
 <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/assign-fix.webp" alt="Assign fix modal stating 847 violations closed on 94 pages, with team, owner, priority, due date and days to the EAA deadline."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/assign-fix.webp" width="2400" height="1707" alt="Assign fix modal stating 847 violations closed on 94 pages, with team, owner, priority, due date and days to the EAA deadline." loading="lazy" decoding="async"></div>
     <figcaption>05 - Assign the fix with its consequence stated</figcaption>
   </figure>
 <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/fix-view.webp" alt="Developer fix view with affected files, the Button.tsx diff at line 42 and a live checkout preview with contrast and verification checks."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/fix-view.webp" width="2400" height="1707" alt="Developer fix view with affected files, the Button.tsx diff at line 42 and a live checkout preview with contrast and verification checks." loading="lazy" decoding="async"></div>
     <figcaption>06 - Fix it in code, verify it in preview</figcaption>
   </figure>
 <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/report-export.webp" alt="Report export screen with the re-scan summary, section toggles and a live accessibility statement preview signed with scan #184."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/report-export.webp" width="2400" height="1707" alt="Report export screen with the re-scan summary, section toggles and a live accessibility statement preview signed with scan #184." loading="lazy" decoding="async"></div>
     <figcaption>07 - Publish the proof</figcaption>
   </figure>
 <figure class="cs-fig">
-    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/components-registry.webp" alt="Component registry table listing all 214 components with category, usage, WCAG criteria, violations, owner and status."></div>
+    <div class="cs-fig__frame"><img src="../assets/images/work/konform/screens/components-registry.webp" width="2400" height="1707" alt="Component registry table listing all 214 components with category, usage, WCAG criteria, violations, owner and status." loading="lazy" decoding="async"></div>
     <figcaption>08 - Track the whole component library over time</figcaption>
   </figure>
   </section>
@@ -440,11 +444,12 @@
               <p class="mt-5 max-w-measure text-s17 text-graphite" data-i18n="work.cases.1.outcome">Acknowledging an incident has to be one action and never an accident. That contradiction shaped the whole product: readable in the dark, operable with a thumb, honest when the network drops.</p>
               <a href="./onset.html" data-page-link="" class="work-card__affordance work-card__link mt-8 inline-flex items-center font-display text-s17 font-bold tracking-display">
                 <span class="work-card__affordance-text" data-i18n="work.readCta">Read case study</span>
-                <svg class="work-card__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                <!-- Font Awesome Free 7.3.1, Solid: arrow-right -->
+                <svg class="work-card__arrow" width="20" height="20" viewBox="0 0 640 640" aria-hidden="true" focusable="false"><path fill="currentColor" d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"></path></svg>
               </a>
             </div>
             <div class="work-card__media relative order-1 flex aspect-[4/3] items-center justify-center overflow-hidden md:order-2 md:aspect-auto md:h-full" data-image-slot="work-02">
-              <img src="../assets/images/work/onset/card-cover.webp" alt="Three Onset status screens on a dark green-lit background: All quiet with a green ring, Needs attention with an amber ring showing 2, and P1 active with a red ring showing 1." class="absolute inset-0 h-full w-full object-cover object-left-top">
+              <img src="../assets/images/work/onset/card-cover.webp" width="2400" height="1707" alt="Three Onset status screens on a dark green-lit background: All quiet with a green ring, Needs attention with an amber ring showing 2, and P1 active with a red ring showing 1." class="absolute inset-0 h-full w-full object-cover object-left-top" loading="lazy" decoding="async">
               <ul class="work-card__tags" role="list">
                 <li class="hero-tag" data-i18n="work.cases.1.tags.0">Mobile UX</li>
                 <li class="hero-tag" data-i18n="work.cases.1.tags.1">AI in the loop</li>
@@ -460,7 +465,7 @@
 
 <footer class="contact-dark">
   <div class="mx-auto flex max-w-container flex-col gap-4 px-gut py-10 sm:flex-row sm:items-center sm:justify-between lg:px-gut-lg">
-    <p class="text-s15 text-white/70" data-i18n="footer.copyright">© 2026 Boris Onofrei · Freiburg, Germany</p>
+    <p class="text-s15 text-white/70" data-i18n="footer.copyright">© 2026 Boris Onofrei · Bad Krozingen, Germany</p>
     <ul class="flex flex-wrap items-center gap-x-8 gap-y-1" role="list">
       <li><a href="https://www.linkedin.com/in/boris-onofrei" rel="me noopener" target="_blank" class="nav-link inline-flex min-h-[44px] items-center text-s15 font-medium text-white no-underline">LinkedIn</a></li>
       <li><a href="mailto:boris.onofrei.design@gmail.com" class="nav-link inline-flex min-h-[44px] items-center text-s15 font-medium text-white no-underline">boris.onofrei.design@gmail.com</a></li>
@@ -470,6 +475,6 @@
   </div>
 </footer>
 
-<script src="../assets/js/main.js"></script>
+<script src="../assets/js/main.js?v=20261011e"></script>
 </body>
 </html>

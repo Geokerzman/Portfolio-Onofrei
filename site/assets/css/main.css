@@ -92,7 +92,8 @@ button:focus-visible,
 .cta:hover { color: var(--accent); }
 
 .nav-link { transition: color 150ms var(--ease); }
-.nav-link:hover { color: var(--accent); }
+/* mouse only: on touch a hover colour sticks to the link after a tap */
+@media (hover: hover) { .nav-link:hover { color: var(--accent); } }
 
 a { color: var(--accent); }
 a:hover { color: var(--ink); }
@@ -190,6 +191,14 @@ a:hover { color: var(--ink); }
   transform: translateX(0);
 }
 
+/* ---------- Header nav: inline links from 1024px, menu button below ----------
+   five links + CV + EN/DE don't fit one tablet row (German labels are longest) */
+header .nav-wide { display: none; }
+@media (min-width: 1024px) {
+  header .nav-wide { display: flex; }
+  header .nav-narrow { display: none; }
+}
+
 /* ---------- Nav CV pill ---------- */
 .btn-cv {
   display: inline-flex;
@@ -210,6 +219,13 @@ a:hover { color: var(--ink); }
 }
 .btn-cv:hover,
 .btn-cv:focus-visible { background: #1A93F5; color: #FFFFFF; }
+/* phones under 360px: the German label (Lebenslauf) pushed the header past the screen edge */
+@media (max-width: 359px) {
+  html[lang="de"] header nav > a.font-display { font-size: 16px; }
+  html[lang="de"] header nav > div.flex { gap: 4px; }
+  html[lang="de"] header .btn-cv { padding-inline: 12px; font-size: 14px; }
+  html[lang="de"] header #menu-button { margin-left: 0; }
+}
 
 /* ---------- Work section (dark, bridges hero -> capabilities) ---------- */
 .work-dark {
@@ -265,8 +281,13 @@ footer.contact-dark {
     transform 180ms var(--ease),
     box-shadow 180ms var(--ease);
 }
-.work-card:hover,
-.work-card:focus-within {
+.work-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+/* keyboard focus only (:focus-within also matched after a mouse click and stuck on back navigation) */
+.work-card:has(:focus-visible) {
   border-color: var(--accent);
   transform: translateY(-2px);
   box-shadow: var(--shadow-card);
@@ -279,8 +300,12 @@ footer.contact-dark {
   background: transparent;
   box-shadow: none;
 }
-.work-dark .work-card:hover,
-.work-dark .work-card:focus-within {
+.work-dark .work-card:hover {
+  transform: translateY(-4px);
+  background: transparent;
+  box-shadow: none;
+}
+.work-dark .work-card:has(:focus-visible) {
   transform: translateY(-4px);
   background: transparent;
   box-shadow: none;
@@ -376,8 +401,8 @@ footer.contact-dark {
   color: #FFFFFF;
   transition: background-color 180ms var(--ease);
 }
-.work-card:hover .work-card__affordance,
-.work-card:focus-within .work-card__affordance { background: #1A93F5; }
+.work-card:hover .work-card__affordance { background: #1A93F5; }
+.work-card:has(:focus-visible) .work-card__affordance { background: #1A93F5; }
 
 .work-card__arrow {
   width: 0;
@@ -391,8 +416,13 @@ footer.contact-dark {
     opacity 180ms var(--ease),
     transform 180ms var(--ease);
 }
-.work-card:hover .work-card__arrow,
-.work-card:focus-within .work-card__arrow {
+.work-card:has(:focus-visible) .work-card__arrow {
+  width: 20px;
+  margin-left: 10px;
+  opacity: 1;
+  transform: translateX(0);
+}
+.work-card:hover .work-card__arrow {
   width: 20px;
   margin-left: 10px;
   opacity: 1;
@@ -506,6 +536,11 @@ footer.contact-dark {
   .cs-meta { margin-top: 64px; grid-template-columns: 1fr; }
   .cs-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cs-fig__frame { padding: 16px; }
+  /* phones: row labels and prose results wrap, so tables fit the column instead of scrolling sideways */
+  .cs-table th[scope="row"] { white-space: normal; }
+  .cs-table th, .cs-table td { padding-left: 8px; padding-right: 8px; }
+  .cs-table--wrap th[scope="row"] { min-width: 8em; }
+  .cs-table--wrap .num { white-space: normal; }
 }
 
 /* ---------- Case-study screenshots: open full size (lightbox) ---------- */
@@ -636,6 +671,10 @@ footer.contact-dark {
 }
 .cv-head.is-condensed .cv-head__name { font-size: 19px; }
 .cv-head.is-condensed .cv-head__role { font-size: 14px; }
+/* phones: the two download buttons stack full width on one line each (the German one used to wrap into a tall pill) */
+@media (max-width: 639px) {
+  .cv-foot .btn-solid { width: 100%; justify-content: center; min-height: 48px; padding: 12px 16px; font-size: 15px; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .cv-head,
@@ -762,7 +801,6 @@ footer.contact-dark {
   color: var(--graphite);
   transition: color 260ms var(--ease), opacity 200ms var(--ease);
 }
-.caps-fingerprint { display: none; }
 .caps-arrow > span {
   position: absolute;
   transition: opacity 200ms var(--ease), transform 260ms var(--ease);
@@ -781,27 +819,32 @@ footer.contact-dark {
     opacity 220ms var(--ease),
     transform 260ms var(--ease);
 }
-.caps-row:hover,
-.caps-row:focus-within {
-  background: var(--accent);
-  border-color: var(--accent);
-  border-radius: 16px;
-}
-.caps-row:hover .caps-index,
-.caps-row:focus-within .caps-index { color: rgba(255, 255, 255, 0.72); }
-.caps-row:hover .caps-name,
-.caps-row:focus-within .caps-name {
-  color: #FFFFFF;
-  opacity: 0;
-  transform: translateY(-6px);
-}
-.caps-row:hover .caps-arrow,
-.caps-row:focus-within .caps-arrow { opacity: 0; }
-.caps-row:hover .caps-detail,
-.caps-row:focus-within .caps-detail {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+/* desktop only (wide screen + mouse): the blue panel unfolds the detail on hover/focus.
+   Phones and tablets show every detail in one swipeable row (below). */
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+  /* :focus-visible, not :focus-within: a mouse click focused the card (tabindex) and left it open */
+  .caps-row:hover,
+  .caps-row:focus-visible {
+    background: var(--accent);
+    border-color: var(--accent);
+    border-radius: 16px;
+  }
+  .caps-row:hover .caps-index,
+  .caps-row:focus-visible .caps-index { color: rgba(255, 255, 255, 0.72); }
+  .caps-row:hover .caps-name,
+  .caps-row:focus-visible .caps-name {
+    color: #FFFFFF;
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  .caps-row:hover .caps-arrow,
+  .caps-row:focus-visible .caps-arrow { opacity: 0; }
+  .caps-row:hover .caps-detail,
+  .caps-row:focus-visible .caps-detail {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
 }
 
 .caps-lead {
@@ -823,6 +866,17 @@ footer.contact-dark {
   line-height: 1.55;
   color: #FFFFFF;
 }
+.caps-core,
+.caps-also__list { list-style: none; padding: 0; margin-bottom: 0; }
+.caps-also__list { margin-top: 0; }
+/* desktop: items run inline, separated by a middle dot */
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+  .caps-also__list,
+  .caps-core li,
+  .caps-also__list li { display: inline; }
+  .caps-core li + li::before,
+  .caps-also__list li + li::before { content: " · "; }
+}
 
 @media (max-width: 767px) {
   .caps-lead { font-size: 17px; line-height: 1.45; }
@@ -833,46 +887,65 @@ footer.contact-dark {
   .caps-name { font-size: clamp(26px, 2.2vw + 18px, 34px); }
   .caps-heading__dim { display: block; }
 }
-@media (max-width: 767px) {
-  /* one height in every state: tall enough for the longest open description */
-  .caps-row { min-height: 300px; }
-  /* the description takes the name's place, full width, number stays */
+/* swipe row geometry: edge = viewport to text column, card = card width */
+#caps-rows { --caps-edge: var(--gut); --caps-card: calc(100vw - var(--gut) - 44px); --caps-top: 24px; }
+@media (min-width: 768px) { #caps-rows { --caps-card: 440px; } }
+@media (min-width: 1024px) { #caps-rows { --caps-edge: calc(max(0px, (100vw - 1348px) / 2) + 48px); --caps-top: 40px; } }
+
+/* phones and tablets (anything but a wide screen with a mouse):
+   number, name and the full description stacked, always visible */
+@media not all and (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+  .caps-row {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    align-content: start;
+    min-height: 0;
+  }
   .caps-detail {
-    grid-area: 1 / 1 / 2 / -1;
-    padding-top: 40px;
+    grid-area: 2 / 1;
+    padding-top: 16px;
     padding-right: 0;
     max-width: none;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
   }
-  /* touch: the card opens while a finger is held on it */
-  .caps-row.is-held {
-    background: var(--accent);
-    border-color: var(--accent);
-    border-radius: 16px;
-  }
-  .caps-row.is-held .caps-index { color: rgba(255, 255, 255, 0.72); }
-  .caps-row.is-held .caps-name {
-    color: #FFFFFF;
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  .caps-row.is-held .caps-arrow { opacity: 0; }
-  /* mobile: the ↗ glyph gives way to a fingerprint mark in the card's corner */
-  .caps-arrow__open { display: none; }
-  .caps-row .caps-arrow {
+  .caps-lead,
+  .caps-core,
+  .caps-also { color: var(--ink); transition: color 260ms var(--ease); }
+  /* touch: a tap fills the card for 1 s (main.js) */
+  .caps-row.is-tapped { background: var(--accent); border-color: var(--accent); }
+  .caps-row.is-tapped .caps-index { color: rgba(255, 255, 255, 0.72); }
+  .caps-row.is-tapped .caps-name,
+  .caps-row.is-tapped .caps-lead,
+  .caps-row.is-tapped .caps-core,
+  .caps-row.is-tapped .caps-also { color: #FFFFFF; }
+  /* items stacked, with the same short dash as the experience cards */
+  .caps-also { margin-top: 14px; }
+  .caps-also__label { display: block; }
+  .caps-also__list { margin-top: 4px; }
+  .caps-core li,
+  .caps-also__list li { position: relative; padding-left: 24px; text-wrap: pretty; }
+  .caps-core li + li { margin-top: 6px; }
+  .caps-also__list li + li { margin-top: 4px; }
+  .caps-core li::before,
+  .caps-also__list li::before {
+    content: "";
     position: absolute;
-    grid-column: auto;
-    grid-row: auto;
-    right: var(--caps-pad);
-    bottom: var(--caps-pad);
-    width: 38px;
-    height: 38px;
-    font-size: 0;
+    left: 0;
+    top: calc(0.75em - 1px);
+    width: 12px;
+    height: 2px;
+    border-radius: 1px;
+    background: currentColor;
+    opacity: 0.4;
   }
-  .caps-fingerprint { display: block; width: 38px; height: 38px; color: inherit; }
+  .caps-arrow { display: none; }
 
-  /* mobile: one swipeable row of cards */
+  /* one swipeable row of cards */
   #caps-rows {
     display: flex;
+    align-items: stretch; /* every card as tall as the tallest one */
     grid-auto-rows: auto;
     gap: 12px;
     overflow-x: auto;
@@ -881,57 +954,44 @@ footer.contact-dark {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     overscroll-behavior-x: contain;
-    /* full-bleed to the viewport edges; cards still line up with the gutter */
-    width: 100vw;
-    max-width: 100vw;
-    margin-inline: calc(var(--gut) * -1);
-    padding-inline: var(--gut);
+    /* full-bleed to the viewport edges; cards still line up with the text column */
+    margin-inline: calc(var(--caps-edge) * -1);
+    padding-inline: var(--caps-edge);
+    scroll-padding-inline: var(--caps-edge);
     /* room above/below so card shadows aren't clipped */
     padding-block: 16px;
     margin-block: -16px;
-    margin-top: 24px;
-    scroll-padding-inline: var(--gut);
+    margin-top: var(--caps-top);
   }
   #caps-rows::-webkit-scrollbar { display: none; }
   #caps-rows .caps-row {
     flex: 0 0 auto;
-    width: calc(100vw - var(--gut) - 44px);
+    width: var(--caps-card);
     scroll-snap-align: start;
   }
   /* filtering dims cards in place — the row keeps its length */
   #caps-rows .caps-row.is-dim { display: grid; }
-  .caps-row.is-held .caps-detail {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
+  /* a mouse drags the row (main.js) */
+  #caps-rows.is-dragging { scroll-snap-type: none; cursor: grabbing; -webkit-user-select: none; user-select: none; }
+  #caps-rows.is-dragging .caps-row { cursor: grabbing; }
 }
-/* touch: no hover, no focus-open — only a held finger opens a card */
-@media (hover: none) and (max-width: 767px) {
-  .caps-row {
-    -webkit-touch-callout: none;
-    -webkit-tap-highlight-color: transparent;
-    user-select: none;
-    -webkit-user-select: none;
-  }
-  .caps-row:focus-within:not(.is-held) {
-    background: linear-gradient(to top right, color-mix(in srgb, var(--ink) 1%, #F5F4F1) 0%, transparent 55%), var(--surface);
-    border-color: transparent;
-  }
-  .caps-row:focus-within:not(.is-held) .caps-index { color: var(--graphite); }
-  .caps-row:focus-within:not(.is-held) .caps-name { color: var(--ink); opacity: 1; transform: none; }
-  .caps-row:focus-within:not(.is-held) .caps-arrow { opacity: 1; }
-  .caps-row:focus-within:not(.is-held) .caps-detail { opacity: 0; transform: translateY(8px); }
+/* narrow window with a mouse: same row, draggable, filled on hover like the other cards */
+@media (max-width: 1023px) and (hover: hover) and (pointer: fine) {
+  #caps-rows .caps-row { cursor: grab; }
+  .caps-row:hover { background: var(--accent); border-color: var(--accent); }
+  .caps-row:hover .caps-index { color: rgba(255, 255, 255, 0.72); }
+  .caps-row:hover .caps-name,
+  .caps-row:hover .caps-lead,
+  .caps-row:hover .caps-core,
+  .caps-row:hover .caps-also { color: #FFFFFF; }
 }
 @media (max-width: 639px) {
-  .caps-row { --caps-pad: 22px; min-height: 300px; }
-  .caps-row:hover, .caps-row:focus-within { border-radius: 16px; }
-  .caps-arrow { width: 28px; height: 28px; font-size: 20px; }
+  .caps-row { --caps-pad: 22px; }
 }
 
 
 /* --- desktop: alternate a full-width row with a row holding two cards --- */
-@media (min-width: 900px) {
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
   #caps-rows {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-auto-rows: auto;
@@ -953,6 +1013,87 @@ footer.contact-dark {
   .caps-detail { transform: none; }
 }
 
+/* ---------- Core skills (summary grid under the capability cards) ---------- */
+.skills { margin-top: 96px; }
+@media (min-width: 1024px) { .skills { margin-top: 128px; } }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  margin: 40px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.skill-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 16px;
+  align-items: start;
+  padding: 22px;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  background: linear-gradient(to top right, color-mix(in srgb, var(--ink) 1%, #F5F4F1) 0%, transparent 55%), var(--surface);
+  box-shadow: 0 1px 2px rgba(11, 12, 14, 0.04), 0 8px 24px rgba(11, 12, 14, 0.05);
+}
+.skill-card__icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  color: var(--graphite);
+}
+.skill-card__icon svg { display: block; width: 100%; height: 100%; }
+.skill-card__body { min-width: 0; }
+.skill-card__title {
+  margin: 0;
+  font-family: 'Satoshi', system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+html[lang="de"] .skill-card__title { hyphens: auto; }
+.skill-card__text {
+  margin: 6px 0 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--graphite);
+  text-wrap: pretty;
+}
+.skill-card,
+.skill-card__icon,
+.skill-card__title,
+.skill-card__text { transition: background-color 200ms var(--ease), border-color 200ms var(--ease), color 200ms var(--ease); }
+/* tablet and desktop: equal-height cards; icon top left, text full width underneath */
+@media (min-width: 768px) {
+  .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; }
+  .skill-card { display: flex; flex-direction: column; padding: 28px; }
+  .skill-card__icon { align-self: flex-start; width: 28px; height: 28px; }
+  .skill-card__body { margin-top: 18px; }
+  .skill-card__title { font-size: 20px; }
+  .skill-card__text { margin-top: 8px; }
+}
+@media (min-width: 1024px) { .skills-grid { margin-top: 56px; } }
+/* desktop: 3 × 2 */
+@media (min-width: 1180px) { .skills-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* hover fills the card with the accent, like the About and Experience cards — mouse only */
+@media (hover: hover) and (pointer: fine) {
+  .skill-card:hover { border-color: var(--accent); background: var(--accent); }
+  .skill-card:hover .skill-card__title,
+  .skill-card:hover .skill-card__text { color: #FFFFFF; }
+  .skill-card:hover .skill-card__icon { color: #FFFFFF; }
+}
+/* touch: a tap fills it for 1 s instead (main.js) */
+.skill-card.is-tapped { border-color: var(--accent); background: var(--accent); }
+.skill-card.is-tapped .skill-card__title,
+.skill-card.is-tapped .skill-card__text,
+.skill-card.is-tapped .skill-card__icon { color: #FFFFFF; }
+/* no grey tap flash on the tappable cards; the accent fill is the feedback */
+.about-card, .exp-card, .skill-card, .caps-row { -webkit-tap-highlight-color: transparent; }
+
 /* ---------- Touch devices: no hover affordances (tap/focus still works) ---------- */
 @media (hover: none) {
   .contact-email:hover:not(:focus-visible) { color: #FFFFFF; }
@@ -970,30 +1111,6 @@ footer.contact-dark {
   .work-dark .work-card:hover:not(:focus-visible) { transform: none; }
   .work-card:hover:not(:focus-visible) .work-card__affordance { background: var(--accent); }
   .work-card:hover:not(:focus-visible) .work-card__arrow { width: 0; margin-left: 0; opacity: 0; }
-  .about-card:not(.about-card--accent):hover {
-    border-color: transparent;
-    background: linear-gradient(to top right, color-mix(in srgb, var(--ink) 1%, #F5F4F1) 0%, transparent 55%), var(--surface);
-  }
-  .about-card:not(.about-card--accent):hover .label { color: var(--graphite); }
-  .about-card:not(.about-card--accent):hover p,
-  .about-card:not(.about-card--accent):hover .text-ink { color: var(--ink); }
-  .about-card:not(.about-card--accent):hover .about-card__minor { color: var(--graphite); }
-  .caps-row:hover:not(:focus-within) {
-    background: linear-gradient(to top right, color-mix(in srgb, var(--ink) 1%, #F5F4F1) 0%, transparent 55%), var(--surface);
-    border-color: transparent;
-  }
-  .caps-row:hover:not(:focus-within) .caps-index { color: var(--graphite); }
-  .caps-row:hover:not(:focus-within) .caps-name {
-    color: var(--ink);
-    opacity: 1;
-    transform: none;
-  }
-  .caps-row:hover:not(:focus-within) .caps-arrow { opacity: 1; }
-  .caps-row:hover:not(:focus-within) .caps-detail {
-    opacity: 0;
-    transform: translateY(8px);
-    pointer-events: none;
-  }
 }
 
 /* ---------- Overlay (CV) ---------- */
@@ -1080,6 +1197,7 @@ footer.contact-dark {
   box-shadow: 0 1px 2px rgba(11, 12, 14, 0.04), 0 8px 24px rgba(11, 12, 14, 0.05);
 }
 .about-card p { margin: 0; }
+.about-card { container-type: inline-size; }
 .about-card,
 .about-card p,
 .about-card .label {
@@ -1088,15 +1206,19 @@ footer.contact-dark {
     border-color 200ms var(--ease),
     color 200ms var(--ease);
 }
-/* hover swaps the two states: plain cards fill accent, the Focus card empties */
-.about-card:not(.about-card--accent):hover {
-  border-color: var(--accent);
-  background: var(--accent);
+/* plain cards fill with the accent: on hover with a mouse, for 1 s after a tap on touch (main.js) */
+@media (hover: hover) and (pointer: fine) {
+  .about-card:not(.about-card--accent):hover { border-color: var(--accent); background: var(--accent); }
+  .about-card:not(.about-card--accent):hover .label,
+  .about-card:not(.about-card--accent):hover p,
+  .about-card:not(.about-card--accent):hover .text-ink,
+  .about-card:not(.about-card--accent):hover .about-card__minor { color: #FFFFFF; }
 }
-.about-card:not(.about-card--accent):hover .label,
-.about-card:not(.about-card--accent):hover p,
-.about-card:not(.about-card--accent):hover .text-ink,
-.about-card:not(.about-card--accent):hover .about-card__minor { color: #FFFFFF; }
+.about-card.is-tapped:not(.about-card--accent) { border-color: var(--accent); background: var(--accent); }
+.about-card.is-tapped:not(.about-card--accent) .label,
+.about-card.is-tapped:not(.about-card--accent) p,
+.about-card.is-tapped:not(.about-card--accent) .text-ink,
+.about-card.is-tapped:not(.about-card--accent) .about-card__minor { color: #FFFFFF; }
 /* Focus card carries the accent so it takes the eye */
 .about-card--accent {
   border-color: var(--accent);
@@ -1124,10 +1246,15 @@ footer.contact-dark {
   hyphens: none;
   overflow-wrap: normal;
   color: var(--ink);
+  /* never wider than the card: the longest word (E‑COMMERCE, PRODUKTDESIGN) used to spill out
+     between 900 and 1200px; at full width this stays 34px */
+  font-size: min(34px, 14cqi);
 }
+html[lang="de"] .about-card p + p:not(.about-card__minor) { font-size: min(34px, 11.4cqi); }
 
 @media (max-width: 767px) {
-  .about-card p + p:not(.about-card__minor) { font-size: clamp(26px, 2.2vw + 18px, 34px); }
+  .about-card p + p:not(.about-card__minor) { font-size: clamp(26px, 2.2vw + 18px, 34px); font-size: min(clamp(26px, 2.2vw + 18px, 34px), 14cqi); }
+  html[lang="de"] .about-card p + p:not(.about-card__minor) { font-size: min(clamp(26px, 2.2vw + 18px, 34px), 11.4cqi); }
 }
 
 @media (max-width: 899px) {
@@ -1139,55 +1266,8 @@ footer.contact-dark {
   .about-bento__row,
   .about-bento__row--tall { grid-column: 1; grid-row: auto; }
   /* portrait leads the section on mobile */
-  .about-bento__portrait { order: -1; }
-  .about-bento__portrait img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 32%;
-  transform: scale(1.45) translateY(-20px);
-  transform-origin: 52% 34%;
-}
-.about-portrait__tags {
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.about-bento__portrait {
-  position: relative; grid-column: 1; }
-  .about-bento__portrait img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 32%;
-  transform: scale(1.45) translateY(-20px);
-  transform-origin: 52% 34%;
-}
-.about-portrait__tags {
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.about-bento__portrait {
-  position: relative;
+  .about-bento__portrait {
+    order: -1;
     grid-column: 1;
     grid-row: auto;
     min-height: 280px;
@@ -1215,7 +1295,7 @@ h1, h2, h3 { text-transform: uppercase; }
   box-shadow: none;
 }
 [data-card-surface="glass"] .work-dark .work-card:hover,
-[data-card-surface="glass"] .work-dark .work-card:focus-within {
+[data-card-surface="glass"] .work-dark .work-card:has(:focus-visible) {
   background: rgba(255, 255, 255, 0.22);
   box-shadow: none;
 }
@@ -1237,7 +1317,7 @@ h1, h2, h3 { text-transform: uppercase; }
   box-shadow: none;
 }
 [data-card-surface="outline"] .work-dark .work-card:hover,
-[data-card-surface="outline"] .work-dark .work-card:focus-within {
+[data-card-surface="outline"] .work-dark .work-card:has(:focus-visible) {
   border-color: var(--accent);
   background: transparent;
   box-shadow: none;
@@ -1353,14 +1433,19 @@ h1, h2, h3 { text-transform: uppercase; }
 .exp-card__role,
 .exp-card__org,
 .exp-card__points li { transition: background-color 200ms var(--ease), border-color 200ms var(--ease), color 200ms var(--ease); }
-/* hover fills the card with the accent, like the About cards */
-@media (hover: hover) {
+/* hover fills the card with the accent, like the About cards — mouse only; touch: 1 s after a tap (main.js) */
+@media (hover: hover) and (pointer: fine) {
   .exp-card:hover { border-color: var(--accent); background: var(--accent); }
   .exp-card:hover .label,
   .exp-card:hover .exp-card__role,
   .exp-card:hover .exp-card__org,
   .exp-card:hover .exp-card__points li { color: #FFFFFF; }
 }
+.exp-card.is-tapped { border-color: var(--accent); background: var(--accent); }
+.exp-card.is-tapped .label,
+.exp-card.is-tapped .exp-card__role,
+.exp-card.is-tapped .exp-card__org,
+.exp-card.is-tapped .exp-card__points li { color: #FFFFFF; }
 @media (min-width: 900px) {
   .exp-card { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); padding: 36px; }
 }
@@ -1408,9 +1493,11 @@ h1, h2, h3 { text-transform: uppercase; }
   color: rgba(255, 255, 255, 0.72);
   text-decoration: none;
 }
-.case-back:hover { color: #FFFFFF; }
 .case-back svg { transition: transform 180ms var(--ease); }
-.case-back:hover svg { transform: translateX(-3px); }
+@media (hover: hover) {
+  .case-back:hover { color: #FFFFFF; }
+  .case-back:hover svg { transform: translateX(-3px); }
+}
 .case-hero__title {
   font-family: 'Satoshi', system-ui, sans-serif;
   font-size: clamp(44px, 5.6vw + 12px, 96px);
@@ -1512,7 +1599,9 @@ h1, h2, h3 { text-transform: uppercase; }
 .legal li + li { margin-top: 4px; }
 .legal li::marker { color: var(--accent); }
 .legal a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
-.legal a:hover { color: var(--ink); }
+@media (hover: hover) { .legal a:hover { color: var(--ink); } }
+/* the e-mail address is wider than the card on 320px phones */
+.legal p, .legal li, .legal address { overflow-wrap: break-word; }
 .legal .legal__note { margin: 0 0 32px; font-size: 15px; }
 .legal .todo { padding: 0 4px; border-radius: 3px; background: var(--signal); color: var(--ink); }
 

@@ -105,6 +105,32 @@
 
   new ResizeObserver(fit).observe(stage);
   fit();
+
+  /* Touch emulation: the page inside answers hover/pointer media queries as a phone would
+     (no hover; a click counts as a tap). Mouse drag scrolls the Capabilities row. */
+  const frame = document.getElementById('frame');
+  const FLIP = { hover: 'none', none: 'hover', fine: 'coarse', coarse: 'fine' };
+  const flip = q => q.replace(/\(\s*(hover|pointer)\s*:\s*(hover|none|fine|coarse)\s*\)/g, (m, f, v) => '(' + f + ': ' + FLIP[v] + ')');
+  function emulateTouch() {
+    let win, doc;
+    try { win = frame.contentWindow; doc = frame.contentDocument; } catch (e) { return; }
+    if (!doc || doc.__touch || doc.readyState !== 'complete' || doc.URL === 'about:blank') return;
+    doc.__touch = true;
+    const walk = list => {
+      for (const r of list) {
+        if (r.media && r.cssRules) { const t = r.media.mediaText, n = flip(t); if (n !== t) r.media.mediaText = n; }
+        if (r.cssRules) walk(r.cssRules);
+      }
+    };
+    for (const sheet of doc.styleSheets) { try { walk(sheet.cssRules); } catch (e) {} }
+    if (!win.__touchMM) {
+      win.__touchMM = true;
+      const mm = win.matchMedia.bind(win);
+      win.matchMedia = q => mm(flip(String(q)));
+    }
+  }
+  frame.addEventListener('load', emulateTouch);
+  emulateTouch();
 </script>
 </body>
 </html>
