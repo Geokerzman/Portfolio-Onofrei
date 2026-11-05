@@ -179,7 +179,7 @@
         "heading_dim": "Hi, I'm",
         "heading_strong": "Boris Onofrei",
         "p1": "I came to design from law, and the habit stayed: I think in structure. Three years in-house at a German company — first design system built from zero, UX for an internal SAP rollout, e-commerce flows redesigned for +22% engagement — plus B2B SaaS work for freelance clients in the EU and the US. Research to shipped interface, accessible to WCAG 2.1 AA, never a pile of screens.",
-        "portraitAlt": "Boris Onofrei, product designer, black-and-white portrait",
+        "portraitAlt": "Boris Onofrei, product designer, in profile against a blue background",
         "facts": [
           {
             "term": "Based in",
@@ -452,7 +452,7 @@
         "heading_dim": "Hallo, ich bin",
         "heading_strong": "Boris Onofrei",
         "p1": "Ich kam über das Jura-Studium zum Design, und die Gewohnheit blieb: Ich denke in Strukturen. Drei Jahre in-house in einem deutschen Unternehmen — erstes Designsystem von null aufgebaut, UX für einen internen SAP-Rollout, E-Commerce-Flows mit +22 % Engagement überarbeitet — dazu B2B-SaaS-Projekte für Freelance-Kunden in der EU und den USA. Von der Recherche bis zum ausgelieferten Interface, barrierefrei nach WCAG 2.1 AA, nie ein Stapel Screens.",
-        "portraitAlt": "Boris Onofrei, Produktdesigner, Schwarz-Weiß-Porträt",
+        "portraitAlt": "Boris Onofrei, Produktdesigner, im Profil vor blauem Hintergrund",
         "facts": [
           {
             "term": "Standort",
@@ -664,6 +664,9 @@
     document.querySelectorAll('[data-page-link]').forEach(function (el) {
       el.setAttribute('href', withLang(el.getAttribute('data-base-href')));
     });
+
+    /* motion.js re-splits animated text after the copy changes */
+    try { document.dispatchEvent(new CustomEvent('langchange', { detail: { lang: lang } })); } catch (e) { /* very old browser: no motion layer either */ }
   }
 
   buttons.forEach(function (btn) {

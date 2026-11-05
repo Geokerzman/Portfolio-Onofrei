@@ -13,10 +13,15 @@ site/
 ├── favicon.svg
 ├── README.md
 └── assets/
-    ├── css/main.css            Custom styles (font, components, case and legal pages)
-    ├── css/tailwind.css        Compiled Tailwind utilities (generated, see below)
+    ├── css/site.css            Redesign 11/2026: tokens, nav, footer, all home sections, motion states (every page)
+    ├── css/pages.css           Re-skin of the case and legal pages in the new style (after main.css + tailwind.css)
+    ├── css/main.css            Previous styles — still used by case and legal pages and the lightbox
+    ├── css/tailwind.css        Compiled Tailwind utilities used by case and legal pages (generated, see below)
     ├── js/tailwind.config.js   Tailwind theme (colours, type scale, spacing)
-    ├── js/main.js              EN/DE copy, language, menu, filters, CV overlay, case-page contents
+    ├── js/main.js              EN/DE copy, language, menu, CV overlay, case-page contents; fires `langchange`
+    ├── js/motion.js            Home-page motion: starfield hero, case entrances, pinned "What I do" with CSS-3D scenes,
+    │                           lit About paragraph, fact tiles, document stack, contact bars, smooth scroll
+    ├── js/vendor/              GSAP 3.13 + ScrollTrigger (GreenSock standard licence, free), Lenis 1.3.23 (MIT)
     ├── fonts/                  Satoshi (ITF Free Font License, see Satoshi-License-FFL.txt)
     ├── docs/                   CV PDFs (EN, DE) — linked as downloads
     └── images/
@@ -30,6 +35,20 @@ site/
 
 Case-study text lives in `work/*.html`; card and UI copy in the `COPY` object in `assets/js/main.js` (`en`, `de`). The language travels between pages as `?lang=de` / `?lang=en`; nothing is stored in the browser.
 
+## Motion
+
+The home page is complete without JavaScript; `motion.js` only adds movement on top.
+
+- **Desktop (≥ 900 px):** smooth scroll (Lenis), the hero holds for one screen while the stars assemble into an interface, each case un-tilts into place as it scrolls in (cases stay in normal flow, one per screen), "What I do" pins and steps through eight scenes, the About paragraph lights up word by word, the document stack fans open.
+- **Phones and tablets below 900 px:** native scroll, no ScrollTrigger pins. "What I do" is held with CSS `position: sticky` (blue text panel on top, scene below, as on DeepBook's mobile page) when every step's text fits the panel; on very small screens it falls back to a list of blue cards. Case covers un-tilt, the About paragraph lights up and the document stack fans open with the scroll; the hero assembles by itself after a second.
+- **Reduced motion:** everything is shown in its final state; the hero draws the assembled interface once.
+
+The text-splitting effects re-run after an EN/DE switch (`langchange` event from `main.js`). Crossing the 900 px breakpoint reloads the page so the right scroll model is built.
+
+Menu links scroll with `motion.js`, re-measure on arrival and highlight the section in view (`aria-current`). Do not add `scroll-behavior: smooth` for the home page: ScrollTrigger needs instant programmatic scrolls.
+
+**Deploy health check.** The server checks `/assets/images/hero/portrait.webp` and `/assets/fonts/Satoshi-Regular.woff2` after every release (see `deploy/server_deploy.py` in the repository). Neither is used by the redesigned home page, but both must stay in `site/`.
+
 ## Run locally
 
 Any static server, from inside `site/`:
@@ -39,6 +58,8 @@ npx serve .        # or: python3 -m http.server 8000
 ```
 
 Opening `index.html` directly from disk also works, but font preloading and PDF downloads behave best over HTTP.
+
+To try it on a phone in the same Wi-Fi: `python3 -m http.server 8000 --bind 0.0.0.0` in `site/`, then open `http://<the Mac's IP>:8000` on the phone (`ipconfig getifaddr en0` prints the IP).
 
 ## Before going live
 

@@ -1,0 +1,135 @@
+/* ==========================================================
+   Case-study and legal pages — re-skin of the existing markup
+   (main.css + tailwind.css) in the new visual language.
+   Loaded after site.css. No copy or structure changes.
+   ========================================================== */
+
+body.page-sub {
+  --accent: var(--blue);     /* main.css reads --accent everywhere */
+  --paper: #ffffff;
+  --surface: #ffffff;
+  --mist: #e3e3e0;
+  font-family: var(--font);
+  background: #fff;
+  color: var(--ink);
+}
+.page-sub [id] { scroll-margin-top: calc(var(--nav-space) + 16px); }
+.page-sub a:focus-visible, .page-sub button:focus-visible, .page-sub [tabindex]:focus-visible { outline-color: var(--blue); }
+.page-sub .text-accent { color: var(--blue); }
+/* main.css upper-cases every heading; the new type is sentence case as written */
+.page-sub h1, .page-sub h2, .page-sub h3 { text-transform: none; }
+.page-sub .font-extrabold, .page-sub .font-bold { font-weight: 500; }
+.page-sub .tracking-display { letter-spacing: -.04em; }
+
+/* the old sticky header is gone; the floating nav overlays the page */
+.page-sub .nav__links a[data-current] { color: #fff; }
+
+/* ---------- case hero ---------- */
+.page-case .case-hero { background: var(--black); color: #fff; padding-top: calc(var(--nav-space) - 8px); }
+.page-case .case-back { color: var(--dim); }
+.page-case .case-back:hover { color: #fff; }
+.page-case .case-hero .label { color: var(--dim); letter-spacing: .01em; font-weight: 500; }
+.page-case .case-hero__title {
+  font-family: var(--font);
+  font-size: clamp(46px, 6.4vw, 104px);
+  font-weight: 500;
+  line-height: .95;
+  letter-spacing: -.05em;
+}
+.page-case .case-hero__title .accent { color: var(--mute); }
+.page-case .case-hero .text-onmute { color: var(--dim); }
+
+.page-sub .hero-tag {
+  display: inline-flex; gap: 8px;
+  min-height: 30px; padding: 4px 11px;
+  border: 1px solid var(--line); border-radius: 4px;
+  background: rgba(255, 255, 255, .04);
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+  font-size: 13px; font-weight: 500; line-height: 1.2;
+}
+.page-sub .hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--blue); }
+
+.page-case .case-cover-band::after { background: #fff; }
+.page-case .case-hero__cover {
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .1), 0 40px 90px -30px rgba(0, 0, 0, .8);
+}
+
+/* ---------- body ---------- */
+.page-case .case-body { background: #fff; }
+.page-case .case-article { color: var(--ink-2); }
+.page-case .cs-lede { font-size: clamp(20px, 1.6vw, 26px); font-weight: 500; line-height: 1.4; letter-spacing: -.02em; color: var(--ink); }
+.page-case .cs-eyebrow { font-size: 12px; font-weight: 500; letter-spacing: .1em; color: var(--blue); display: flex; align-items: center; gap: 10px; }
+.page-case .cs-eyebrow::before { content: ''; width: 8px; height: 8px; background: var(--blue); flex: none; }
+.page-case .cs-h {
+  margin-top: 18px;
+  font-family: var(--font);
+  font-size: clamp(28px, 2.6vw, 42px);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -.035em;
+}
+.page-case .cs-h__accent { color: var(--blue); }
+.page-case .cs-pull, .page-case .cs-close { font-family: var(--font); font-weight: 500; letter-spacing: -.025em; }
+.page-case .cs-pull {
+  position: relative; padding: 22px 26px 22px 30px;
+  border-left: 0; background: var(--blue); color: #fff; border-radius: 4px; max-width: 34ch;
+}
+.page-case .cs-note { background: #f4f4f2; border-radius: 4px; border-left: 3px solid var(--blue); }
+
+/* figures: framed like the DeepBook panels */
+.page-case .cs-fig__frame {
+  position: relative;
+  padding: clamp(14px, 2.4vw, 32px);
+  border: 1px solid var(--rule); border-radius: 4px;
+  background-color: #f7f7f5;
+  background-image: radial-gradient(circle at center, rgba(11, 12, 14, .16) 1px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+.page-case .cs-fig__frame img { border-radius: 4px; box-shadow: 0 1px 2px rgba(11, 12, 14, .06), 0 18px 40px -18px rgba(11, 12, 14, .25); }
+.page-case .cs-fig figcaption { font-size: 12px; letter-spacing: .08em; font-weight: 500; }
+.page-case .cs-phones__row li { border-radius: 6px; background: #f7f7f5; border-color: var(--rule); }
+
+/* meta grid, strips, tables: thin rules, square corners */
+.page-case .cs-meta { border-radius: 4px; background: var(--rule); border-color: var(--rule); }
+.page-case .cs-meta dt, .page-case .cs-strip span, .page-case .cs-table thead th, .page-case .cs-sub { letter-spacing: .08em; font-weight: 500; }
+.page-case .cs-strip { border-radius: 4px; }
+.page-case .cs-list li::before { top: .62em; width: 8px; height: 8px; background: var(--blue); }
+
+/* contents rail */
+.page-case .case-toc a { border-radius: 4px; }
+.page-case .case-toc a:hover { background: #f1f1ef; }
+.page-case .case-toc a.is-active { background: var(--blue); color: #fff; }
+.page-case .case-toc-m { border-radius: 4px; background: #f4f4f2; }
+.page-case .case-toc-m > summary { font-weight: 500; }
+@media (min-width: 1024px) {
+  .page-case .case-aside { top: calc(var(--nav-space) + 12px); }
+  .page-case .case-aside .case-toc { max-height: calc(100vh - var(--nav-space) - 40px); }
+}
+
+/* gentle entrance for the hero copy */
+@media (prefers-reduced-motion: no-preference) {
+  .page-case .case-hero > div:first-child > * { animation: sub-rise .9s var(--ease) both; }
+  .page-case .case-hero > div:first-child > :nth-child(2) { animation-delay: .05s; }
+  .page-case .case-hero > div:first-child > :nth-child(3) { animation-delay: .1s; }
+  .page-case .case-hero > div:first-child > :nth-child(4) { animation-delay: .16s; }
+  .page-case .case-hero > div:first-child > :nth-child(5) { animation-delay: .22s; }
+  .page-case .case-hero__cover { animation: sub-cover 1.2s var(--ease) .15s both; }
+}
+@keyframes sub-rise { from { opacity: 0; transform: translateY(22px); } }
+@keyframes sub-cover { from { opacity: 0; transform: translateY(40px) scale(.97); } }
+
+/* ---------- legal pages ---------- */
+.page-legal main > section:first-child { background: var(--black); color: #fff; border-bottom: 0; padding-top: calc(var(--nav-space) - 24px); }
+.page-legal #legal-title { font-family: var(--font); font-weight: 500; letter-spacing: -.045em; color: #fff; }
+.page-legal #legal-title + p { color: var(--dim); }
+.page-legal .legal-card {
+  position: relative;
+  border-radius: 4px; background: #fff; box-shadow: none;
+}
+.page-legal .legal h2 { font-family: var(--font); font-weight: 500; letter-spacing: -.025em; }
+.page-legal .legal a { color: var(--blue); }
+
+/* CV overlay (index) and lightbox keep main.css, only the accent follows */
+.page-sub .lb, .page-sub .overlay { --accent: var(--blue); }
