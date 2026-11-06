@@ -39,6 +39,8 @@ Case-study text lives in `work/*.html`; card and UI copy in the `COPY` object in
 
 The home page is complete without JavaScript; `motion.js` only adds movement on top.
 
+- **Dot field (all sizes):** the band between the hero and "Law taught me order" (`.field`, canvas). Squares light up under the pointer and fade in a trail; click and hold sends out waves. On touch screens cells twinkle on their own and a tap sends a wave. Decorative, `aria-hidden`; the hint text is `field.hint` in `main.js`.
+- **Rails (all sizes):** three section dividers (`[data-rail]`): cases → "What I do" (right to left), "What I bring" → About (left to right), Experience → Contact (right to left). One blue cube rolls along the line with the scroll and draws it behind itself; scrolling back rolls it back.
 - **Desktop (≥ 900 px):** smooth scroll (Lenis), the hero holds for one screen while the stars assemble into an interface, each case un-tilts into place as it scrolls in (cases stay in normal flow, one per screen), "What I do" pins and steps through eight scenes, the About paragraph lights up word by word, the document stack fans open.
 - **Phones and tablets below 900 px:** native scroll, no ScrollTrigger pins. "What I do" is held with CSS `position: sticky` (blue text panel on top, scene below, as on DeepBook's mobile page) when every step's text fits the panel; on very small screens it falls back to a list of blue cards. Case covers un-tilt, the About paragraph lights up and the document stack fans open with the scroll; the hero assembles by itself after a second.
 - **Reduced motion:** everything is shown in its final state; the hero draws the assembled interface once.
@@ -46,6 +48,8 @@ The home page is complete without JavaScript; `motion.js` only adds movement on 
 The text-splitting effects re-run after an EN/DE switch (`langchange` event from `main.js`). Crossing the 900 px breakpoint reloads the page so the right scroll model is built.
 
 Menu links scroll with `motion.js`, re-measure on arrival and highlight the section in view (`aria-current`). Do not add `scroll-behavior: smooth` for the home page: ScrollTrigger needs instant programmatic scrolls.
+
+**Cache busting.** Stylesheets and scripts are linked with `?v=YYYYMMDDx` (currently `20261106a`) on all six pages. Change it on every page whenever a CSS or JS file changes, or returning visitors keep the old files.
 
 **Deploy health check.** The server checks `/assets/images/hero/portrait.webp` and `/assets/fonts/Satoshi-Regular.woff2` after every release (see `deploy/server_deploy.py` in the repository). Neither is used by the redesigned home page, but both must stay in `site/`.
 

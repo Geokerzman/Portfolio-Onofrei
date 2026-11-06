@@ -237,7 +237,8 @@
       const zoneTop = 14 + 52 + 30;
       const zoneBot = content.offsetTop - 28;
       const zoneH = Math.max(110, zoneBot - zoneTop);
-      let fw = Math.min(920, W * .62), fh = fw * .56;
+      /* the frame keeps its earlier size and place above the copy (~720 px on desktop) */
+      let fw = W >= 900 ? Math.min(720, W * .5) : W - 40, fh = fw * .56;
       if (fh > zoneH) { fh = zoneH; fw = fh / .56; }
       if (fw > W - 40) { fw = W - 40; fh = fw * .56; }
       frame = { w: fw, h: fh, x: (W - fw) / 2, y: zoneTop + Math.max(0, (zoneH - fh) / 2) };
@@ -642,6 +643,140 @@
   buildBars();
 
   /* ---------------------------------------------------------
+     FIELD — dot grid under the hero. Squares light up under the
+     pointer and fade in a trail; click and hold sends out waves.
+     Touch screens: a gentle twinkle, and a tap sends a wave.
+     --------------------------------------------------------- */
+  function buildField() {
+    const sec = $('.field'), canvas = $('.field__canvas', sec || document), cursor = $('.field__cursor', sec || document);
+    if (!sec || !canvas) return;
+    const ctx = canvas.getContext('2d');
+    const FINE = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const IN = REDUCED ? 1 : .32, OUT = REDUCED ? 1 : .075;
+    let W = 0, H = 0, dpr = 1, S = 72, cols = 0, rows = 0, ox = 0, oy = 0, cells = [];
+    let visible = false, raf = 0, lastCell = -1, rings = [], holding = false, holdT = 0, twinkleT = 0;
+    const pos = { x: -999, y: -999, cx: 0, cy: 0, inside: false };
+
+    function size() {
+      dpr = Math.min(2, window.devicePixelRatio || 1);
+      W = sec.clientWidth; H = sec.clientHeight;
+      canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+      S = W >= 900 ? 72 : 48;
+      cols = Math.max(1, Math.floor(W / S)); rows = Math.max(1, Math.floor(H / S));
+      ox = (W - cols * S) / 2; oy = (H - rows * S) / 2;
+      cells = Array.from({ length: cols * rows }, () => ({ e: 0, until: 0 }));
+      lastCell = -1;
+      draw(performance.now());
+    }
+    const cellAt = (x, y) => {
+      const c = Math.floor((x - ox) / S), r = Math.floor((y - oy) / S);
+      return c >= 0 && c < cols && r >= 0 && r < rows ? r * cols + c : -1;
+    };
+    const light = (i, now, hold) => { if (i >= 0 && cells[i]) cells[i].until = Math.max(cells[i].until, now + hold); };
+    /* every cell on the way from the last one, so fast moves leave no gaps */
+    function trail(from, to, now) {
+      if (to < 0) return;
+      if (from < 0) { light(to, now, 170); return; }
+      let x0 = from % cols, y0 = (from / cols) | 0;
+      const x1 = to % cols, y1 = (to / cols) | 0;
+      const dx = Math.abs(x1 - x0), dy = -Math.abs(y1 - y0), sx = x0 < x1 ? 1 : -1, sy = y0 < y1 ? 1 : -1;
+      let err = dx + dy, k = 0;
+      for (;;) {
+        light(y0 * cols + x0, now, 110 + k * 12);
+        if ((x0 === x1 && y0 === y1) || ++k > 64) break;
+        const e2 = 2 * err;
+        if (e2 >= dy) { err += dy; x0 += sx; }
+        if (e2 <= dx) { err += dx; y0 += sy; }
+      }
+    }
+    const ring = (x, y, now) => ({ x, y, t0: now, v: W >= 900 ? .95 : .6, max: Math.hypot(W, H) + S });
+
+    function square(x, y, s, r) {
+      if (ctx.roundRect) { ctx.beginPath(); ctx.roundRect(x, y, s, s, r); ctx.fill(); }
+      else ctx.fillRect(x, y, s, s);
+    }
+    function draw(now) {
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, W, H);
+      rings = rings.filter(r => (now - r.t0) * r.v < r.max);
+      let busy = rings.length > 0;
+      for (let i = 0; i < cells.length; i++) {
+        const c = cells[i];
+        const x = ox + (i % cols) * S + S / 2, y = oy + ((i / cols) | 0) * S + S / 2;
+        for (let k = 0; k < rings.length; k++) {
+          const r = rings[k], rad = (now - r.t0) * r.v;
+          if (Math.abs(Math.hypot(x - r.x, y - r.y) - rad) < S * .5) c.until = Math.max(c.until, now + 80);
+        }
+        const on = now < c.until;
+        c.e += ((on ? 1 : 0) - c.e) * (on ? IN : OUT);
+        if (c.e < .003) c.e = 0;
+        if (c.e > 0 || on) busy = true;
+        if (c.e > 0) {
+          const s = S * .47 * c.e;
+          ctx.fillStyle = 'rgba(30,110,243,' + Math.min(.95, c.e * 1.3).toFixed(3) + ')';
+          square(x - s / 2, y - s / 2, s, Math.min(6, s / 4));
+        }
+        ctx.fillStyle = c.e > .4 ? 'rgba(255,255,255,.95)' : 'rgba(255,255,255,.36)';
+        ctx.fillRect(x - 1, y - 1, 2, 2);
+      }
+      return busy;
+    }
+
+    function loop(now) {
+      raf = 0;
+      if (!visible || document.hidden) return;
+      if (holding && now - holdT > 320) { rings.push(ring(pos.x, pos.y, now)); holdT = now; }
+      if (!FINE && !REDUCED && now > twinkleT) {
+        light(Math.floor(Math.random() * cells.length), now, 260);
+        twinkleT = now + 220 + Math.random() * 420;
+      }
+      if (cursor && FINE && pos.inside) {
+        pos.cx += (pos.x - pos.cx) * .4; pos.cy += (pos.y - pos.cy) * .4;
+        cursor.style.transform = 'translate3d(' + pos.cx.toFixed(1) + 'px,' + pos.cy.toFixed(1) + 'px,0)';
+      }
+      const busy = draw(now);
+      if (busy || holding || pos.inside || (!FINE && !REDUCED)) raf = requestAnimationFrame(loop);
+    }
+    const kick = () => { if (!raf && visible) raf = requestAnimationFrame(loop); };
+    const local = e => { const r = sec.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+
+    sec.addEventListener('pointermove', e => {
+      const [x, y] = local(e);
+      pos.x = x; pos.y = y;
+      if (e.pointerType === 'touch') return;          /* a finger here is usually scrolling the page */
+      if (!pos.inside) { pos.inside = true; pos.cx = x; pos.cy = y; sec.classList.add('is-hover'); }
+      const i = cellAt(x, y);
+      if (i !== lastCell) { trail(lastCell, i, performance.now()); lastCell = i; }
+      kick();
+    }, { passive: true });
+    sec.addEventListener('pointerleave', () => {
+      pos.inside = false; lastCell = -1; holding = false;
+      sec.classList.remove('is-hover', 'is-down');
+    });
+    sec.addEventListener('pointerdown', e => {
+      if (REDUCED) return;
+      const [x, y] = local(e), now = performance.now();
+      pos.x = x; pos.y = y;
+      rings.push(ring(x, y, now));
+      if (e.pointerType !== 'touch') { holding = true; holdT = now; sec.classList.add('is-down'); }
+      kick();
+    });
+    const release = () => { holding = false; sec.classList.remove('is-down'); };
+    sec.addEventListener('pointerup', release);
+    sec.addEventListener('pointercancel', release);
+    window.addEventListener('blur', release);
+
+    let rT = 0;
+    window.addEventListener('resize', () => { clearTimeout(rT); rT = setTimeout(size, 150); });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(es => es.forEach(e => { visible = e.isIntersecting; if (visible) kick(); })).observe(sec);
+    } else { visible = true; }
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) kick(); });
+    size();
+  }
+  buildField();
+
+  /* ---------------------------------------------------------
      Scroll choreography
      --------------------------------------------------------- */
   const caps = buildCaps();
@@ -729,6 +864,20 @@
         onUpdate: self => docs.open(easeIO(self.progress))
       });
     }
+
+    /* 6 · rails: the cube rolls along the line and draws it; scroll back, it rolls back */
+    $$('[data-rail]').forEach(rail => {
+      const st = { p: 0 }, dir = rail.getAttribute('data-rail') === 'rtl' ? -1 : 1, half = 6;
+      const apply = () => {
+        const deg = st.p * 720 * dir;                                   /* two full turns end to end */
+        const a = (Math.abs(deg) % 90) * Math.PI / 180;                 /* a square pivoting on its edge rises */
+        rail.style.setProperty('--p', st.p.toFixed(4));
+        rail.style.setProperty('--r', deg.toFixed(2));
+        rail.style.setProperty('--lift', (half * (Math.cos(a) + Math.sin(a)) - half).toFixed(2));
+      };
+      apply();
+      gsap.to(st, { p: 1, ease: 'none', onUpdate: apply, scrollTrigger: { trigger: rail, start: 'top 92%', end: 'top 28%', scrub: .6 } });
+    });
 
     /* keep every trigger (and so every menu jump) measured against the real
        layout: fonts arriving late or the page growing re-measure once */

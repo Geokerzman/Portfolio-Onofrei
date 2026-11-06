@@ -29,7 +29,7 @@
 
 <link rel="preload" href="./assets/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="./assets/css/site.css?v=20261105a">
+<link rel="stylesheet" href="./assets/css/site.css?v=20261106a">
 <script>
   /* motion.js removes the safety net once it runs; without it everything stays visible */
   document.documentElement.classList.add('js');
@@ -100,17 +100,20 @@
     <div class="hero__shade" aria-hidden="true"></div>
 
     <div class="hero__content container">
-      <ul class="hero__tags" role="list">
+      <div class="hero__main">
+        <p class="hero__eyebrow hero__in" style="--d:0" data-i18n="hero.eyebrow">Design Portfolio</p>
+        <h1 id="hero-h1" class="hero__title hero__in" style="--d:1" data-i18n="hero.h1">Boris Onofrei</h1>
+      </div>
+      <div class="hero__side">
+      <ul class="hero__tags hero__in" style="--d:2" role="list">
         <li class="tag" data-i18n="hero.tag1">Branding</li>
         <li class="tag" data-i18n="hero.tag2">UX/UI design</li>
         <li class="tag" data-i18n="hero.tag3">Web development</li>
       </ul>
-      <p class="hero__eyebrow" data-i18n="hero.eyebrow">Design Portfolio</p>
-      <h1 id="hero-h1" class="hero__title" data-i18n="hero.h1">Boris Onofrei</h1>
-      <p class="hero__sub">
+      <p class="hero__sub hero__in" style="--d:3">
         <span class="dim" data-i18n="hero.sub_dim">I make complex B2B software </span><span data-i18n="hero.sub_strong">clear, consistent and compliant.</span>
       </p>
-      <div class="hero__ctas">
+      <div class="hero__ctas hero__in" style="--d:4">
         <a href="#work" class="btn btn--blue">
           <span data-i18n="hero.cta1">See selected work</span>
           <!-- Font Awesome Free 7.3.1, Solid: arrow-right -->
@@ -122,8 +125,18 @@
           <svg class="icon" viewBox="0 0 640 640" aria-hidden="true" focusable="false"><path fill="currentColor" d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"></path></svg>
         </a>
       </div>
+      </div>
     </div>
   </section>
+
+  <!-- ============================================================
+       01b — FIELD: interactive dot grid, squares light up under the
+       pointer; click and hold sends out a wave. Decorative only.
+       ============================================================ -->
+  <div class="field" aria-hidden="true">
+    <canvas class="field__canvas"></canvas>
+    <span class="field__cursor"><span class="field__hint" data-i18n="field.hint">Click and hold</span></span>
+  </div>
 
   <!-- ============================================================
        02 — SELECTED WORK: three cases in normal flow, one per screen
@@ -233,6 +246,11 @@
       </li>
     </ol>
   </section>
+
+  <!-- RAIL — between the cases and "What I do" (right → left; the three rails alternate) -->
+  <div class="rail" data-rail="rtl" aria-hidden="true">
+    <div class="rail__in"><span class="rail__track"></span><span class="rail__fill"></span><span class="rail__cube"></span></div>
+  </div>
 
   <!-- ============================================================
        03 — WHAT I DO: pinned story, blue panel + iso scene per step
@@ -388,6 +406,11 @@
     </div>
   </section>
 
+  <!-- RAIL — a blue cube rolls along the line with the scroll (left → right) -->
+  <div class="rail" data-rail="ltr" aria-hidden="true">
+    <div class="rail__in"><span class="rail__track"></span><span class="rail__fill"></span><span class="rail__cube"></span></div>
+  </div>
+
   <!-- ============================================================
        05 — ABOUT: scroll-lit paragraph, portrait, fact tiles
        ============================================================ -->
@@ -495,6 +518,11 @@
       </li>
     </ol>
   </section>
+
+  <!-- RAIL — the same cube, rolling back (right → left) -->
+  <div class="rail rail--end" data-rail="rtl" aria-hidden="true">
+    <div class="rail__in"><span class="rail__track"></span><span class="rail__fill"></span><span class="rail__cube"></span></div>
+  </div>
 
   <!-- ============================================================
        07 — CONTACT: black CTA framed by moving blue bars
@@ -722,11 +750,11 @@
 <!-- ============================================================
      SCRIPTS — copy and language (main.js), then the motion layer
      ============================================================ -->
-<script src="./assets/js/main.js?v=20261105a"></script>
+<script src="./assets/js/main.js?v=20261106a"></script>
 <script src="./assets/js/vendor/gsap.min.js"></script>
 <script src="./assets/js/vendor/ScrollTrigger.min.js"></script>
 <script src="./assets/js/vendor/lenis.min.js"></script>
-<script src="./assets/js/motion.js?v=20261105a"></script>
+<script src="./assets/js/motion.js?v=20261106a"></script>
 
 </body>
 </html>

@@ -40,6 +40,9 @@
         "cta1": "See selected work",
         "cta2": "About me"
       },
+      "field": {
+        "hint": "Click and hold"
+      },
       "work": {
         "label": "Selected work",
         "heading": "Law taught me order. Design put it to work.",
@@ -312,6 +315,9 @@
         "sub_strong": "klar, konsistent und konform.",
         "cta1": "Ausgewählte Arbeiten",
         "cta2": "Über mich"
+      },
+      "field": {
+        "hint": "Klicken und halten"
       },
       "work": {
         "label": "Ausgewählte Arbeiten",
