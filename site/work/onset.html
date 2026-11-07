@@ -19,10 +19,10 @@
 <link rel="apple-touch-icon" href="../assets/images/meta/apple-touch-icon.png">
 <link rel="preload" href="../assets/fonts/Satoshi-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/css/main.css?v=20261106a">
-<link rel="stylesheet" href="../assets/css/tailwind.css?v=20261106a">
-<link rel="stylesheet" href="../assets/css/site.css?v=20261106a">
-<link rel="stylesheet" href="../assets/css/pages.css?v=20261106a">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261108c">
+<link rel="stylesheet" href="../assets/css/tailwind.css?v=20261108c">
+<link rel="stylesheet" href="../assets/css/site.css?v=20261108c">
+<link rel="stylesheet" href="../assets/css/pages.css?v=20261108c">
   <!-- Icons: Font Awesome Free 7.3.1 by @fontawesome, https://fontawesome.com/license/free (Icons: CC BY 4.0) -->
 </head>
 <body class="font-body bg-paper text-ink antialiased page-sub page-case" data-root="../">
@@ -307,38 +307,43 @@
     </div>
   </div>
 
-  <section class="work-dark next-case" aria-labelledby="next-heading">
-    <div class="mx-auto max-w-container px-gut py-rhythm lg:px-gut-lg lg:py-rhythm-lg">
-      <h2 id="next-heading" class="font-display text-s48 font-extrabold tracking-display text-onink" data-i18n="case.next">Next case study</h2>
-      <ul class="work-list mt-12 flex flex-col gap-6 lg:mt-16 lg:gap-8" role="list">
-        <li>
-          <article class="work-card grid overflow-hidden rounded-card border md:grid-cols-[50%_50%] md:items-stretch" data-case="2">
-            <div style="container-type: inline-size" class="order-2 p-6 md:order-1 md:p-8 lg:p-10">
-              <p class="label text-graphite" data-i18n="work.cases.2.label">01 / Case study</p>
-              <h3 class="mt-4 font-display text-s34 font-bold tracking-display text-ink" style="font-size: min(34px, 8.4cqw)">
-                <span class="block whitespace-nowrap" data-i18n="work.cases.2.csHeadDim">Marp</span>
-                <span class="block whitespace-nowrap" data-i18n="work.cases.2.csHeadStrong">B2B revenue analytics</span>
-              </h3>
-              <p class="mt-3 text-s15 text-graphite" data-i18n="work.cases.2.context">Responsive · B2B SaaS · Device handoff</p>
-              <p class="mt-5 max-w-measure text-s17 text-graphite" data-i18n="work.cases.2.outcome">A setup assistant that proposes metrics, segments and a first dashboard — then makes every one of them easy to reject. Configuration you edit is faster than configuration you write, and safer than configuration you inherit.</p>
-              <a href="./marp.html" data-page-link="" class="work-card__affordance work-card__link mt-8 inline-flex items-center font-display text-s17 font-bold tracking-display">
-                <span class="work-card__affordance-text" data-i18n="work.readCta">Read case study</span>
-                <!-- Font Awesome Free 7.3.1, Solid: arrow-right -->
-                <svg class="work-card__arrow" width="20" height="20" viewBox="0 0 640 640" aria-hidden="true" focusable="false"><path fill="currentColor" d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"></path></svg>
-              </a>
-            </div>
-            <div class="work-card__media relative order-1 flex aspect-[4/3] items-center justify-center overflow-hidden md:order-2 md:aspect-auto md:h-full" data-image-slot="work-03">
-              <img src="../assets/images/work/marp/card-cover.webp" width="2400" height="1707" alt="Marp on a light blue background: the mobile sign-up screen promising a first dashboard in about 10 minutes, next to the desktop revenue dashboard with a lime Your dashboard is ready card and this month's KPI tiles." class="absolute inset-0 h-full w-full object-cover object-left-top" loading="lazy" decoding="async">
-              <ul class="work-card__tags" role="list">
-                <li class="hero-tag" data-i18n="work.cases.2.tags.0">Responsive UX</li>
-                <li class="hero-tag" data-i18n="work.cases.2.tags.1">AI in the loop</li>
-                <li class="hero-tag" data-i18n="work.cases.2.tags.2">Design system</li>
-              </ul>
-            </div>
-          </article>
-        </li>
-      </ul>
+  <section class="next-case" aria-labelledby="next-heading">
+    <div class="container next-case__head">
+      <h2 id="next-heading" class="h2" data-i18n="case.next">Next case study</h2>
     </div>
+    <ol class="cases next-case__list" role="list">
+      <li class="case">
+        <article class="work-card case__frame" data-case="2">
+          <i class="pc pc--tl"></i><i class="pc pc--tr"></i><i class="pc pc--bl"></i><i class="pc pc--br"></i>
+          <div class="case__text">
+            <p class="case__label" data-i18n="work.cases.2.label">01 / Case study</p>
+            <h3 class="case__title" id="next-title-marp">
+              <span data-i18n="work.cases.2.csHeadDim">Marp</span>
+              <span class="dim" data-i18n="work.cases.2.csHeadStrong">B2B revenue analytics</span>
+            </h3>
+            <p class="case__context" data-i18n="work.cases.2.context">Responsive · B2B SaaS · Device handoff</p>
+            <p class="case__outcome" data-i18n="work.cases.2.outcome">A setup assistant that proposes metrics, segments and a first dashboard — then makes every one of them easy to reject. Configuration you edit is faster than configuration you write, and safer than configuration you inherit.</p>
+            <ul class="case__tags" role="list">
+              <li class="tag" data-i18n="work.cases.2.tags.0">Responsive UX</li>
+              <li class="tag" data-i18n="work.cases.2.tags.1">AI in the loop</li>
+              <li class="tag" data-i18n="work.cases.2.tags.2">Design system</li>
+            </ul>
+            <a href="./marp.html" data-page-link class="work-card__link cta-bar" aria-describedby="next-title-marp">
+              <span class="cta-bar__label" data-i18n="work.readCta">Read case study</span>
+              <span class="cta-bar__arrow" aria-hidden="true">
+                <!-- Font Awesome Free 7.3.1, Solid: arrow-right -->
+                <svg class="icon" viewBox="0 0 640 640" aria-hidden="true" focusable="false"><path fill="currentColor" d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"></path></svg>
+              </span>
+            </a>
+          </div>
+          <div class="case__media">
+            <div class="case__shot">
+              <img src="../assets/images/work/marp/card-cover.webp" width="2400" height="1707" alt="Marp on a light blue background: the mobile sign-up screen promising a first dashboard in about 10 minutes, next to the desktop revenue dashboard with a lime Your dashboard is ready card and this month's KPI tiles." loading="lazy" decoding="async">
+            </div>
+          </div>
+        </article>
+      </li>
+    </ol>
   </section>
 </main>
 
@@ -368,6 +373,6 @@
   </div>
 </footer>
 
-<script src="../assets/js/main.js?v=20261106a"></script>
+<script src="../assets/js/main.js?v=20261108c"></script>
 </body>
 </html>

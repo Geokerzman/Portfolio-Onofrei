@@ -29,7 +29,7 @@
 
 <link rel="preload" href="./assets/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="./assets/css/site.css?v=20261106a">
+<link rel="stylesheet" href="./assets/css/site.css?v=20261108c">
 <script>
   /* motion.js removes the safety net once it runs; without it everything stays visible */
   document.documentElement.classList.add('js');
@@ -436,24 +436,24 @@
 
     <div class="facts">
       <div class="fact fact--blue" data-fact>
+        <p class="fact__term" data-i18n="about.facts.0.term">Based in</p>
         <p class="fact__value" data-i18n="about.facts.0.value" data-roll>Germany</p>
         <p class="fact__value2" data-i18n="about.facts.0.value2">European Union</p>
-        <p class="fact__term" data-i18n="about.facts.0.term">Based in</p>
       </div>
       <div class="fact fact--black" data-fact>
+        <p class="fact__term" data-i18n="about.facts.1.term">Experience</p>
         <p class="fact__value" data-i18n="about.facts.1.value" data-roll>3+ YEARS IN-HOUSE IN GERMANY</p>
         <p class="fact__value2" data-i18n="about.facts.1.value2">Plus freelance work in the EU and US</p>
-        <p class="fact__term" data-i18n="about.facts.1.term">Experience</p>
       </div>
       <div class="fact fact--grey" data-fact>
+        <p class="fact__term" data-i18n="about.facts.2.term">Languages</p>
         <p class="fact__value" data-i18n="about.facts.2.value" data-roll>English C1 / German B1</p>
         <p class="fact__value2" data-i18n="about.facts.2.value2">Ukrainian / Russian</p>
-        <p class="fact__term" data-i18n="about.facts.2.term">Languages</p>
       </div>
       <div class="fact fact--white" data-fact>
+        <p class="fact__term" data-i18n="about.facts.3.term">Focus</p>
         <p class="fact__value" data-i18n="about.facts.3.value" data-roll>Product design / E‑commerce / Enterprise B2B</p>
         <p class="fact__value2" data-i18n="about.facts.3.value2">Design systems</p>
-        <p class="fact__term" data-i18n="about.facts.3.term">Focus</p>
       </div>
     </div>
   </section>
@@ -517,12 +517,12 @@
         </div>
       </li>
     </ol>
-  </section>
 
-  <!-- RAIL — the same cube, rolling back (right → left) -->
-  <div class="rail rail--end" data-rail="rtl" aria-hidden="true">
-    <div class="rail__in"><span class="rail__track"></span><span class="rail__fill"></span><span class="rail__cube"></span></div>
-  </div>
+    <!-- RAIL — the same cube, rolling back (right → left), on the white of Experience -->
+    <div class="rail rail--light" data-rail="rtl" aria-hidden="true">
+      <div class="rail__in"><span class="rail__track"></span><span class="rail__fill"></span><span class="rail__cube"></span></div>
+    </div>
+  </section>
 
   <!-- ============================================================
        07 — CONTACT: black CTA framed by moving blue bars
@@ -750,11 +750,11 @@
 <!-- ============================================================
      SCRIPTS — copy and language (main.js), then the motion layer
      ============================================================ -->
-<script src="./assets/js/main.js?v=20261106a"></script>
+<script src="./assets/js/main.js?v=20261108c"></script>
 <script src="./assets/js/vendor/gsap.min.js"></script>
 <script src="./assets/js/vendor/ScrollTrigger.min.js"></script>
 <script src="./assets/js/vendor/lenis.min.js"></script>
-<script src="./assets/js/motion.js?v=20261106a"></script>
+<script src="./assets/js/motion.js?v=20261108c"></script>
 
 </body>
 </html>

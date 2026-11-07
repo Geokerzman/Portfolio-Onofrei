@@ -21,6 +21,10 @@ body.page-sub {
 .page-sub .font-extrabold, .page-sub .font-bold { font-weight: 500; }
 .page-sub .tracking-display { letter-spacing: -.04em; }
 
+/* main.css turns every hovered link ink-black (a:hover); the shared nav, footer, next-case card and
+   their buttons keep their own colours, exactly as on the home page */
+.page-sub :is(.nav, .footer, .next-case) a:hover { color: inherit; }
+
 /* the old sticky header is gone; the floating nav overlays the page */
 .page-sub .nav__links a[data-current] { color: #fff; }
 
@@ -119,6 +123,19 @@ body.page-sub {
 }
 @keyframes sub-rise { from { opacity: 0; transform: translateY(22px); } }
 @keyframes sub-cover { from { opacity: 0; transform: translateY(40px) scale(.97); } }
+
+/* ---------- next case: the same framed card as the cases on the home page ---------- */
+.page-case .next-case { background: var(--black); color: #fff; padding: var(--sec) 0 calc(var(--sec) * .7); }
+.page-case .next-case__list { margin-top: clamp(28px, 4vh, 48px); }
+.page-case .next-case .case { min-height: 0; padding-block: 0; }
+.page-case .next-case .case__frame { height: clamp(480px, 64vh, 640px); min-height: 0; }
+/* main.css lifts .work-card on hover; here the frame only brightens, as on the home page */
+.page-case .next-case .work-card { transition: border-color .35s var(--ease); }
+.page-case .next-case .work-card:hover,
+.page-case .next-case .work-card:has(:focus-visible) { transform: none; box-shadow: none; border-color: var(--line-2); }
+@media (max-width: 899px) {
+  .page-case .next-case .case__frame { height: auto; }
+}
 
 /* ---------- legal pages ---------- */
 .page-legal main > section:first-child { background: var(--black); color: #fff; border-bottom: 0; padding-top: calc(var(--nav-space) - 24px); }

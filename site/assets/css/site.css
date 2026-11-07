@@ -352,7 +352,11 @@ html.lenis, html.lenis body { height: auto; }
    page, rtl before Contact). Without motion: drawn, cube at rest.
    ========================================================== */
 .rail { max-width: var(--maxw); margin: 0 auto; padding: var(--sec) var(--gut) 0; }
-.rail--end { padding-top: clamp(64px, 9vh, 104px); }
+/* the last rail closes the white Experience block, just above Contact */
+.rail--light { padding-top: clamp(64px, 9vh, 104px); }
+.rail--light .rail__track { background: rgba(11, 12, 14, .14); }
+.rail--light .rail__track::before, .rail--light .rail__track::after { background: rgba(11, 12, 14, .38); }
+.rail--light .rail__cube { box-shadow: 0 6px 16px rgba(30, 110, 243, .35); }
 .rail__in { position: relative; height: 28px; }
 .rail__track, .rail__fill { position: absolute; top: 50%; height: 1px; }
 .rail__track { left: 0; right: 0; background: var(--line); }
@@ -587,9 +591,10 @@ html.lenis, html.lenis body { height: auto; }
 .fact::before, .fact::after { content: ''; position: absolute; right: 14px; width: 7px; height: 7px; background: currentColor; }
 .fact::before { top: 14px; }
 .fact::after { bottom: 14px; }
-.fact__value { font-size: clamp(24px, 2.3vw, 38px); font-weight: 500; line-height: 1.08; letter-spacing: -.035em; padding-right: 18px; }
+/* label on top, the value sits at the bottom of the tile */
+.fact__term { font-size: 14px; font-weight: 500; padding-right: 18px; }
+.fact__value { margin-top: auto; padding-top: 28px; font-size: clamp(24px, 2.3vw, 38px); font-weight: 500; line-height: 1.08; letter-spacing: -.035em; padding-right: 18px; }
 .fact__value2 { margin-top: 10px; font-size: 15px; line-height: 1.45; }
-.fact__term { margin-top: auto; padding-top: 24px; font-size: 14px; font-weight: 500; }
 .fact--blue { background: var(--blue); color: #fff; }
 .fact--black { background: var(--black); color: #fff; border-block: 1px solid var(--line); }
 .fact--black .fact__value2 { color: var(--dim); }
@@ -608,7 +613,7 @@ html.lenis, html.lenis body { height: auto; }
 /* ==========================================================
    EXPERIENCE — white block
    ========================================================== */
-.exp { background: #fff; color: var(--ink); padding: var(--sec) 0; }
+.exp { background: #fff; color: var(--ink); padding: var(--sec) 0 clamp(56px, 8vh, 88px); }
 .exp ::selection { background: var(--blue); color: #fff; }
 .exp__top { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: 48px; align-items: center; }
 .exp__ctas { margin-top: clamp(28px, 4vh, 40px); display: flex; flex-wrap: wrap; gap: 10px; }
